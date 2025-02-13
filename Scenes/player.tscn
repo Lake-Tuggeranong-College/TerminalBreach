@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=18 format=3 uid="uid://xcjrjq5cbn7y"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_2v3wm"]
-[ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="2_4esil"]
-[ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_27dhu"]
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_50ycf"]
+[ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="2_62ygg"]
+[ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_rtlv2"]
+[ext_resource type="AudioStream" uid="uid://ce44bg7mdkoh1" path="res://audio/gunshot.ogg" id="4_fwa6j"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xk8km"]
 
@@ -16,9 +17,9 @@ colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_cfnn0")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
-gravity = Vector3(0, 0, 0)
 angle_min = 45.0
 angle_max = 45.0
+gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("GradientTexture1D_is51c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4smqo"]
@@ -26,7 +27,7 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.960784, 0.670588, 1)
-albedo_texture = ExtResource("3_27dhu")
+albedo_texture = ExtResource("3_rtlv2")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
@@ -125,17 +126,17 @@ _data = {
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hn37q"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
-properties/0/sync = true
+properties/0/replication_mode = 1
 properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
-properties/1/sync = true
+properties/1/replication_mode = 1
 properties/2/path = NodePath("Camera3D:rotation")
 properties/2/spawn = true
-properties/2/sync = true
+properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-script = ExtResource("1_2v3wm")
+script = ExtResource("1_50ycf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -148,7 +149,7 @@ shape = SubResource("CapsuleShape3D_67y6s")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51306, 0)
 
-[node name="Pistol" parent="Camera3D" instance=ExtResource("2_4esil")]
+[node name="Pistol" parent="Camera3D" instance=ExtResource("2_62ygg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.25, -0.5)
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/Pistol"]
@@ -166,13 +167,17 @@ target_position = Vector3(0, 0, -50)
 collision_mask = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
-playback_default_blend_time = 0.05
 libraries = {
 "": SubResource("AnimationLibrary_p6wdk")
 }
+autoplay = "idle"
+playback_default_blend_time = 0.05
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_hn37q")
+
+[node name="gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fwa6j")
+pitch_scale = 2.85
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

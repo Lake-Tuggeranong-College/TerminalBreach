@@ -6,6 +6,7 @@ signal health_changed(health_value)
 @onready var anim_player = $AnimationPlayer
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
+@onready var gunshot = $gunshot
 
 var health = 3
 
@@ -34,6 +35,7 @@ func _unhandled_input(event):
 	
 	if Input.is_action_just_pressed("shoot") \
 			and anim_player.current_animation != "shoot":
+		gunshot.play()
 		play_shoot_effects.rpc()
 		if raycast.is_colliding():
 			var hit_player = raycast.get_collider()
@@ -74,6 +76,7 @@ func _physics_process(delta):
 func play_shoot_effects():
 	anim_player.stop()
 	anim_player.play("shoot")
+
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
 
