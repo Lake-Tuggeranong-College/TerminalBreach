@@ -23,5 +23,4 @@ surface_material_override/1 = SubResource("StandardMaterial3D_jylvv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("4_dqiia")
-autoplay = true
 parameters/looping = true

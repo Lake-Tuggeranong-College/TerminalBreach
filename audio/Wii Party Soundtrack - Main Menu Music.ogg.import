@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dq04iocdx6bn3"
+path="res://.godot/imported/Wii Party Soundtrack - Main Menu Music.ogg-b7d92bec4dc1654385294ae5a7a5ead8.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/Wii Party Soundtrack - Main Menu Music.ogg"
+dest_files=["res://.godot/imported/Wii Party Soundtrack - Main Menu Music.ogg-b7d92bec4dc1654385294ae5a7a5ead8.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
