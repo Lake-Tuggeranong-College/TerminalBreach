@@ -76,7 +76,8 @@ func shoot_bullet():
 
 
 func _on_timer_timeout():
-	shoot_bullet()
+	if Global.player != null:
+		shoot_bullet()
 
 
 func take_damageE(damage_amount):
