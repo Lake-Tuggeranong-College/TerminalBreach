@@ -1,9 +1,9 @@
 [gd_scene load_steps=224 format=3 uid="uid://txw564016hgy"]
 
-[ext_resource type="Script" path="res://spaceship_map.gd" id="1_ua7sc"]
-[ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/enemy.tscn" id="1_yd3bh"]
+[ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
+[ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="1_yd3bh"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
-[ext_resource type="Texture2D" uid="uid://dvjg8qw203lj7" path="res://panorama6.jpg" id="2_ovteb"]
+[ext_resource type="Texture2D" uid="uid://dvjg8qw203lj7" path="res://textures/panorama6.jpg" id="2_ovteb"]
 [ext_resource type="Texture2D" uid="uid://d3vf70f35hwbm" path="res://textures/metalgrid(floor)/metalgrid2_AO.png" id="3_0tvp7"]
 [ext_resource type="Texture2D" uid="uid://dyrr2si0y7stw" path="res://textures/metalgrid(floor)/metalgrid2_metallic.png" id="4_7gjqj"]
 [ext_resource type="Texture2D" uid="uid://umg2dbwr1tlw" path="res://textures/metalgrid(floor)/metalgrid2_roughness.png" id="5_ic1wy"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://d31chl3dl1ua7" path="res://textures/metalbase(walls)/metal-siding-base_normal-dx.png" id="36_nn63f"]
 [ext_resource type="Texture2D" uid="uid://cun7mc88ipxp5" path="res://textures/spacepanels(doors)/filthy-space-panels_roughness.png" id="37_8sd5s"]
 [ext_resource type="Texture2D" uid="uid://biqw5pexpt1pg" path="res://textures/metalbase(walls)/metal-siding-base_roughness.png" id="37_wt8lh"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)

@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var player = null #get_node("/root/Player")  
 var SPEED = 0
 const JUMP_VELOCITY = 4.5
-var bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
+var bullet_scene = preload("res://Scenes/Enemy/enemy_bullet.tscn")
 @export var shooting_offset: Vector3 = Vector3(0, 1, 3)  # Adjust where bullets should spawn
 var bullet_instance = 0
 var shoot_timer: Timer
