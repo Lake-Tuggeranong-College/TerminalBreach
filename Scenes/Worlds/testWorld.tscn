@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_hxikr"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="5_s43mj"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="6_lh3b6"]
-[ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://pause menu/paused_menu.tscn" id="7_cpvqq"]
+[ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="7_cpvqq"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="8_p3kjf"]
 [ext_resource type="PackedScene" uid="uid://c1j7an8woikyd" path="res://Scenes/Worlds/environment.tscn" id="9_io42b"]
 [ext_resource type="AudioStream" uid="uid://cv08xdxi1iusd" path="res://audio/background.ogg" id="10_jkuni"]
@@ -205,5 +205,6 @@ parameters/looping = true
 spawn_path = NodePath("../DirectionalLight3D")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/spaceship" to="." method="_on_spaceship_pressed"]

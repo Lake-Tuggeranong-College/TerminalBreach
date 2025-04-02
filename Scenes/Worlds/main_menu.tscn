@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="2_xlx0f"]
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_asrc3"]
 
-
 [sub_resource type="FontVariation" id="FontVariation_eftnw"]
 base_font = ExtResource("1_ix8f7")
 

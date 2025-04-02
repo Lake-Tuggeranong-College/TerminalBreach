@@ -59,6 +59,6 @@ func _ready():
 
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
-	
 
-	
+func _on_options_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/options.tscn")
