@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8oqxmm2w2wvv"]
+[gd_scene load_steps=22 format=3 uid="uid://c8oqxmm2w2wvv"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_ctiuy"]
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="2_474y7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_d4g1i"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="6_jyvv5"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://pause menu/paused_menu.tscn" id="7_dh2qy"]
+[ext_resource type="AudioStream" uid="uid://cv08xdxi1iusd" path="res://audio/background.ogg" id="10_npdem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5pdl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -195,6 +196,10 @@ navigation_mesh = SubResource("NavigationMesh_rmptm")
 
 [node name="Environment" parent="NavigationRegion3D" instance=ExtResource("2_fr3vy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0233759, 0)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="NavigationRegion3D/Environment"]
+stream = ExtResource("10_npdem")
+parameters/looping = true
 
 [node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://player.tscn")

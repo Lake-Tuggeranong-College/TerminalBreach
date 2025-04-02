@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2accwiykec1o"]
+[gd_scene load_steps=3 format=3 uid="uid://b2accwiykec1o"]
 
 [ext_resource type="Script" path="res://pause menu/paused_menu.gd" id="1_jm0ka"]
+[ext_resource type="AudioStream" uid="uid://vd8npopxa8a5" path="res://audio/Monkeys-Spinning-Monkeys(chosic.com).mp3" id="2_0j4qu"]
 
 [node name="PausedMenu" type="Control"]
 visible = false
@@ -53,6 +54,9 @@ text = "settings"
 process_mode = 3
 layout_mode = 2
 text = "quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0j4qu")
 
 [connection signal="pressed" from="ColorRect/GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
