@@ -41,6 +41,7 @@ func take_damageP(amount) -> void:
 		position = Vector3.ZERO
 		# Emit the health_changed signal with the reset health value
 		health_changed.emit(health)
+		start_reload()
 	else:
 		# Emit the health_changed signal with the updated health value
 		health_changed.emit(health)
@@ -107,11 +108,15 @@ func _unhandled_input(event):
 	
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0:
 		shoot()
+		anim_player.stop()
+		anim_player.play("shoot")
+		gunshot.play()
+		muzzle_flash.restart()
+		muzzle_flash.emitting = true
 		can_shoot = false
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown).timeout
 		can_shoot = true
-		play_shoot_effects.rpc()
 		#if raycast.is_colliding():
 			#var hit_player = raycast.get_collider()
 			#hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority())
@@ -155,15 +160,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-@rpc("call_local")
-func play_shoot_effects():
-	anim_player.stop()
-	anim_player.play("shoot")
-	gunshot.play()
-	muzzle_flash.restart()
-	muzzle_flash.emitting = true
-
-@rpc("any_peer")
+#@rpc("any_peer")
 #func receive_damage():
 #	current_health -= 20
 #	print("player health")
@@ -241,11 +238,6 @@ func start_reload():
 	is_reloading = false
 
 
-func respawn():
-	await get_tree().create_timer(5).timeout  # Optional delay before respawning
-	current_health = max_health  # Reset health
-	global_position = Vector3.ZERO  # Move player back to spawn
-	health_changed.emit(current_health)  # Update health bar
 
 func show_hitmarker():
 	if hitmarker:
