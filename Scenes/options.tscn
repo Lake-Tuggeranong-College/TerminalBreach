@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://beiu2wrofifn2"]
 
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_6syl2"]
-[ext_resource type="Script" path="res://options.gd" id="1_hiosf"]
+[ext_resource type="Script" path="res://Scenes/options.gd" id="1_hiosf"]
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="2_hx7m7"]
 
 [sub_resource type="FontVariation" id="FontVariation_vu2uu"]

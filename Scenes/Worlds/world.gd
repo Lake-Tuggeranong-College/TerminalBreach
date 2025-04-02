@@ -1,12 +1,12 @@
 extends Node
 
 @onready var main_menu = $CanvasLayer/MainMenu
-#@onready var address_entry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry
+#@onready var address_entry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry 
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
 @onready var music = $NavigationRegion3D/Environment/AudioStreamPlayer2
 
-@onready var Player = preload("res://player.tscn")
+@onready var Player = preload("res://Scenes/Player/player.tscn")
 #@onready var Player = $Player
 var tracked = false
 var player
@@ -58,7 +58,7 @@ func _ready():
 	Global.hud = $HUD
 
 func _on_spaceship_pressed():
-	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
-	
+	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
 
-	
+func _on_options_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/options.tscn")

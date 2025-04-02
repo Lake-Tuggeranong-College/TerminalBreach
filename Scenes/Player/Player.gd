@@ -16,7 +16,7 @@ signal health_changed(health_value)
 
 var is_crouching : bool = false
 var bullet_spawn
-var bullet_scene = preload("res://player_bullet.tscn")
+var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
 var shoot_cooldown = 0.2
 var can_shoot = true
 var ammo = 16

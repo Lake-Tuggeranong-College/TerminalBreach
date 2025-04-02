@@ -1,11 +1,12 @@
 [gd_scene load_steps=20 format=3 uid="uid://xcjrjq5cbn7y"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_2v3wm"]
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="PackedScene" uid="uid://bkmywv3rot0ui" path="res://models/man.blend" id="2_1bble"]
 [ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_27dhu"]
 [ext_resource type="AudioStream" uid="uid://cyp0dip0hu5qd" path="res://audio/gunshot.ogg" id="4_56v1d"]
 [ext_resource type="PackedScene" uid="uid://83cgs8n8136j" path="res://models/lasergun.blend" id="4_x7mbp"]
 [ext_resource type="PackedScene" uid="uid://cbfh13w0xw7gi" path="res://models/futuristicpistol-complete.blend" id="5_ikpur"]
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
 

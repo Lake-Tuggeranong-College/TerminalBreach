@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Terminal Breach"
-run/main_scene="res://testWorld.tscn"
+run/main_scene="res://Scenes/Worlds/testWorld.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icons/TerminalBreachIcon.png"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 
