@@ -4,7 +4,7 @@ extends Node
 #@onready var address_entry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
-
+@onready var music = $NavigationRegion3D/Environment/AudioStreamPlayer2
 
 @onready var Player = preload("res://player.tscn")
 #@onready var Player = $Player
@@ -29,6 +29,7 @@ func _unhandled_input(_event):
 func _on_single_player_button_pressed():
 	main_menu.hide()
 	hud.show()
+	music.play()
 	#multiplayer.multiplayer_peer = enet_peer
 	add_player(multiplayer.get_unique_id())
 
@@ -58,5 +59,6 @@ func _ready():
 
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
+	
 
 	
