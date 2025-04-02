@@ -58,7 +58,7 @@ func _ready():
 	Global.hud = $HUD
 
 func _on_spaceship_pressed():
-	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
 	
 
 	

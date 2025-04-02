@@ -1,6 +1,6 @@
 extends Node3D  # Ensure this matches the new scene’s root node type
 
-@onready var Player = preload("res://player.tscn")  # Load player scene
+@onready var Player = preload("res://Scenes/Player/player.tscn")  # Load player scene
 @onready var main_menu = $CanvasLayer/MainMenu
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
