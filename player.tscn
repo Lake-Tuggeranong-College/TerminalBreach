@@ -166,6 +166,15 @@ script = ExtResource("1_2v3wm")
 [node name="man" parent="." instance=ExtResource("2_1bble")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0)
 
+[node name="Skeleton3D" parent="man/Armature" index="0"]
+bones/3/rotation = Quaternion(0.469725, -0.253896, -0.641974, 0.550241)
+bones/4/rotation = Quaternion(0.176669, 0.0955826, -0.261637, 0.944033)
+bones/7/rotation = Quaternion(0.592379, 0.0850517, 0.427962, 0.677275)
+bones/8/rotation = Quaternion(0.122609, 0.0312199, 0.146888, 0.981028)
+bones/9/rotation = Quaternion(0.509732, 0.488892, 0.526109, -0.473673)
+bones/10/rotation = Quaternion(-0.677893, 0.171256, 0.161755, 0.696396)
+bones/14/rotation = Quaternion(-0.633433, 0.0292539, 0.226799, 0.739236)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_67y6s")
@@ -234,3 +243,5 @@ transform = Transform3D(-0.00402387, 0, 0.0498378, 0, 0.05, 0, -0.0498378, 0, -0
 visible = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="man"]
