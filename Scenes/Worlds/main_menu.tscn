@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://b25721k0oqnlb"]
+
+[ext_resource type="Script" path="res://Scenes/Worlds/main_menu.gd" id="1_07mw3"]
+[ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_ix8f7"]
+[ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="2_xlx0f"]
+[ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_asrc3"]
+
+[sub_resource type="FontVariation" id="FontVariation_eftnw"]
+base_font = ExtResource("1_ix8f7")
+
+[sub_resource type="FontVariation" id="FontVariation_26gi0"]
+base_font = ExtResource("2_xlx0f")
+
+[sub_resource type="FontVariation" id="FontVariation_wxbue"]
+base_font = ExtResource("2_xlx0f")
+
+[sub_resource type="FontVariation" id="FontVariation_q3ytf"]
+base_font = ExtResource("2_xlx0f")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = 272.0
+offset_right = -705.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00552, 1.03959)
+script = ExtResource("1_07mw3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -752.972
+offset_top = -422.079
+offset_right = -418.972
+offset_bottom = -229.079
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_eftnw")
+theme_override_font_sizes/font_size = 30
+text = "Terminal Breach"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SinglePlayer" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_26gi0")
+text = "Single Player"
+
+[node name="Options" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_wxbue")
+text = "Options"
+
+[node name="Quit" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_q3ytf")
+text = "Quit"
+
+[node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+show_behind_parent = true
+position = Vector2(135.972, 189.079)
+scale = Vector2(1.14467, 1.07512)
+texture = ExtResource("4_asrc3")
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

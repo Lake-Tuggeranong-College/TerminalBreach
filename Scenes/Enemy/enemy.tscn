@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://5k1o5ctvtah6"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_phvpf"]
+[ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="2_u1s3k"]
+[ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_on872"]
+[ext_resource type="AudioStream" uid="uid://ufe04k1hbj1h" path="res://audio/pew.ogg" id="4_5cqtn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7x2r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_an04p"]
+
+[sub_resource type="GDScript" id="GDScript_t1skp"]
+script/source = "extends Node3D
+
+#@onready var nav_agent = $NavigationAgent3D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Gradient" id="Gradient_or8bq"]
+offsets = PackedFloat32Array(0, 0.141221, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_is51c"]
+gradient = SubResource("Gradient_or8bq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rw2b2"]
+angle_min = 45.0
+angle_max = 45.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_is51c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4smqo"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.960784, 0.670588, 1)
+albedo_texture = ExtResource("3_on872")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8vdlg"]
+material = SubResource("StandardMaterial3D_4smqo")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_phvpf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_q7x2r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_an04p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Pistol" parent="." instance=ExtResource("2_u1s3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.25, -0.5)
+script = SubResource("GDScript_t1skp")
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0588368, -0.313209)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_rw2b2")
+draw_pass_1 = SubResource("PlaneMesh_8vdlg")
+
+[node name="bullet_spawn" type="Node3D" parent="Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.273147)
+
+[node name="enemy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5cqtn")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
