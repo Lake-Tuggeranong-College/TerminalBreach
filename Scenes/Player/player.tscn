@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://83cgs8n8136j" path="res://models/lasergun.blend" id="4_x7mbp"]
 [ext_resource type="PackedScene" uid="uid://cbfh13w0xw7gi" path="res://models/futuristicpistol-complete.blend" id="5_ikpur"]
 
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xk8km"]
