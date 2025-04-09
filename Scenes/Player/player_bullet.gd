@@ -1,6 +1,6 @@
 extends Area3D
 signal enemy_hit
-var speed: float = 150.0
+var speed: float = 75.0
 var damage: int = 20
 @export var lifetime: float = 5.0
 var ccd_enabled = true
