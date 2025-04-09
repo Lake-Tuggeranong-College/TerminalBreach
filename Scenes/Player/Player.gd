@@ -23,6 +23,7 @@ var ammo = 16
 var reload_time = 3
 var max_health = 100
 var current_health = max_health
+var health_regen = 1 #amount of health regenerated every second
 var health:int = 100
 var is_ready = false
 var speed = 5.0
@@ -150,6 +151,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
+	
+
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		anim_player.play("idle")
@@ -171,6 +174,12 @@ func _process(delta: float):
 
 	else:
 		speed = 5.0
+		
+	if health < max_health:
+		#print("health")
+		health = health + health_regen
+		print(health)
+		
 		
 		
 func toggle_crouch():
