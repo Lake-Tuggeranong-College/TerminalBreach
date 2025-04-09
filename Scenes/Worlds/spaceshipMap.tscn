@@ -500,186 +500,217 @@ size = Vector3(4, 0.5, 9)
 data = PackedVector3Array(-2, 0.25, 4, 2, 0.25, 4, -2, -0.25, 4, 2, 0.25, 4, 2, -0.25, 4, -2, -0.25, 4, 2, 0.25, -4, -2, 0.25, -4, 2, -0.25, -4, -2, 0.25, -4, -2, -0.25, -4, 2, -0.25, -4, 2, 0.25, 4, 2, 0.25, -4, 2, -0.25, 4, 2, 0.25, -4, 2, -0.25, -4, 2, -0.25, 4, -2, 0.25, -4, -2, 0.25, 4, -2, -0.25, -4, -2, 0.25, 4, -2, -0.25, 4, -2, -0.25, -4, 2, 0.25, 4, -2, 0.25, 4, 2, 0.25, -4, -2, 0.25, 4, -2, 0.25, -4, 2, 0.25, -4, -2, -0.25, 4, 2, -0.25, 4, -2, -0.25, -4, 2, -0.25, 4, 2, -0.25, -4, -2, -0.25, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p3pjr"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(29.5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y41rn"]
 data = PackedVector3Array(14.75, 0, 4, -14.75, 0, 4, 14.75, 0, -4, -14.75, 0, 4, -14.75, 0, -4, 14.75, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_50w5e"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(57.5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_brn4p"]
 data = PackedVector3Array(28.75, 0, 4, -28.75, 0, 4, 28.75, 0, -4, -28.75, 0, 4, -28.75, 0, -4, 28.75, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6aumy"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3ogwm"]
 data = PackedVector3Array(2.5, 0, 4, -2.5, 0, 4, 2.5, 0, -4, -2.5, 0, 4, -2.5, 0, -4, 2.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pc3st"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(20, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h0yuy"]
 data = PackedVector3Array(10, 0, 4, -10, 0, 4, 10, 0, -4, -10, 0, 4, -10, 0, -4, 10, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k2k1u"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(13.5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8tym2"]
 data = PackedVector3Array(6.75, 0, 4, -6.75, 0, 4, 6.75, 0, -4, -6.75, 0, 4, -6.75, 0, -4, 6.75, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_m5qwu"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(13.9, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qal7l"]
 data = PackedVector3Array(6.95, 0, 4, -6.95, 0, 4, 6.95, 0, -4, -6.95, 0, 4, -6.95, 0, -4, 6.95, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n510h"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(6.2, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lnjw8"]
 data = PackedVector3Array(3.1, 0, 4, -3.1, 0, 4, 3.1, 0, -4, -3.1, 0, 4, -3.1, 0, -4, 3.1, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3e5fg"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(20, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m28co"]
 data = PackedVector3Array(10, 0, 4, -10, 0, 4, 10, 0, -4, -10, 0, 4, -10, 0, -4, 10, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qhlu5"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(3.27, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0gtun"]
 data = PackedVector3Array(1.635, 0, 4, -1.635, 0, 4, 1.635, 0, -4, -1.635, 0, 4, -1.635, 0, -4, 1.635, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7hhl2"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(3.27, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c226y"]
 data = PackedVector3Array(1.635, 0, 4, -1.635, 0, 4, 1.635, 0, -4, -1.635, 0, 4, -1.635, 0, -4, 1.635, 0, -4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_yg1fs"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(7.75, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vvf13"]
 data = PackedVector3Array(3.875, -4, 0, -3.875, -4, 0, 3.875, 4, 0, -3.875, -4, 0, -3.875, 4, 0, 3.875, 4, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jwa3q"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(7.75, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1uahc"]
 data = PackedVector3Array(3.875, 0, 4, -3.875, 0, 4, 3.875, 0, -4, -3.875, 0, 4, -3.875, 0, -4, 3.875, 0, -4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dojxa"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(15, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1hmik"]
 data = PackedVector3Array(7.5, -4, 0, -7.5, -4, 0, 7.5, 4, 0, -7.5, -4, 0, -7.5, 4, 0, 7.5, 4, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nu2fl"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(15, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jr3mu"]
 data = PackedVector3Array(7.5, 0, 4, -7.5, 0, 4, 7.5, 0, -4, -7.5, 0, 4, -7.5, 0, -4, 7.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ltfgd"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(15, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eobhm"]
 data = PackedVector3Array(7.5, 0, 4, -7.5, 0, 4, 7.5, 0, -4, -7.5, 0, 4, -7.5, 0, -4, 7.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tu22p"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_davx4"]
 data = PackedVector3Array(2.5, 0, 4, -2.5, 0, 4, 2.5, 0, -4, -2.5, 0, 4, -2.5, 0, -4, 2.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xlkga"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(2, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0m66h"]
 data = PackedVector3Array(1, 0, 4, -1, 0, 4, 1, 0, -4, -1, 0, 4, -1, 0, -4, 1, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_l866f"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(15.25, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vyitw"]
 data = PackedVector3Array(7.625, 0, 4, -7.625, 0, 4, 7.625, 0, -4, -7.625, 0, 4, -7.625, 0, -4, 7.625, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lw3qu"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mer3q"]
 data = PackedVector3Array(2.5, 0, 4, -2.5, 0, 4, 2.5, 0, -4, -2.5, 0, 4, -2.5, 0, -4, 2.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u2jeb"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(21, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3ebyw"]
 data = PackedVector3Array(10.5, 0, 4, -10.5, 0, 4, 10.5, 0, -4, -10.5, 0, 4, -10.5, 0, -4, 10.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1e00b"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(7, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_luelh"]
 data = PackedVector3Array(3.5, 0, 4, -3.5, 0, 4, 3.5, 0, -4, -3.5, 0, 4, -3.5, 0, -4, 3.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d68in"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(20, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_btek3"]
 data = PackedVector3Array(10, 0, 4, -10, 0, 4, 10, 0, -4, -10, 0, 4, -10, 0, -4, 10, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rkyt5"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(4, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_igtc4"]
 data = PackedVector3Array(2, 0, 4, -2, 0, 4, 2, 0, -4, -2, 0, 4, -2, 0, -4, 2, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8o37v"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(31.5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_beu0u"]
 data = PackedVector3Array(15.75, 0, 4, -15.75, 0, 4, 15.75, 0, -4, -15.75, 0, 4, -15.75, 0, -4, 15.75, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hb2qu"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(14, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lln8b"]
 data = PackedVector3Array(7, 0, 4, -7, 0, 4, 7, 0, -4, -7, 0, 4, -7, 0, -4, 7, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n04aw"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(20, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m0y4s"]
 data = PackedVector3Array(10, 0, 4, -10, 0, 4, 10, 0, -4, -10, 0, 4, -10, 0, -4, 10, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ycn5s"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(14, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vfq3o"]
 data = PackedVector3Array(7, 0, 4, -7, 0, 4, 7, 0, -4, -7, 0, 4, -7, 0, -4, 7, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rwf57"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(33.5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7o1on"]
 data = PackedVector3Array(16.75, 0, 4, -16.75, 0, 4, 16.75, 0, -4, -16.75, 0, 4, -16.75, 0, -4, 16.75, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ot7uw"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(5, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fbesh"]
 data = PackedVector3Array(2.5, 0, 4, -2.5, 0, 4, 2.5, 0, -4, -2.5, 0, 4, -2.5, 0, -4, 2.5, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ja2qr"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(18.65, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ab6w"]
 data = PackedVector3Array(9.325, 0, 4, -9.325, 0, 4, 9.325, 0, -4, -9.325, 0, 4, -9.325, 0, -4, 9.325, 0, -4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o07lb"]
+material = SubResource("StandardMaterial3D_rhh2n")
 size = Vector2(7, 9)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7a476"]
