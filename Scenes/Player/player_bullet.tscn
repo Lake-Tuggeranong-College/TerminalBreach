@@ -1,16 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://cakea5axg6wb3"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player_bullet.gd" id="1_rafk8"]
-[ext_resource type="Material" uid="uid://dde5cih6qf6j6" path="res://Scenes/Player/player_bullet.tres" id="2_w4iff"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5ux0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m7wu"]
+albedo_color = Color(0.483974, 0.00634816, 0.756096, 1)
 
 [node name="playerBullet" type="Area3D"]
 transform = Transform3D(4.37107e-08, -0.999985, -0.00556765, -2.43368e-10, 0.00556765, -0.999985, 1, 4.37114e-08, 1.93782e-15, 0, 0, 0)
 script = ExtResource("1_rafk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 8.72336e-08, -3.8131e-15, 0, -8.74228e-08, -2, -8.72336e-08, 2, -8.74228e-08, 0, 0, 0)
+transform = Transform3D(2.29742, 8.71895e-08, -7.10543e-15, -7.10543e-15, -8.84756e-08, -2.1817, -1.00206e-07, 1.99899, -9.59262e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_5ux0h")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -18,6 +20,6 @@ transform = Transform3D(1, -2.52576e-15, -1.10404e-22, 0, -4.37114e-08, 1, -2.52
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.991307, -1.48802e-16, 3.55271e-15, 8.68653e-18, 2.07605, 4.65661e-10, 0, 9.31323e-10, 0.997347, 0, 0, 0)
-material = ExtResource("2_w4iff")
+material = SubResource("StandardMaterial3D_1m7wu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
