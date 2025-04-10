@@ -1608,3 +1608,64 @@ mesh = SubResource("PlaneMesh_o07lb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Exterior Walls/MeshInstance3D31/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7a476")
+
+[node name="Roof" type="Node" parent="."]
+
+[node name="Mid2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 8, 0.5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_ev2dd")
+skeleton = NodePath("../..")
+
+[node name="MidBranchABig2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -28.75, 8, -6)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_3w6hn")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="SiteA2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -50, 8, -2)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_6yl15")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="AttackerBranchALobby2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -39, 8, 21)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_642bi")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="AttackerSpawnExit2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 2, 8, 21.25)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_rtvs4")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="AttackerSpawn2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.5, 8, 35.625)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_8u4vn")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="BSite2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 41.75, 8, 0.5)
+mesh = SubResource("PlaneMesh_bjqk2")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="AttackerBranchBMain2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 48, 8, 21.25)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_6r3n1")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="DefenderSpawnExit2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 2.6, 8, -26.5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_woyha")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
+
+[node name="DefenderSpawn2" type="MeshInstance3D" parent="Roof"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.5, 8, -42.5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_rlmhc")
+skeleton = NodePath("../../NavigationRegion3D/Floor")
