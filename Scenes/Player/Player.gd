@@ -14,23 +14,28 @@ signal health_changed(health_value)
 @onready var reticle = $CanvasLayer/HUD/Reticle
 @onready var player_anim_player = $man/AnimationPlayer
 
-var is_crouching : bool = false
+#player shooting
 var bullet_spawn
 var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
 var shoot_cooldown = 0.2
 var can_shoot = true
 var ammo = 16
 var reload_time = 3
+var is_reloading = false 
+
+#player health
 var max_health = 100
 var current_health = max_health
 var health_regen:float = 1 #amount of health regenerated every second
 var health:float = 100.0
-var is_ready = false
+
+#player movement
+const JUMP_VELOCITY = 10.0
 var speed = 5.0
 var gravity = 20.0
-var is_reloading = false 
-const JUMP_VELOCITY = 10.0
+var is_crouching : bool = false
 
+var is_ready = false
 
 func take_damageP(amount) -> void:
 	health -= amount
