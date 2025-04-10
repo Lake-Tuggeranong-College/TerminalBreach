@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8oqxmm2w2wvv"]
+[gd_scene load_steps=23 format=3 uid="uid://c8oqxmm2w2wvv"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/world.gd" id="1_wdb8h"]
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="2_ipgrp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_hxikr"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="5_s43mj"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="6_lh3b6"]
+[ext_resource type="PackedScene" uid="uid://flvvwubbwbxt" path="res://Scenes/pickup.tscn" id="7_ciq5o"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="7_cpvqq"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="8_p3kjf"]
 [ext_resource type="PackedScene" uid="uid://c1j7an8woikyd" path="res://Scenes/Worlds/environment.tscn" id="9_io42b"]
@@ -181,14 +182,17 @@ offset_bottom = 332.0
 texture = ExtResource("6_lh3b6")
 expand_mode = 1
 
+[node name="Pickup" parent="CanvasLayer/HUD" instance=ExtResource("7_ciq5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5956, 4.55945, 16.8663)
+
 [node name="PausedMenu" parent="CanvasLayer" instance=ExtResource("7_cpvqq")]
 process_mode = 3
 
 [node name="EvilRobot" parent="." instance=ExtResource("8_p3kjf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00742, 1.03476, 0.74423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.784344, 1.03476, 0.74423)
 
 [node name="Enemy93" parent="." instance=ExtResource("8_p3kjf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.67, 3.17711, 0.74423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5137, 3.17711, 0.74423)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0685169, 0.118976, 0.152675)

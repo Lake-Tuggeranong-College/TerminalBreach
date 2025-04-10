@@ -253,3 +253,9 @@ func show_hitmarker():
 		#print("Hiding hitmarker!")
 	#else:
 		#print("ERROR: Hitmarker is NULL!")
+
+func pickup():
+	print("collide")
+	ammo += 1
+	update_ammo_counter()
+	
