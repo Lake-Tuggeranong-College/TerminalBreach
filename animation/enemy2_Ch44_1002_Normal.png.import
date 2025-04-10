@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c35jmkmlfndv1"
+path.s3tc="res://.godot/imported/enemy2_Ch44_1002_Normal.png-f5a156ffb5aee1a8d3aa6977e4dd029f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "28f5b2635f1cd2b9da69db26a9d858ef"
+}
+
+[deps]
+
+source_file="res://animation/enemy2_Ch44_1002_Normal.png"
+dest_files=["res://.godot/imported/enemy2_Ch44_1002_Normal.png-f5a156ffb5aee1a8d3aa6977e4dd029f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://animation/enemy2_Ch44_1002_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
