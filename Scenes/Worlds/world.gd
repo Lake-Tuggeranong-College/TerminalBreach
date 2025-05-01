@@ -1,6 +1,5 @@
 extends Node
 
-@onready var main_menu = $CanvasLayer/MainMenu
 #@onready var address_entry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry 
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
@@ -26,12 +25,6 @@ func _unhandled_input(_event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
-func _on_single_player_button_pressed():
-	main_menu.hide()
-	hud.show()
-	music.play()
-	#multiplayer.multiplayer_peer = enet_peer
-	add_player(multiplayer.get_unique_id())
 
 
 func add_player(peer_id):
@@ -56,6 +49,10 @@ func _on_quit_pressed() -> void:
 
 func _ready():
 	Global.hud = $HUD
+	hud.show()
+	music.play()
+	#multiplayer.multiplayer_peer = enet_peer
+	add_player(multiplayer.get_unique_id())
 
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")

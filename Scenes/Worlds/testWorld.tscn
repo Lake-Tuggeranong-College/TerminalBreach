@@ -1,9 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://c8oqxmm2w2wvv"]
+[gd_scene load_steps=16 format=3 uid="uid://c8oqxmm2w2wvv"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/world.gd" id="1_wdb8h"]
-[ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="2_ipgrp"]
-[ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="3_pxgxh"]
-[ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_hxikr"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="5_s43mj"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="6_lh3b6"]
 [ext_resource type="PackedScene" uid="uid://flvvwubbwbxt" path="res://Scenes/pickup.tscn" id="7_ciq5o"]
@@ -24,18 +21,6 @@ background_mode = 2
 sky = SubResource("Sky_w2qqb")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="FontVariation" id="FontVariation_6d5jd"]
-base_font = ExtResource("2_ipgrp")
-
-[sub_resource type="FontVariation" id="FontVariation_0ollw"]
-base_font = ExtResource("3_pxgxh")
-
-[sub_resource type="FontVariation" id="FontVariation_q6w0d"]
-base_font = ExtResource("3_pxgxh")
-
-[sub_resource type="FontVariation" id="FontVariation_nop3c"]
-base_font = ExtResource("3_pxgxh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujyws"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -75,63 +60,6 @@ shadow_enabled = true
 environment = SubResource("Environment_6knbf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MainMenu" type="PanelContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 423.0
-offset_top = 227.0
-offset_right = -423.0
-offset_bottom = -227.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenu"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_6d5jd")
-theme_override_font_sizes/font_size = 30
-text = "Terminal Breach"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SinglePlayer" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_0ollw")
-text = "Single Player"
-
-[node name="Options" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_q6w0d")
-text = "Options"
-
-[node name="Quit" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_nop3c")
-text = "Quit"
-
-[node name="7Ddc6769-3759-4691-97e3-3555e34b3367" type="Sprite2D" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-show_behind_parent = true
-position = Vector2(131, 206)
-scale = Vector2(1.13839, 1.03418)
-texture = ExtResource("4_hxikr")
-
-[node name="spaceship" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_0ollw")
-text = "Spaceship
-"
 
 [node name="HUD" type="Control" parent="CanvasLayer" groups=["hud"]]
 visible = false
@@ -207,8 +135,3 @@ parameters/looping = true
 
 [node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../DirectionalLight3D")
-
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/spaceship" to="." method="_on_spaceship_pressed"]
