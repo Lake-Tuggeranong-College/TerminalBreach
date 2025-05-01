@@ -149,7 +149,7 @@ func _physics_process(delta):
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
-		player_anim_player.play("ArmatureAction_001")
+		player_anim_player.play("plugwalk")
 	else:
 		anim_player.play("idle")
 
