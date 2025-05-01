@@ -29,6 +29,12 @@ func _unhandled_input(_event):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			
+func _process(delta):
+	if get_tree().get_nodes_in_group("enemy").size() ==0:
+		print("enemy dead")
+		get_tree().change_scene_to_file("res://Scenes/Worlds/main_menu.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_single_player_button_pressed():
 	main_menu.hide()
