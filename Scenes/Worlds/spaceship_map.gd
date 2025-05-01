@@ -21,6 +21,9 @@ func _physics_process(_delta):
 		get_tree().call_group("enemy", "update_target_location", player.global_transform.origin)
 
 func _unhandled_input(_event):
+	if Input.is_action_just_pressed("test world"):
+		get_tree().change_scene_to_file("res://Scenes/Worlds/testWorld.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	if Input.is_action_pressed("toggle_fullscreen"):
@@ -66,5 +69,7 @@ func _on_quit_pressed() -> void:
 
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
+	
+
 
 	
