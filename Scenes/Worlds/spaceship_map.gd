@@ -6,9 +6,11 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
 var player
 var tracked = false
+@onready var hitmarker = $CanvasLayer/HUD/Hitmarker
+
 func _ready():
 	add_player(multiplayer.get_unique_id())
-
+	hitmarker.hide()
 	
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
