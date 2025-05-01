@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Worlds/world.gd" id="1_wdb8h"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="5_s43mj"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="6_lh3b6"]
-[ext_resource type="PackedScene" path="res://Scenes/pickup.tscn" id="7_ciq5o"]
+[ext_resource type="PackedScene" uid="uid://flvvwubbwbxt" path="res://Scenes/pickup.tscn" id="7_ciq5o"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="7_cpvqq"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="8_p3kjf"]
 [ext_resource type="PackedScene" uid="uid://c1j7an8woikyd" path="res://Scenes/Worlds/environment.tscn" id="9_io42b"]
