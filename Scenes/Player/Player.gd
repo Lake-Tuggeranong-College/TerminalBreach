@@ -257,9 +257,8 @@ func show_hitmarker():
 	#else:
 		#print("ERROR: Hitmarker is NULL!")
 
-func pickup():
-	if health > max_health * pickup_health: #if the current is below 80% of the max health
-		health 
-	ammo += 1
-	update_ammo_counter()
+func health_pickup():
+	if health < max_health * pickup_health: #if the current is below pickup_health% of the max health of the max health
+		health += max_health * pickup_health
+		health_changed.emit(health)
 	

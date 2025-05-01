@@ -25,7 +25,7 @@ func float_object_down():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.has_method("pickup"):
+	if body.has_method("health_pickup"):
 		#print("player collide")
-		body.pickup()
+		body.health_pickup()
 		queue_free()
