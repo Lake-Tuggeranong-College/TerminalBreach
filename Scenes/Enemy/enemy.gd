@@ -12,6 +12,7 @@ var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
 var health = 100
+const max_distance = 10.0  # Maximum distance to follow and shoot the player
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -22,6 +23,13 @@ func _ready() -> void:
 func update_target_location (target_location):
 	nav_agent.set_target_position(target_location)
 
+# Check if the player is within the specified range
+func is_within_distance(target_location: Vector3) -> bool:
+	var current_location = global_transform.origin
+	var distance = current_location.distance_to(target_location)
+	return distance <= max_distance
+	
+	
 #this is code writtin by AI, It moves the enemy but only in the x and z directions. This means they wont constantly look down.
 func _physics_process(_delta):
 	var current_location = global_transform.origin
@@ -36,9 +44,10 @@ func _physics_process(_delta):
 		look_at(current_location + direction, Vector3.UP)  # Rotate only around Y-axis
 	
 	# Vector Maths for movement
-	var new_velocity = direction * SPEED
-	velocity = new_velocity
-	move_and_slide()
+	if Global.player != null and is_within_distance(Global.player.global_transform.origin):
+		var new_velocity = direction * SPEED
+		velocity = new_velocity
+		move_and_slide()
 	
 # Attempt to find the player node if not already found
 	if Global.player == null:
@@ -50,7 +59,7 @@ func _physics_process(_delta):
 
 #This will make the enemy aim at the player
 func aim_gun_at_player():
-	if Global.player != null:
+	if Global.player != null and is_within_distance(Global.player.global_transform.origin):
 		# Calculate the direction from the gun to the player
 		var pistol_position = pistol.global_transform.origin
 		var player_position = Global.player.global_transform.origin
@@ -76,7 +85,7 @@ func shoot_bullet():
 
 
 func _on_timer_timeout():
-	if Global.player != null:
+	if Global.player != null and is_within_distance(Global.player.global_transform.origin):
 		shoot_bullet()
 
 
