@@ -38,7 +38,7 @@ var is_crouching : bool = false
 var is_ready = false
 
 #pickup
-var pickup_health = 0.8 #the perctange of the player's max health that is regenerated upon colliding with the pickup
+var pickup_health = 0.2 #the perctange of the player's max health that is regenerated upon colliding with the pickup
 
 func take_damageP(amount) -> void:
 	health -= amount
@@ -258,7 +258,6 @@ func show_hitmarker():
 		#print("ERROR: Hitmarker is NULL!")
 
 func health_pickup():
-	if health < max_health * pickup_health: #if the current is below pickup_health% of the max health of the max health
+	if health < max_health - pickup_health * max_health: #if the current is below pickup_health% of the max health of the max health
 		health += max_health * pickup_health
 		health_changed.emit(health)
-	
