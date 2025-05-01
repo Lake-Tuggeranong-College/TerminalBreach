@@ -1,4 +1,4 @@
-[gd_scene load_steps=206 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=207 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="1_yd3bh"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://d31chl3dl1ua7" path="res://textures/metalbase(walls)/metal-siding-base_normal-dx.png" id="36_nn63f"]
 [ext_resource type="Texture2D" uid="uid://cun7mc88ipxp5" path="res://textures/spacepanels(doors)/filthy-space-panels_roughness.png" id="37_8sd5s"]
 [ext_resource type="Texture2D" uid="uid://biqw5pexpt1pg" path="res://textures/metalbase(walls)/metal-siding-base_roughness.png" id="37_wt8lh"]
+[ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="40_mrqha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -1761,3 +1762,6 @@ mesh = SubResource("PlaneMesh_1h3j2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight6/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="PausedMenu" parent="." instance=ExtResource("40_mrqha")]
+process_mode = 3
