@@ -37,6 +37,9 @@ var is_crouching : bool = false
 
 var is_ready = false
 
+#pickup
+var pickup_health = 0.8 #the perctange of the player's max health that is regenerated upon colliding with the pickup
+
 func take_damageP(amount) -> void:
 	health -= amount
 #	print("damage taken")
@@ -255,7 +258,8 @@ func show_hitmarker():
 		#print("ERROR: Hitmarker is NULL!")
 
 func pickup():
-	print("collide")
+	if health > max_health * pickup_health: #if the current is below 80% of the max health
+		health 
 	ammo += 1
 	update_ammo_counter()
 	
