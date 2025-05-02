@@ -37,6 +37,9 @@ var is_crouching : bool = false
 
 var is_ready = false
 
+#weapon
+var weapon_state = 0 #value of zero means the pistol is equiped, a value of one means the rifle is eqiped
+var max_weapon_state = 1 #the maximum ammount of weapons that are in the game.
 
 func take_damageP(amount) -> void:
 	health -= amount
@@ -182,7 +185,15 @@ func _process(delta: float):
 	else:
 		speed = 5.0
 		
+	if Input.is_action_just_pressed("weapon_switch"):
+		if weapon_state == max_weapon_state:
+			weapon_state = 0
+		else:
+			weapon_state +=1
 		
+		if weapon_state == 0:
+			
+	
 	#regenerates health_regen amount every second
 	var fps = Engine.get_frames_per_second()
 	if health < max_health: #
