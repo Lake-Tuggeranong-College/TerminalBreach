@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_single_player_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
+	print("pressed")
 
 
 func _on_options_pressed():
@@ -24,5 +25,4 @@ func _on_options_pressed():
 
 
 func _on_quit_pressed() -> void:
-	pass # Replace with function body.
 	get_tree().quit()

@@ -728,6 +728,7 @@ size = Vector2(0.425, 3.5)
 data = PackedVector3Array(0.2125, 0, 1.75, -0.2125, 0, 1.75, 0.2125, 0, -1.75, -0.2125, 0, 1.75, -0.2125, 0, -1.75, 0.2125, 0, -1.75)
 
 [node name="SpaceshipMap" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_ua7sc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1764,4 +1765,3 @@ mesh = SubResource("PlaneMesh_1h3j2")
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="PausedMenu" parent="." instance=ExtResource("40_mrqha")]
-process_mode = 3
