@@ -8,10 +8,11 @@ var player
 var tracked = false
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker
 
+
 func _ready():
 	add_player(multiplayer.get_unique_id())
 	hitmarker.hide()
-	
+	get_tree().paused == false
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
 
@@ -24,8 +25,6 @@ func _unhandled_input(_event):
 	if Input.is_action_just_pressed("test world"):
 		get_tree().change_scene_to_file("res://Scenes/Worlds/testWorld.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
 	if Input.is_action_pressed("toggle_fullscreen"):
 		var current_mode = DisplayServer.window_get_mode()
 		if current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
