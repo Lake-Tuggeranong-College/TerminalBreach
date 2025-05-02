@@ -37,6 +37,7 @@ var is_crouching : bool = false
 
 var is_ready = false
 
+
 func take_damageP(amount) -> void:
 	health -= amount
 #	print("damage taken")
@@ -254,8 +255,6 @@ func show_hitmarker():
 	#else:
 		#print("ERROR: Hitmarker is NULL!")
 
-func pickup():
-	print("collide")
-	ammo += 1
-	update_ammo_counter()
-	
+func health_pickup(pickup_health_percent):
+	health += max_health * pickup_health_percent
+	health_changed.emit(health)

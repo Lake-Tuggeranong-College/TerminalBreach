@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://flvvwubbwbxt"]
+[gd_scene load_steps=6 format=3 uid="uid://flvvwubbwbxt"]
 
 [ext_resource type="Script" path="res://Scenes/pickup.gd" id="1_fcsvy"]
+[ext_resource type="Texture2D" uid="uid://c7nq54kbq0tts" path="res://textures/health_icon.png" id="2_s0an5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p4rgj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4g46v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vu6u5"]
+albedo_texture = ExtResource("2_s0an5")
+uv1_triplanar = true
 
 [node name="Pickup" type="Area3D"]
 script = ExtResource("1_fcsvy")
@@ -14,5 +19,6 @@ shape = SubResource("BoxShape3D_p4rgj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_4g46v")
+surface_material_override/0 = SubResource("StandardMaterial3D_vu6u5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
