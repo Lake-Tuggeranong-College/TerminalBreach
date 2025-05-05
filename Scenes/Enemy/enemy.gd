@@ -48,7 +48,10 @@ func _physics_process(_delta):
 	#checks whether the player has entered the into the range of the enemy and has not detected the player yet
 	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_detected == false:
 		player_detected = true
-		print("hello")
+		print("detected")
+	
+	if player_detected == true:
+		player_detected = true
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
@@ -99,8 +102,8 @@ func _on_timer_timeout():
 func take_damageE(damage_amount):
 	health -= damage_amount
 	if Global.player != null and player_detected == false:
-		print("player detected")
+		#print("player detected")
 		var player_detected = true
-		print(player_detected)
+		#print(player_detected)
 	if health <=0:
 		queue_free()
