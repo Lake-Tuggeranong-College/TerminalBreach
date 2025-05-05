@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://q531qdb3m0yw"]
+
+[ext_resource type="PackedScene" uid="uid://carig0omq7672" path="res://models/riflecomplete.blend" id="1_7t6om"]
+
+[node name="riflecomplete" instance=ExtResource("1_7t6om")]
