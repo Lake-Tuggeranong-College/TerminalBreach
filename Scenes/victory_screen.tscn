@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxdnfw7ksqemp"]
+
+[ext_resource type="Texture2D" uid="uid://5uokqyd14e0w" path="res://icons/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.webp" id="1_o03d2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o03d2")
