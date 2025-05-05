@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b25721k0oqnlb"]
+[gd_scene load_steps=10 format=3 uid="uid://b25721k0oqnlb"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/main_menu.gd" id="1_07mw3"]
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_ix8f7"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="2_xlx0f"]
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_asrc3"]
+[ext_resource type="AudioStream" uid="uid://43my1d6prcwm" path="res://audio/Main Menu.ogg" id="5_xuwlm"]
 
 [sub_resource type="FontVariation" id="FontVariation_eftnw"]
 base_font = ExtResource("1_ix8f7")
@@ -89,6 +90,10 @@ show_behind_parent = true
 position = Vector2(225.972, 191.079)
 scale = Vector2(1.14467, 1.07512)
 texture = ExtResource("4_asrc3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xuwlm")
+autoplay = true
 
 [connection signal="button_down" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]

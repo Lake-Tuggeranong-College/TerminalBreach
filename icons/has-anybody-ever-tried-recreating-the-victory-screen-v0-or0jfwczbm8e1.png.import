@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5uokqyd14e0w"
-path="res://.godot/imported/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.webp-d13f6e1c9006b2661ea541587c33558d.ctex"
+uid="uid://bg4fj2uk1tucg"
+path="res://.godot/imported/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.png-b2c15da249db33927a6503e00e843c60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.webp"
-dest_files=["res://.godot/imported/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.webp-d13f6e1c9006b2661ea541587c33558d.ctex"]
+source_file="res://icons/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.png"
+dest_files=["res://.godot/imported/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.png-b2c15da249db33927a6503e00e843c60.ctex"]
 
 [params]
 
