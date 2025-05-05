@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxdnfw7ksqemp"]
+[gd_scene load_steps=3 format=3 uid="uid://cxdnfw7ksqemp"]
 
+[ext_resource type="Script" path="res://Scenes/victory_screen.gd" id="1_rch70"]
 [ext_resource type="Texture2D" uid="uid://bg4fj2uk1tucg" path="res://icons/has-anybody-ever-tried-recreating-the-victory-screen-v0-or0jfwczbm8e1.png" id="1_yaugk"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rch70")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -15,3 +17,5 @@ offset_top = 613.0
 offset_right = 1149.0
 offset_bottom = 644.0
 text = "Return to main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
