@@ -114,7 +114,6 @@ expand_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5956, 4.55945, 16.8663)
 
 [node name="PausedMenu" parent="CanvasLayer" instance=ExtResource("7_cpvqq")]
-process_mode = 3
 
 [node name="EvilRobot" parent="." instance=ExtResource("8_p3kjf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.784344, 1.03476, 0.74423)
