@@ -788,6 +788,9 @@ expand_mode = 1
 [node name="Enemy93" parent="." instance=ExtResource("1_yd3bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270454, 0.988378, -6.6741)
 
+[node name="Enemy94" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7756, 1.22921, -6.6741)
+
 [node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../spawn_point")
 

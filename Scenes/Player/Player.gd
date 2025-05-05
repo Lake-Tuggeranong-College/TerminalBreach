@@ -37,7 +37,6 @@ var is_crouching : bool = false
 
 var is_ready = false
 
-
 func take_damageP(amount) -> void:
 	health -= amount
 #	print("damage taken")
@@ -181,8 +180,7 @@ func _process(delta: float):
 
 	else:
 		speed = 5.0
-		
-		
+	
 	#regenerates health_regen amount every second
 	var fps = Engine.get_frames_per_second()
 	if health < max_health: #

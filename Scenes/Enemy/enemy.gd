@@ -13,6 +13,7 @@ var shoot_timer: Timer
 var bullet_spawn
 var health = 100
 const max_distance = 10.0  # Maximum distance to follow and shoot the player
+var player_detected = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -43,8 +44,12 @@ func _physics_process(_delta):
 	if direction.length() > 0:
 		look_at(current_location + direction, Vector3.UP)  # Rotate only around Y-axis
 	
+	#checks whether the player has entered the into the range of the enemy
+	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_detected == false:
+		player_detected = true
+
 	# Vector Maths for movement
-	if Global.player != null and is_within_distance(Global.player.global_transform.origin):
+	if Global.player != null and player_detected == true:
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()
@@ -59,7 +64,7 @@ func _physics_process(_delta):
 
 #This will make the enemy aim at the player
 func aim_gun_at_player():
-	if Global.player != null and is_within_distance(Global.player.global_transform.origin):
+	if Global.player != null and player_detected == true:
 		# Calculate the direction from the gun to the player
 		var pistol_position = pistol.global_transform.origin
 		var player_position = Global.player.global_transform.origin
