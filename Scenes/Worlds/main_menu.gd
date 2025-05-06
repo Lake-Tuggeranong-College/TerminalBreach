@@ -29,4 +29,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_credits_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Credits/Credits.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Credits/GodotCredits.tscn")

@@ -13,10 +13,10 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_yaugk")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 975.0
-offset_top = 613.0
-offset_right = 1149.0
-offset_bottom = 644.0
+offset_left = 978.0
+offset_top = 617.0
+offset_right = 1152.0
+offset_bottom = 648.0
 text = "Return to main menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

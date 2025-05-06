@@ -363,31 +363,36 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_6tn6b")
 text = "Return"
 
+[node name="volume" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
 [node name="Volume" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-min_value = -70.0
+tooltip_text = "Volume"
+min_value = -100.0
 max_value = 0.0
-
-[node name="Mute_Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Mute"
+step = 20.0
 
 [node name="Mute" type="CheckBox" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Mute"
 
 [node name="Resolutions" type="OptionButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 2
-item_count = 3
-popup/item_0/text = "1920x1080"
-popup/item_1/text = "1600x900"
+item_count = 4
+popup/item_0/text = "2560x1440"
+popup/item_1/text = "1920x1080"
 popup/item_1/id = 1
-popup/item_2/text = "1280x720"
+popup/item_2/text = "1600x900"
 popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
 
 [node name="7Ddc6769-3759-4691-97e3-3555e34b3367" type="Sprite2D" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 show_behind_parent = true
-position = Vector2(128.122, 167.192)
+position = Vector2(128, 174)
 scale = Vector2(0.450081, 0.450046)
 texture = ExtResource("3_1mbos")
 

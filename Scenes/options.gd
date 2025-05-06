@@ -28,10 +28,12 @@ func _on_resolutions_item_selected(index: int) -> void:
 	var resolution = Vector2i()
 	match index:
 		0:
-			resolution = Vector2i(1920, 1080)
+			resolution = Vector2i(2560, 1440)
 		1:
-			resolution = Vector2i(1600, 900)
+			resolution = Vector2i(1920, 1080)
 		2:
+			resolution = Vector2i(1600, 900)
+		3:
 			resolution = Vector2i(1280, 720)
 
 	# Set the window size
@@ -48,3 +50,9 @@ func _on_resolutions_item_selected(index: int) -> void:
 
 	# Provide feedback
 	print("Resolution changed to: ", resolution)
+
+
+func _on_mute_toggled(toggled_on: bool) -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	# Godot 4 / 3.5+: mute the “Master” bus
+	AudioServer.set_bus_mute(master_bus, toggled_on)
