@@ -102,6 +102,12 @@ offset_bottom = 648.0
 theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Credits"
 
+[node name="?" type="Button" parent="CanvasLayer"]
+offset_top = 617.0
+offset_right = 16.0
+offset_bottom = 648.0
+text = "?"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xuwlm")
 pitch_scale = 0.99
@@ -113,3 +119,4 @@ parameters/looping = true
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="button_down" from="CanvasLayer/Credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="CanvasLayer/?" to="." method="_on__button_down"]

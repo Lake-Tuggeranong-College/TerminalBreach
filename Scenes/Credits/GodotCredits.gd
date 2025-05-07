@@ -2,7 +2,7 @@ extends Node2D
 
 const section_time := 0.5
 const line_time := 0.15
-const base_speed := 300
+const base_speed := 200
 const speed_up_multiplier := 5.0
 const title_color := Color.BLUE_VIOLET
 
@@ -25,33 +25,48 @@ var credits = [
 		"A game by LTC students"
 	],[
 		"Programming",
-		"Programmer Name",
-		"Programmer Name 2"
+		"Atharva",
+		"Alex",
+		"Emmet",
+		"Jordan",
+		"Malakai",
+		"Nadal",
+		"Oscar"
 	],[
 		"Art and Design",
-		"Artist Name"
+		"Jordan",
+		"Malakai",
+		"Nadal",
+		"Oscar"
 	],[
 		"Music",
-		"Various Artists"
+		"Main Title - Mega Man 11 (Produced by Marika Suzuki)",
+		"Dr. Light - Mega Man 11 (Produced by Marika Suzuki)",
+		"Acid Man Stage - Mega Man 11 (Produced by Marika Suzuki)",
+		"Monkeys Spinning Monkeys (Produced by Kevin MacLeod)",
+		"Wild Side (Produced by Toshimi Watanabe featuring ALI)"
 	],[
 		"Sound Effects",
-		"SFX Name"
+		"Gunshot noise but pitched higher",
+		"Stage clear noise from mega man 11",
+		"eerie.ogg"
 	],[
 		"Testers",
-		"beta tester inni winni mc inni",
-		"Name 2",
-		"Name 3"
+		"Beta tester inni winni mc inni",
+		"GURT",
+		"My 2 pet cats"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
 		"",
-		"Art, Textures, Map and Models created with",
+		"Art, Textures, Map and Models created/edited with",
 		"https://www.blender.org/"
 	],[
 		"Special thanks",
 		"Ryan Cather",
 		"Jacob Strachan",
+		"Umair",
 		"competitors"
 	],[
 		"Thanks for playing!"]

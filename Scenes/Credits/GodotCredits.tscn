@@ -34,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="dance dog" type="VideoStreamPlayer" parent="CreditsContainer"]
+layout_mode = 0
 offset_left = 245.0
 offset_top = 480.0
 offset_right = 757.0
