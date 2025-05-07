@@ -68,6 +68,8 @@ autostart = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="health_pickup_spawn" type="Node3D" parent="."]
+
 [node name="Pistol" parent="." instance=ExtResource("2_u1s3k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.25, -0.5)
 script = SubResource("GDScript_t1skp")

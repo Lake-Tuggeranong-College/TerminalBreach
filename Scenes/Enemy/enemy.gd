@@ -12,14 +12,19 @@ var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
 var health = 100
+
 const max_distance = 10.0  # Maximum distance to follow and shoot the player
 var player_detected = false
+
+var health_pickup_scene = preload("res://Scenes/health_pickup.tscn")
+var health_pickup_spawn
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	bullet_spawn = get_node("Pistol/bullet_spawn")
+	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
 	nav_agent.set_target_position(target_location)
@@ -44,7 +49,7 @@ func _physics_process(_delta):
 	if direction.length() > 0:
 		look_at(current_location + direction, Vector3.UP)  # Rotate only around Y-axis
 	
-	print(player_detected)
+	#print(player_detected)
 	#checks whether the player has entered the into the range of the enemy and has not detected the player yet
 	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_detected == false:
 		detected_player()
@@ -101,6 +106,12 @@ func take_damageE(damage_amount):
 	if Global.player != null and player_detected == false:
 		detected_player()
 	if health <=0:
+		var health_pickup_instance = health_pickup_scene.instantiate()
+		
+		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
+		
+		get_tree().current_scene.add_child(health_pickup_instance)
+		
 		queue_free()
 
 func detected_player():
