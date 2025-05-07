@@ -2,7 +2,7 @@ extends Node2D
 
 const section_time := 0.5
 const line_time := 0.15
-const base_speed := 300
+const base_speed := 200
 const speed_up_multiplier := 5.0
 const title_color := Color.BLUE_VIOLET
 

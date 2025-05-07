@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf2w52jlqq071"]
+[gd_scene load_steps=4 format=3 uid="uid://bf2w52jlqq071"]
 
+[ext_resource type="Script" path="res://Scenes/dont look/node_2d.gd" id="1_ffleo"]
 [ext_resource type="Texture2D" uid="uid://f2pp2is6aira" path="res://icons/Screenshot 2025-05-08 021739.png" id="1_lqpvk"]
 [ext_resource type="AudioStream" uid="uid://di8j50f4kr4wi" path="res://audio/eerie.ogg" id="2_gqegy"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ffleo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.125, 323.875)
@@ -15,16 +17,11 @@ stream = ExtResource("2_gqegy")
 autoplay = true
 parameters/looping = true
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 516.0
-offset_top = 625.0
+[node name="Button" type="Button" parent="."]
+offset_left = 508.0
+offset_top = 617.0
 offset_right = 645.0
 offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-text = "You can't escape
-"
+text = "You can't escape"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
