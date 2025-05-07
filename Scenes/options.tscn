@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://beiu2wrofifn2"]
+[gd_scene load_steps=14 format=4 uid="uid://beiu2wrofifn2"]
 
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_6syl2"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="1_hiosf"]
 [ext_resource type="Texture2D" uid="uid://bgpluunpo7jtj" path="res://icons/Settings.png" id="3_1mbos"]
 [ext_resource type="AudioStream" uid="uid://snr01bmdo85k" path="res://audio/options.ogg" id="4_qgt03"]
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="5_adjo0"]
 
 [sub_resource type="FontVariation" id="FontVariation_vu2uu"]
 base_font = ExtResource("1_6syl2")
@@ -400,6 +401,9 @@ texture = ExtResource("3_1mbos")
 stream = ExtResource("4_qgt03")
 autoplay = true
 parameters/looping = true
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("5_adjo0")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="value_changed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
