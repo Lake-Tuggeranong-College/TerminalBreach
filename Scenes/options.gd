@@ -1,9 +1,12 @@
 extends Control
 
-
+@onready var mutebox := $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Mute
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	mutebox.button_pressed = Global.checkboxChecked
+	print("Global singleton:", Global)
+	print("checkbox_checked value:", Global.checkboxChecked)
+	mutebox.toggled.connect(_on_mute_toggled)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,3 +59,4 @@ func _on_mute_toggled(toggled_on: bool) -> void:
 	var master_bus = AudioServer.get_bus_index("Master")
 	# Godot 4 / 3.5+: mute the “Master” bus
 	AudioServer.set_bus_mute(master_bus, toggled_on)
+	Global.checkboxChecked = toggled_on
