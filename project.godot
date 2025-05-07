@@ -106,3 +106,5 @@ weapon_switch={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+limits/opengl/max_renderable_lights=256
+limits/opengl/max_lights_per_object=1024
