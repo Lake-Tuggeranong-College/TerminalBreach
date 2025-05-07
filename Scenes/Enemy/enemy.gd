@@ -44,10 +44,10 @@ func _physics_process(_delta):
 	if direction.length() > 0:
 		look_at(current_location + direction, Vector3.UP)  # Rotate only around Y-axis
 	
-	#print(player_detected)
+	print(player_detected)
 	#checks whether the player has entered the into the range of the enemy and has not detected the player yet
 	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_detected == false:
-		detcted_player()
+		detected_player()
 	
 
 	# Vector Maths for movement
@@ -99,11 +99,11 @@ func _on_timer_timeout():
 func take_damageE(damage_amount):
 	health -= damage_amount
 	if Global.player != null and player_detected == false:
-		detcted_player()
+		detected_player()
 	if health <=0:
 		queue_free()
 
-func detcted_player():
-	var player_detected = true
-	print("player detected")
-	print(player_detected)
+func detected_player():
+	player_detected = true
+	#print("player detected")
+	#print(player_detected)
