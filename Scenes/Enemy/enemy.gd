@@ -104,6 +104,6 @@ func take_damageE(damage_amount):
 		queue_free()
 
 func detcted_player():
-	#var player_detected = true
+	var player_detected = true
 	print("player detected")
-	#print(player_detected)
+	print(player_detected)
