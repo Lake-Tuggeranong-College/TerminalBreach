@@ -37,7 +37,7 @@ func _unhandled_input(_event):
 func _process(delta):
 	if get_tree().get_nodes_in_group("enemy").size() ==0:
 		print("enemy dead")
-		get_tree().change_scene_to_file("res://Scenes/victory_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Victory screen/victory_screen.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_single_player_button_pressed():

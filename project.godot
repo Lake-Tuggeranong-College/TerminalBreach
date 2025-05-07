@@ -23,10 +23,17 @@ buses/default_bus_layout=""
 
 Global="*res://Scripts/Global.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+window/quality/screen_space_aa=1
+window/quality/msaa_3d=3
+window/quality/msaa_2d=3
 
 [dotnet]
 
