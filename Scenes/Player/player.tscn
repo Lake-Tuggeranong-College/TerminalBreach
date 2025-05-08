@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cyp0dip0hu5qd" path="res://audio/gunshot.ogg" id="4_56v1d"]
 [ext_resource type="PackedScene" uid="uid://83cgs8n8136j" path="res://models/lasergun.blend" id="4_x7mbp"]
 [ext_resource type="PackedScene" uid="uid://cbfh13w0xw7gi" path="res://models/futuristicpistol-complete.blend" id="5_ikpur"]
-[ext_resource type="PackedScene" uid="uid://q531qdb3m0yw" path="res://Scenes/Guns/riflecomplete.tscn" id="7_hb2iv"]
+[ext_resource type="PackedScene" path="res://Scenes/Guns/riflecomplete.tscn" id="7_hb2iv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
 
