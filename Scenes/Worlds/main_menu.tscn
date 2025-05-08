@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://43my1d6prcwm" path="res://audio/Main Menu.ogg" id="5_xuwlm"]
 [ext_resource type="PackedScene" uid="uid://brobgr6w8iunf" path="res://Scenes/Transition/transition.tscn" id="6_tbhif"]
 
+[sub_resource type="FontVariation" id="FontVariation_eftnw"]
+base_font = ExtResource("1_ix8f7")
+
 [sub_resource type="FontVariation" id="FontVariation_26gi0"]
 base_font = ExtResource("2_xlx0f")
 
@@ -15,9 +18,6 @@ base_font = ExtResource("2_xlx0f")
 
 [sub_resource type="FontVariation" id="FontVariation_q3ytf"]
 base_font = ExtResource("2_xlx0f")
-
-[sub_resource type="FontVariation" id="FontVariation_eftnw"]
-base_font = ExtResource("1_ix8f7")
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -41,6 +41,7 @@ scale = Vector2(1.14467, 1.07512)
 texture = ExtResource("4_asrc3")
 
 [node name="MainMenu" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -56,32 +57,6 @@ grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="SinglePlayer" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_26gi0")
-text = "Single Player"
-
-[node name="Options" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_wxbue")
-text = "Options"
-
-[node name="Quit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_q3ytf")
-text = "Quit"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
@@ -112,18 +87,48 @@ offset_right = -58.5883
 offset_bottom = 362.862
 text = "?"
 
-[node name="Transition" parent="." instance=ExtResource("6_tbhif")]
-position = Vector2(-74.5884, -258.756)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xuwlm")
 pitch_scale = 0.99
 autoplay = true
 parameters/looping = true
 
-[connection signal="button_down" from="MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
-[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 322.249
+offset_top = -44.324
+offset_right = 656.249
+offset_bottom = 148.676
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_26gi0")
+text = "Single Player"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_wxbue")
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_q3ytf")
+text = "Quit"
+
+[node name="Transition" parent="." instance=ExtResource("6_tbhif")]
+position = Vector2(-74.5884, -258.756)
+
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="?" to="." method="_on__button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
