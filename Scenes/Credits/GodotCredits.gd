@@ -56,7 +56,8 @@ var credits = [
 		"GURT",
 		"My 2 pet cats",
 		"Max",
-		"Karen"
+		"Karen",
+		"Leelah"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
