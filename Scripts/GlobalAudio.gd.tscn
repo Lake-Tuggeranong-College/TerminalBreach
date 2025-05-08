@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsgxhh4rhb706"]
+
+[ext_resource type="Script" path="res://GlobalAudio.gd" id="1_5tiyo"]
+[ext_resource type="AudioStream" uid="uid://cv08xdxi1iusd" path="res://audio/background.ogg" id="2_j0p3x"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_5tiyo")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j0p3x")
+parameters/looping = true

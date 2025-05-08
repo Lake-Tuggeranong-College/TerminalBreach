@@ -21,7 +21,10 @@ var shoot_cooldown = 0.2
 var can_shoot = true
 var ammo = 16
 var reload_time = 3
-var is_reloading = false 
+var is_reloading = false
+var weapons = {}
+var current_weapon = null
+
 
 #player health
 var max_health = 100
@@ -34,6 +37,7 @@ const JUMP_VELOCITY = 10.0
 var speed = 5.0
 var gravity = 20.0
 var is_crouching : bool = false
+@onready var weapon_holder = $weapon_holder
 
 var is_ready = false
 
@@ -71,6 +75,11 @@ func _ready():
 
 	await get_tree().process_frame  # Wait a frame
 	var hud = null
+	
+	weapons["pistol"] = preload("res://Scenes/Guns/pistol.tscn").instantiate()
+	weapons["rifle"] = preload("res://Scenes/Guns/riflecomplete.tscn").instantiate()
+	current_weapon = weapons["pistol"]
+	
 
 	while hud == null:
 		hud = get_tree().get_first_node_in_group("hud")
@@ -90,6 +99,17 @@ func _ready():
 	if is_ready and ammo_counter:
 		update_ammo_counter()	
 	
+func switch_weapon(weapon_name : String):
+	if weapons.has(weapon_name):
+		if current_weapon:
+			weapon_holder.remove_child(current_weapon)
+			current_weapon.queue_free()
+		
+		current_weapon = weapons[weapon_name].duplicate()
+		weapon_holder.add_child(current_weapon)
+		print("switch")
+
+#
 
 func update_ammo_counter():
 	if ammo_counter:
@@ -122,6 +142,14 @@ func _unhandled_input(event):
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
 		start_reload()
+		
+	if event is InputEventKey and event.pressed:
+		if Input.is_action_just_pressed("rifle"):
+			if current_weapon == weapons["pistol"]:
+				switch_weapon("rifle")
+				print("Switched weapon")
+				
+
 
 
 func _physics_process(delta):
