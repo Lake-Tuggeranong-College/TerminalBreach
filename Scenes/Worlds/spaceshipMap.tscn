@@ -1685,6 +1685,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight2" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.5, 4.75, 21.25)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1727,6 +1728,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight4" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4.75, 21.25)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1769,6 +1771,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight6" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39, 4.75, 21.25)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight6"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1811,6 +1814,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight8" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 4.75, -7)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight8"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1853,6 +1857,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight10" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 4.75, -30)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight10"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1895,6 +1900,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight12" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.2, 4.75, -30)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight12"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1937,6 +1943,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight14" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.8, 4.75, -30)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight14"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -1979,6 +1986,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight16" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25, 4.75, -42.5)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight16"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2021,6 +2029,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight18" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.75, 4.75, -6.5)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight18"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2063,6 +2072,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight20" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.2, 4.75, 21.25)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight20"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2105,6 +2115,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight22" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32, 4.75, 12.75)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight22"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2147,6 +2158,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight24" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4.75, -3)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight24"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2189,6 +2201,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight26" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 4.75, 14.5)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight26"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
