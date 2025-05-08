@@ -794,11 +794,29 @@ offset_bottom = 332.0
 texture = ExtResource("28_os5cx")
 expand_mode = 1
 
+[node name="Enemy97" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9082, 0.565959, 1.86134)
+
+[node name="Enemy98" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0069, 1.03805, -29.7751)
+
+[node name="Enemy99" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6069, 0.496325, -8.95201)
+
+[node name="Enemy100" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0422, 0.629439, -8.95201)
+
+[node name="Enemy96" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.27776, 0.980463, 37.4006)
+
+[node name="Enemy95" parent="." instance=ExtResource("1_yd3bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.638882, 0.983512, -39.0798)
+
 [node name="Enemy93" parent="." instance=ExtResource("1_yd3bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270454, 0.988378, -6.6741)
 
 [node name="Enemy94" parent="." instance=ExtResource("1_yd3bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7756, 1.22921, -6.6741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.7756, 0.994624, -6.6741)
 
 [node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../spawn_point")
@@ -2142,6 +2160,7 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight23" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 4.75, 1.8)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight23"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
