@@ -54,7 +54,9 @@ var credits = [
 		"Testers",
 		"Beta tester inni winni mc inni",
 		"GURT",
-		"My 2 pet cats"
+		"My 2 pet cats",
+		"Max",
+		"Karen"
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
