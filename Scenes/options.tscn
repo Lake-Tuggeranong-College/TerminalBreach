@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://beiu2wrofifn2"]
+[gd_scene load_steps=15 format=4 uid="uid://beiu2wrofifn2"]
 
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_6syl2"]
 [ext_resource type="Script" path="res://Scenes/options.gd" id="1_hiosf"]
 [ext_resource type="Texture2D" uid="uid://bgpluunpo7jtj" path="res://icons/Settings.png" id="3_1mbos"]
 [ext_resource type="AudioStream" uid="uid://snr01bmdo85k" path="res://audio/options.ogg" id="4_qgt03"]
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="5_adjo0"]
+[ext_resource type="PackedScene" uid="uid://brobgr6w8iunf" path="res://Scenes/Transition/transition.tscn" id="6_yniiy"]
 
 [sub_resource type="FontVariation" id="FontVariation_vu2uu"]
 base_font = ExtResource("1_6syl2")
@@ -322,36 +323,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hiosf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MainMenu" type="PanelContainer" parent="CanvasLayer"]
+[node name="MainMenu" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -719.0
-offset_top = -421.0
-offset_right = -446.0
-offset_bottom = -247.0
+offset_left = -37.0
+offset_top = -406.0
+offset_right = 236.0
+offset_bottom = -140.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenu"]
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Options_Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Options_Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_vu2uu")
 theme_override_font_sizes/font_size = 30
@@ -359,27 +359,27 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Return" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Return" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_6tn6b")
 text = "Return"
 
-[node name="volume" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="volume" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Volume:"
 
-[node name="Volume" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 tooltip_text = "Volume"
 min_value = -100.0
 max_value = 0.0
 step = 20.0
 
-[node name="Mute" type="CheckBox" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Mute" type="CheckBox" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Mute"
 
-[node name="Resolutions" type="OptionButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Resolutions" type="OptionButton" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 2
 item_count = 4
@@ -391,7 +391,7 @@ popup/item_2/id = 2
 popup/item_3/text = "1280x720"
 popup/item_3/id = 3
 
-[node name="7Ddc6769-3759-4691-97e3-3555e34b3367" type="Sprite2D" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="7Ddc6769-3759-4691-97e3-3555e34b3367" type="Sprite2D" parent="MainMenu/MarginContainer/VBoxContainer"]
 show_behind_parent = true
 position = Vector2(128, 174)
 scale = Vector2(0.450081, 0.450046)
@@ -405,7 +405,9 @@ parameters/looping = true
 [node name="Global" type="Node" parent="."]
 script = ExtResource("5_adjo0")
 
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
-[connection signal="value_changed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
-[connection signal="item_selected" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[node name="Transition" parent="." instance=ExtResource("6_yniiy")]
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="MainMenu/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MainMenu/MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="MainMenu/MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]

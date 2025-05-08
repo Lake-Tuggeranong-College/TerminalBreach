@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b25721k0oqnlb"]
+[gd_scene load_steps=11 format=3 uid="uid://b25721k0oqnlb"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/main_menu.gd" id="1_07mw3"]
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_ix8f7"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="2_xlx0f"]
 [ext_resource type="Texture2D" uid="uid://ntptst52fu81" path="res://icons/7ddc6769-3759-4691-97e3-3555e34b3367.webp" id="4_asrc3"]
 [ext_resource type="AudioStream" uid="uid://43my1d6prcwm" path="res://audio/Main Menu.ogg" id="5_xuwlm"]
+[ext_resource type="PackedScene" uid="uid://brobgr6w8iunf" path="res://Scenes/Transition/transition.tscn" id="6_tbhif"]
 
 [sub_resource type="FontVariation" id="FontVariation_26gi0"]
 base_font = ExtResource("2_xlx0f")
@@ -33,80 +34,86 @@ grow_vertical = 2
 scale = Vector2(1.00552, 1.03959)
 script = ExtResource("1_07mw3")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(474.221, 137.755)
+scale = Vector2(1.14467, 1.07512)
+texture = ExtResource("4_asrc3")
 
-[node name="MainMenu" type="PanelContainer" parent="CanvasLayer"]
+[node name="MainMenu" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -752.972
-offset_top = -422.079
-offset_right = -418.972
-offset_bottom = -229.079
+offset_left = -49.7508
+offset_top = -312.324
+offset_right = 284.249
+offset_bottom = -119.324
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenu"]
+[node name="TextureRect" type="TextureRect" parent="MainMenu"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="SinglePlayer" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="SinglePlayer" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Single Player"
 
-[node name="Options" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_wxbue")
 text = "Options"
 
-[node name="Quit" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_q3ytf")
 text = "Quit"
 
-[node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-show_behind_parent = true
-position = Vector2(136.972, 167.079)
-scale = Vector2(1.14467, 1.07512)
-texture = ExtResource("4_asrc3")
-
-[node name="Title" type="Label" parent="CanvasLayer"]
-offset_left = 244.0
-offset_top = 63.0
-offset_right = 855.0
-offset_bottom = 202.0
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.072
+offset_top = -201.041
+offset_right = 779.072
+offset_bottom = -62.0408
 theme_override_fonts/font = SubResource("FontVariation_eftnw")
 theme_override_font_sizes/font_size = 56
 text = "Terminal Breach"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Credits" type="Button" parent="CanvasLayer"]
-offset_left = 1010.0
-offset_top = 619.0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 929.867
+offset_top = 333.785
+offset_right = 1071.87
+offset_bottom = 362.785
 theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Credits"
 
-[node name="?" type="Button" parent="CanvasLayer"]
-offset_top = 617.0
-offset_right = 16.0
-offset_bottom = 648.0
+[node name="?" type="Button" parent="."]
+layout_mode = 0
+offset_left = -74.5883
+offset_top = 331.862
+offset_right = -58.5883
+offset_bottom = 362.862
 text = "?"
+
+[node name="Transition" parent="." instance=ExtResource("6_tbhif")]
+position = Vector2(-74.5884, -258.756)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xuwlm")
@@ -114,9 +121,9 @@ pitch_scale = 0.99
 autoplay = true
 parameters/looping = true
 
-[connection signal="button_down" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="button_down" from="CanvasLayer/Credits" to="." method="_on_credits_button_down"]
-[connection signal="button_down" from="CanvasLayer/?" to="." method="_on__button_down"]
+[connection signal="button_down" from="MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="?" to="." method="_on__button_down"]
