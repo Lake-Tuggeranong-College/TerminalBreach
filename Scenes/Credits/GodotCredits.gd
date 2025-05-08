@@ -61,7 +61,7 @@ var credits = [
 		"Crystal",
 		"Lexy",
 		"Leonard",
-		"Colby"
+		"Colby",
 		"Max",
 		"Karen",
 		"Leelah",
