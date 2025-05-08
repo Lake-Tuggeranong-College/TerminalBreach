@@ -62,6 +62,12 @@ var credits = [
 		"Lexy",
 		"Leonard",
 		"Colby"
+		"Max",
+		"Karen",
+		"Leelah",
+    "Chris",
+    "Joel",
+    "Tristan",
 	],[
 		"Tools used",
 		"Developed with Godot Engine",
