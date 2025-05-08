@@ -166,6 +166,7 @@ script = ExtResource("1_2v3wm")
 
 [node name="man" parent="." instance=ExtResource("2_1bble")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0)
+visible = false
 
 [node name="Skeleton3D" parent="man/Armature" index="0"]
 bones/3/rotation = Quaternion(0.469725, -0.253896, -0.641974, 0.550241)
@@ -245,6 +246,7 @@ visible = false
 
 [node name="riflecomplete" parent="." instance=ExtResource("7_hb2iv")]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0.270865, 1.68607, -0.728051)
+visible = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
