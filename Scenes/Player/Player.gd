@@ -43,11 +43,13 @@ func take_damageP(amount) -> void:
 	if health <= 0:
 #		print("Game Over!")
 		# Reset the player's health and position
-		health = max_health
-		position = Vector3.ZERO
+		#health = max_health
+		#position = Vector3.ZERO
 		# Emit the health_changed signal with the reset health value
-		health_changed.emit(health)
-		start_reload()
+		#health_changed.emit(health)
+		#start_reload()
+		get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		# Emit the health_changed signal with the updated health value
 		health_changed.emit(health)
