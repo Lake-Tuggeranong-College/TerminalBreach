@@ -19,8 +19,16 @@ offset_right = 1152.0
 offset_bottom = 648.0
 text = "Return to main menu"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 617.0
+offset_right = 68.0
+offset_bottom = 648.0
+text = "Replay?"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m1cx")
 autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
