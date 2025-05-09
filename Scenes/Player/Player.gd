@@ -101,9 +101,10 @@ func _ready():
 	
 func switch_weapon(weapon_name : String):
 	if weapons.has(weapon_name):
-		if current_weapon:
-			weapon_holder.remove_child(current_weapon)
-			current_weapon.queue_free()
+		if current_weapon == pistol:
+			$Camera3D/Pistol.hide()
+			#weapon_holder.remove_child(current_weapon)
+			#current_weapon.queue_free()
 		
 		current_weapon = weapons[weapon_name].duplicate()
 		weapon_holder.add_child(current_weapon)
