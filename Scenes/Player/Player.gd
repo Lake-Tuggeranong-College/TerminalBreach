@@ -41,6 +41,8 @@ var is_crouching : bool = false
 
 var is_ready = false
 
+var weapon_switch = 0
+
 func take_damageP(amount) -> void:
 	health -= amount
 #	print("damage taken")
@@ -99,15 +101,16 @@ func _ready():
 	if is_ready and ammo_counter:
 		update_ammo_counter()	
 	
-func switch_weapon(weapon_name : String):
-	if weapons.has(weapon_name):
-		if current_weapon:
-			weapon_holder.remove_child(current_weapon)
-			current_weapon.queue_free()
+#func switch_weapon(weapon_name : String):
+#	if weapons.has(weapon_name):
+		#if current_weapon:
+		#	$Camera3D/Pistol.hide()
+			#weapon_holder.remove_child(current_weapon)
+			#current_weapon.queue_free()
 		
-		current_weapon = weapons[weapon_name].duplicate()
-		weapon_holder.add_child(current_weapon)
-		print("switch")
+		#current_weapon = weapons[weapon_name].duplicate()
+		#weapon_holder.add_child(current_weapon)
+		#print("switch")
 
 #
 
@@ -138,6 +141,8 @@ func _unhandled_input(event):
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown).timeout
 		can_shoot = true
+	if Input.is_action_pressed("shoot") and weapon_switch == 1:
+		shoot()
 
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
@@ -145,9 +150,18 @@ func _unhandled_input(event):
 		
 	if event is InputEventKey and event.pressed:
 		if Input.is_action_just_pressed("rifle"):
-			if current_weapon == weapons["pistol"]:
-				switch_weapon("rifle")
-				print("Switched weapon")
+			if weapon_switch == 0: #switch weapon to the rifle
+				$Camera3D/Pistol.hide()
+				$Camera3D/Rifle.show()
+				weapon_switch = 1
+				var shoot_cooldown = 0.1
+			elif weapon_switch == 1: #switch weapon to the pistol
+				$Camera3D/Pistol.show()
+				$Camera3D/Rifle.hide()
+				weapon_switch = 0
+				var shoot_cooldown = 0.2
+				#switch_weapon("rifle")
+				#print("Switched weapon")
 				
 
 
@@ -239,7 +253,7 @@ func shoot():
 
 		# Update the ammo counter
 		update_ammo_counter()
-	
+
 
 
 func reset_ammo_with_delay() -> void:

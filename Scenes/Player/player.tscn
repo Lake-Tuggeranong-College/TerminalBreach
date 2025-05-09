@@ -186,6 +186,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_xk8km")
 
+[node name="weapon_holder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287798, 1.13315, -0.578018)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4161, -0.130484)
 
@@ -207,6 +210,10 @@ transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -96.6821, 72.0505, 121.
 target_position = Vector3(0, 0, -50)
 collision_mask = 2
 
+[node name="Rifle" parent="Camera3D" instance=ExtResource("7_hb2iv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.301, -0.176027, -0.421038)
+visible = false
+
 [node name="bulletSpawn" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.999903, 7.31055e-05, 0.013962, 0, 0.999986, -0.00523596, -0.0139622, 0.00523545, 0.999889, 0.501696, -0.200336, -0.749963)
 
@@ -224,9 +231,6 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
-
-[node name="weapon_holder" type="Node3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287798, -0.282945, -0.447534)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
