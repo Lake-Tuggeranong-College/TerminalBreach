@@ -1682,12 +1682,10 @@ skeleton = NodePath("../..")
 
 [node name="hanginglight" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 4.75, 21.25)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1704,12 +1702,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight2" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.5, 4.75, 21.25)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1730,7 +1726,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 4.
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1747,12 +1742,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight4" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4.75, 21.25)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1773,7 +1766,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.5,
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1790,12 +1782,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight6" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39, 4.75, 21.25)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight6"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -1812,12 +1802,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight7" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, -47.75, 4.75, 8.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight7"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1834,12 +1822,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight8" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 4.75, -7)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight8"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -1860,7 +1846,6 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight9"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1877,12 +1862,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight10" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 4.75, -30)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight10"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -1899,12 +1882,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight11" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34, 4.75, -30)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight11"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -1921,12 +1902,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight12" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.2, 4.75, -30)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight12"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1947,7 +1926,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.6, 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight13"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1964,12 +1942,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight14" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.8, 4.75, -30)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight14"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -1986,12 +1962,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight15" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.6, 4.75, -30)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight15"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2008,12 +1982,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight16" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25, 4.75, -42.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight16"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -2034,7 +2006,6 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight17"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2051,12 +2022,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight18" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.75, 4.75, -6.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight18"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -2073,12 +2042,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight19" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 4.75, 9.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight19"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -2095,12 +2062,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight20" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40.2, 4.75, 21.25)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight20"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2121,7 +2086,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54, 4.
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight21"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2138,12 +2102,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight22" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32, 4.75, 12.75)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight22"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 20.0
 spot_angle = 89.0
@@ -2160,12 +2122,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight23" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 4.75, 1.8)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight23"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 20.0
 spot_angle = 89.0
@@ -2182,12 +2142,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight24" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4.75, -3)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight24"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -2204,12 +2162,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight25" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.25, 4.75, 14.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight25"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2226,12 +2182,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight26" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 4.75, 14.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight26"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2248,12 +2202,10 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight27" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 4.75, 14.5)
-visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight27"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 25.0
-shadow_enabled = true
 shadow_reverse_cull_face = true
 spot_range = 10.0
 spot_angle = 89.0
@@ -2266,4 +2218,84 @@ mesh = SubResource("PlaneMesh_1h3j2")
 [node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Lights/hanginglight27/MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight27/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="hanginglight28" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 37.5, 4.75, -15.25)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight28"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 25.0
+shadow_reverse_cull_face = true
+spot_range = 10.0
+spot_angle = 89.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Extra Models/Lights/hanginglight28"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.307835, 0)
+visible = false
+mesh = SubResource("PlaneMesh_1h3j2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Lights/hanginglight28/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight28/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="hanginglight29" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 4.75, -15.25)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight29"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 25.0
+shadow_reverse_cull_face = true
+spot_range = 10.0
+spot_angle = 89.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Extra Models/Lights/hanginglight29"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.307835, 0)
+visible = false
+mesh = SubResource("PlaneMesh_1h3j2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Lights/hanginglight29/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight29/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="hanginglight30" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 4.75, -15.25)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight30"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 25.0
+shadow_reverse_cull_face = true
+spot_range = 10.0
+spot_angle = 89.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Extra Models/Lights/hanginglight30"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.307835, 0)
+visible = false
+mesh = SubResource("PlaneMesh_1h3j2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Lights/hanginglight30/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight30/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="hanginglight31" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 4.75, 39.5)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight31"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 25.0
+shadow_reverse_cull_face = true
+spot_range = 100.0
+spot_angle = 89.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Extra Models/Lights/hanginglight31"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.307835, 0)
+visible = false
+mesh = SubResource("PlaneMesh_1h3j2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Lights/hanginglight31/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight31/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
