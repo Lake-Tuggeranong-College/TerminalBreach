@@ -174,8 +174,8 @@ bones/4/rotation = Quaternion(0.176669, 0.0955826, -0.261637, 0.944033)
 bones/7/rotation = Quaternion(0.592379, 0.0850517, 0.427962, 0.677275)
 bones/8/rotation = Quaternion(0.122609, 0.0312199, 0.146888, 0.981028)
 bones/9/rotation = Quaternion(0.509732, 0.488892, 0.526109, -0.473673)
-bones/10/rotation = Quaternion(-0.677604, 0.176253, 0.167168, 0.694149)
-bones/14/rotation = Quaternion(-0.631186, 0.0332365, 0.235232, 0.738353)
+bones/10/rotation = Quaternion(-0.677893, 0.171256, 0.161755, 0.696396)
+bones/14/rotation = Quaternion(-0.633433, 0.0292539, 0.226799, 0.739236)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)

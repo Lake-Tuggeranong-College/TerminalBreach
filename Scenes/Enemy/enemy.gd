@@ -1,10 +1,10 @@
 extends CharacterBody3D
-
+@onready var anim = $enemymodel/AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
 @onready var enemy = $enemy
 @onready var pistol = $Pistol  # Reference the gun node (pistol) in the enemy scene
 @onready var player = null #get_node("/root/Player")  
-var SPEED = 3
+var SPEED = 5
 const JUMP_VELOCITY = 4.5
 var bullet_scene = preload("res://Scenes/Enemy/enemy_bullet.tscn")
 @export var shooting_offset: Vector3 = Vector3(0, 1, 3)  # Adjust where bullets should spawn
@@ -57,6 +57,7 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
+		anim.play("Armature_001|mixamo_com|Layer0_001")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()
