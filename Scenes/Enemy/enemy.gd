@@ -1,5 +1,6 @@
 extends CharacterBody3D
 @onready var anim = $enemymodel/AnimationPlayer
+@onready var gunanim = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
 @onready var enemy = $enemy
 @onready var pistol = $Pistol  # Reference the gun node (pistol) in the enemy scene
@@ -23,7 +24,7 @@ var health_pickup_spawn
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
-	bullet_spawn = get_node("Pistol/bullet_spawn")
+	bullet_spawn = get_node("enemymodel/Pistol/bullet_spawn")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
@@ -58,6 +59,7 @@ func _physics_process(_delta):
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
 		anim.play("Armature_001|mixamo_com|Layer0_001")
+		gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()
@@ -66,23 +68,23 @@ func _physics_process(_delta):
 	if Global.player == null:
 		Global.player = get_tree().root.get_node_or_null("root/World/1")
 #	print(Global.player)
-	if Global.player:
-		aim_gun_at_player()
+	#if Global.player:
+		#aim_gun_at_player()
 	
 
-#This will make the enemy aim at the player
-func aim_gun_at_player():
-	if Global.player != null and player_detected == true:
-		# Calculate the direction from the gun to the player
-		var pistol_position = pistol.global_transform.origin
-		var player_position = Global.player.global_transform.origin
-	#	print("Player position: ", player_position)  # Debug print
-		var aim_direction = (player_position - pistol_position).normalized()
-	#	print("Aim direction: ", aim_direction)  # Debug print
-		# Make the gun rotate to face the player
-		pistol.look_at(pistol_position + aim_direction, Vector3.UP)
-#	else:
-#		print("Player node not found")  # Debug print
+##This will make the enemy aim at the player
+#func aim_gun_at_player():
+	#if Global.player != null and player_detected == true:
+		## Calculate the direction from the gun to the player
+		#var pistol_position = pistol.global_transform.origin
+		#var player_position = Global.player.global_transform.origin
+	##	print("Player position: ", player_position)  # Debug print
+		#var aim_direction = (player_position - pistol_position).normalized()
+	##	print("Aim direction: ", aim_direction)  # Debug print
+		## Make the gun rotate to face the player
+		#pistol.look_at(pistol_position + aim_direction, Vector3.UP)
+##	else:
+##		print("Player node not found")  # Debug print
 
 func shoot_bullet():
 	# Create the bullet instance
