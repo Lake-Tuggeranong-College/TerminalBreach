@@ -141,6 +141,8 @@ func _unhandled_input(event):
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown).timeout
 		can_shoot = true
+	if Input.is_action_pressed("shoot") and weapon_switch == 1:
+		shoot()
 
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
