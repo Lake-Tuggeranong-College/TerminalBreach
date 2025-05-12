@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var gunanim = $AnimationPlayer
 @onready var nav_agent = $NavigationAgent3D
 @onready var enemy = $enemy
-@onready var pistol = $Pistol  # Reference the gun node (pistol) in the enemy scene
+@onready var pistol = $enemymodel/Pistol # Reference the gun node (pistol) in the enemy scene
 @onready var player = null #get_node("/root/Player")  
 var SPEED = 5
 const JUMP_VELOCITY = 4.5
