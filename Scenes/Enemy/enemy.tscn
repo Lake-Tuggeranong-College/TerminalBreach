@@ -52,6 +52,21 @@ orientation = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7x2r"]
 
+[sub_resource type="Animation" id="Animation_d17cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemymodel/Pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0386105, 1.33318, 0.537808)]
+}
+
 [sub_resource type="Animation" id="Animation_30v3c"]
 resource_name = "bob"
 length = 0.75
@@ -66,21 +81,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.0386105, 1.27359, 0.537808), Vector3(-0.0386105, 1.30742, 0.537808), Vector3(-0.0386105, 1.22834, 0.495484), Vector3(-0.0541507, 1.34137, 0.53161), Vector3(-0.0386105, 1.27359, 0.537808)]
-}
-
-[sub_resource type="Animation" id="Animation_d17cx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("enemymodel/Pistol:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.0386105, 1.33318, 0.537808)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mudx8"]

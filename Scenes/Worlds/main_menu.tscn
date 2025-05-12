@@ -80,6 +80,7 @@ theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Credits"
 
 [node name="?" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -74.5883
 offset_top = 331.862
