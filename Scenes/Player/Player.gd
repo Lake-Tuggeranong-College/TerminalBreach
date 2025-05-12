@@ -17,9 +17,12 @@ signal health_changed(health_value)
 #player shooting
 var bullet_spawn
 var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
-var shoot_cooldown = 0.2
+var shoot_cooldown_pistol = 0.2
+var shoot_cooldown_rifle = 0.1
 var can_shoot = true
+
 var ammo = 16
+
 var reload_time = 3
 var is_reloading = false
 var weapons = {}
@@ -130,7 +133,7 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	
-	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0:
+	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
 		anim_player.stop()
 		anim_player.play("shoot")
@@ -139,10 +142,21 @@ func _unhandled_input(event):
 		muzzle_flash.emitting = true
 		can_shoot = false
 		#and anim_player.current_animation != "shoot":
-		await get_tree().create_timer(shoot_cooldown).timeout
+		await get_tree().create_timer(shoot_cooldown_pistol).timeout
 		can_shoot = true
-	if Input.is_action_pressed("shoot") and weapon_switch == 1:
+	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
 		shoot()
+		anim_player.stop()
+		anim_player.play("shoot")
+		gunshot.play()
+		muzzle_flash.restart()
+		muzzle_flash.emitting = true
+		can_shoot = false
+		#and anim_player.current_animation != "shoot":
+		await get_tree().create_timer(shoot_cooldown_rifle).timeout
+		can_shoot = true
+
+		
 
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
