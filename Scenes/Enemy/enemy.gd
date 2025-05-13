@@ -58,7 +58,7 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("Armature_001|mixamo_com|Layer0_001")
+		anim.play("EnemyRunning")
 		gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity

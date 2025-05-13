@@ -167,16 +167,50 @@ standing_height = 2.15
 
 [node name="man" parent="." instance=ExtResource("2_1bble")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0)
-visible = false
+
+[node name="Armature" parent="man" index="0"]
+transform = Transform3D(-0.859548, 0.511055, 0, -0.511055, -0.859548, 0, 0, 0, 1, 2.45948, 15.7942, -0.771757)
 
 [node name="Skeleton3D" parent="man/Armature" index="0"]
-bones/3/rotation = Quaternion(0.469725, -0.253896, -0.641974, 0.550241)
-bones/4/rotation = Quaternion(0.176669, 0.0955826, -0.261637, 0.944033)
-bones/7/rotation = Quaternion(0.592379, 0.0850517, 0.427962, 0.677275)
-bones/8/rotation = Quaternion(0.122609, 0.0312199, 0.146888, 0.981028)
-bones/9/rotation = Quaternion(0.509732, 0.488892, 0.526109, -0.473673)
-bones/10/rotation = Quaternion(-0.677893, 0.171256, 0.161755, 0.696396)
-bones/14/rotation = Quaternion(-0.633433, 0.0292539, 0.226799, 0.739236)
+motion_scale = 0.537
+bones/0/rotation = Quaternion(-1.50822e-08, -6.79799e-08, 0.0291007, 0.999576)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.0443132, 0.00962835, -0.0276086, 0.99859)
+bones/4/rotation = Quaternion(-0.486261, 0.166804, -0.0273775, 0.857308)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.160177, 0.00393901, -0.143213, 0.976636)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.0392503, -0.00124434, -0.03068, 0.998758)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.0236912, 0.0357208, -0.118205, 0.992064)
+bones/9/rotation = Quaternion(0.0202524, 0.00323474, -0.0706959, 0.997287)
+bones/10/rotation = Quaternion(-0.276156, 0.0827239, -0.123557, 0.949541)
+bones/11/rotation = Quaternion(0.240287, -0.00196043, -0.0539616, 0.969199)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(-0.00274861, -0.0308201, -0.123765, 0.991829)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.46103, 0.121266, -0.17314, 0.86184)
+bones/13/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.0319547, -0.000981492, 0.0297175, 0.999047)
+bones/16/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.0346901, -0.0569696, 0.0225325, 0.997519)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/scale = Vector3(1, 1, 1)
+bones/22/rotation = Quaternion(0.109691, 0.118426, 0.184756, 0.969437)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.0478592, -0.0476516, 0.013833, 0.997621)
+bones/24/rotation = Quaternion(-0.0374608, -0.0968487, 0.114588, 0.987971)
+bones/25/rotation = Quaternion(0.0164912, -0.006834, 0.0716665, 0.997269)
+bones/25/scale = Vector3(1, 1, 1)
+bones/27/rotation = Quaternion(0.246061, 0.220684, -0.0101707, 0.943742)
+bones/28/rotation = Quaternion(0.00663804, -0.0101799, 0.123617, 0.992256)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/rotation = Quaternion(0.414846, 0.303155, 0.0440123, 0.856775)
+bones/30/scale = Vector3(1, 1, 1)
+bones/31/rotation = Quaternion(0.022501, 0.0318261, -0.03739, 0.99854)
+bones/31/scale = Vector3(1, 1, 1)
+bones/32/rotation = Quaternion(0.929774, -0.255528, -0.255528, -0.0702261)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
