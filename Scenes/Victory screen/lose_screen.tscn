@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" path="res://Scenes/Victory screen/victory_screen.gd" id="1_bq0wu"]
 [ext_resource type="Texture2D" uid="uid://dc2yh4mg3f5r8" path="res://icons/has-anybody-ever-tried-recreating-the-lose-screen-v0-or0jfwczbm8e1.png" id="2_7su4t"]
-[ext_resource type="AudioStream" uid="uid://c36fbp5d5qh6t" path="res://audio/Stage Clear.ogg" id="3_1m1cx"]
+[ext_resource type="AudioStream" uid="uid://bvkupfpld1hn8" path="res://audio/failure.ogg" id="3_e7u28"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(1.38837, 1.38812)
 script = ExtResource("1_bq0wu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -13,11 +14,12 @@ scale = Vector2(1.245, 1.245)
 texture = ExtResource("2_7su4t")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 978.0
-offset_top = 617.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 978.125
+offset_top = 617.384
+offset_right = 1152.13
+offset_bottom = 648.384
 text = "Return to main menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 1.0
@@ -25,9 +27,10 @@ offset_top = 617.0
 offset_right = 68.0
 offset_bottom = 648.0
 text = "Replay?"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1m1cx")
+stream = ExtResource("3_e7u28")
 autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
