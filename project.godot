@@ -29,6 +29,8 @@ settings/stdout/print_fps=true
 
 [display]
 
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/quality/screen_space_aa=1

@@ -103,75 +103,75 @@ var credits = [
 		"Umair",
 		"competitors"
 	],[
-		"Web Development",
-		"Nadal"
-	],[
-		"Web Dev",
-		"Nadal"
-	],[
-		"Dev Web",
-		"Nadal"
-	],[
-		"Web Spinner",
-		"Nadal"
-	],[
-		"Maker of web",
-		"Nadal"
-	],[
-		"Developing web",
-		"Nadal"
-	],[
-		"Webologist",
-		"Nadal"
-	],[
-		"Weberfile",
-		"Nadal"
-	],[
-		"Front-End Development",
-		"Nadal"
-	],[
-		"Back-End Development",
-		"Nadal"
-	],[
-		"All-Around-End Development",
-		"Nadal"
-	],[
-		"Full-Stack Development",
-		"Nadal"
-	],[
-		"UI/UX Development",
-		"Nadal"
-	],[
-		"Software Engineering (Web)",
-		"Nadal"
-	],[
-		"Web Application Development",
-		"Nadal"
-	],[
-		"Digital Development",
-		"Nadal"
-	],[
-		"Credit stealer",
-		"Nadal"
-	],[
-		"Building the Front-End / Back-End / All-Around-End",
-		"Nadal"
-	],[
-		"Coding for the Web",
-		"Nadal"
-	],[
-		"Writing Web Apps",
-		"Nadal"
-	],[
-		"DevOps (for infrastructure-heavy work)",
-		"Nadal"
-	],[
-		"Cloud Web Dev",
-		"Nadal"
-	],[
-		"Just a guy",
-		"Nadal"
-	],[
+		#"Web Development",
+		#"Nadal"
+	#],[
+		#"Web Dev",
+		#"Nadal"
+	#],[
+		#"Dev Web",
+		#"Nadal"
+	#],[
+		#"Web Spinner",
+		#"Nadal"
+	#],[
+		#"Maker of web",
+		#"Nadal"
+	#],[
+		#"Developing web",
+		#"Nadal"
+	#],[
+		#"Webologist",
+		#"Nadal"
+	#],[
+		#"Weberfile",
+		#"Nadal"
+	#],[
+		#"Front-End Development",
+		#"Nadal"
+	#],[
+		#"Back-End Development",
+		#"Nadal"
+	#],[
+		#"All-Around-End Development",
+		#"Nadal"
+	#],[
+		#"Full-Stack Development",
+		#"Nadal"
+	#],[
+		#"UI/UX Development",
+		#"Nadal"
+	#],[
+		#"Software Engineering (Web)",
+		#"Nadal"
+	#],[
+		#"Web Application Development",
+		#"Nadal"
+	#],[
+		#"Digital Development",
+		#"Nadal"
+	#],[
+		#"Credit stealer",
+		#"Nadal"
+	#],[
+		#"Building the Front-End / Back-End / All-Around-End",
+		#"Nadal"
+	#],[
+		#"Coding for the Web",
+		#"Nadal"
+	#],[
+		#"Writing Web Apps",
+		#"Nadal"
+	#],[
+		#"DevOps (for infrastructure-heavy work)",
+		#"Nadal"
+	#],[
+		#"Cloud Web Dev",
+		#"Nadal"
+	#],[
+		#"Just a guy",
+		#"Nadal"
+	#],[
 		"Thanks for playing!"]
 	
 ]

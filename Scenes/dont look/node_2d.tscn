@@ -5,11 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://di8j50f4kr4wi" path="res://audio/eerie.ogg" id="2_gqegy"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(270, 152)
+scale = Vector2(0.91, 0.91)
 script = ExtResource("1_ffleo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576.125, 323.875)
-scale = Vector2(0.600182, 0.600788)
+position = Vector2(582.259, 327.454)
+scale = Vector2(0.916393, 0.916634)
 texture = ExtResource("1_lqpvk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -18,10 +20,12 @@ autoplay = true
 parameters/looping = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 508.0
-offset_top = 617.0
-offset_right = 645.0
-offset_bottom = 648.0
+offset_left = 509.89
+offset_top = 793.407
+offset_right = 646.89
+offset_bottom = 824.407
+scale = Vector2(0.91, 0.91)
 text = "You can't escape"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
