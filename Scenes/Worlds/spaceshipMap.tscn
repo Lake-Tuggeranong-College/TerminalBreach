@@ -878,12 +878,18 @@ mouse_filter = 2
 
 [node name="Reticle" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -579.24
+offset_top = -330.76
+offset_right = 1796.76
+offset_bottom = 2093.24
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.03, 0.03)
+scale = Vector2(0.01, 0.01)
 pivot_offset = Vector2(576, 324)
 texture = ExtResource("27_rarf2")
 stretch_mode = 5
@@ -894,8 +900,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
-offset_top = 617.0
-offset_right = -777.0
+offset_top = 862.0
+offset_right = -956.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -907,10 +913,10 @@ script = SubResource("GDScript_07fs1")
 
 [node name="Hitmarker" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 315.0
-offset_right = 584.0
-offset_bottom = 332.0
+offset_left = 794.76
+offset_top = 444.24
+offset_right = 810.76
+offset_bottom = 461.24
 texture = ExtResource("28_os5cx")
 expand_mode = 1
 
