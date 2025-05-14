@@ -37,6 +37,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="dance dog" type="VideoStreamPlayer" parent="CreditsContainer"]
+layout_mode = 0
 offset_left = 259.0
 offset_top = 728.0
 offset_right = 771.0
@@ -63,6 +64,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="dance cat" type="VideoStreamPlayer" parent="CreditsContainer"]
+layout_mode = 0
 offset_left = 1513.0
 offset_top = 474.0
 offset_right = 1993.0
