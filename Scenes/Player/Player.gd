@@ -4,6 +4,7 @@ signal health_changed(health_value)
 
 @onready var camera = $Camera3D
 @onready var anim_player = $AnimationPlayer
+@onready var rifle_anim_player = $Camera3D/Rifle/RifleAnimationPlayer
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 @onready var gunshot = $gunshot
@@ -208,6 +209,7 @@ func _physics_process(delta):
 		anim_player.play("move")
 	else:
 		anim_player.play("idle")
+		rifle_anim_player.play("idle")
 
 	move_and_slide()
 	
@@ -217,6 +219,7 @@ func _physics_process(delta):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		anim_player.play("idle")
+		rifle_anim_player.play("idle")
 		
 # Called every frame
 func _process(delta: float):
