@@ -132,6 +132,15 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
 	
+	
+	
+
+		
+
+	# Detect the reload key (R key)
+	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
+		start_reload()
+		
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
 		anim_player.stop()
@@ -143,24 +152,6 @@ func _unhandled_input(event):
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown_pistol).timeout
 		can_shoot = true
-	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
-		shoot()
-		anim_player.stop()
-		anim_player.play("shoot")
-		gunshot.play()
-		muzzle_flash.restart()
-		muzzle_flash.emitting = true
-		can_shoot = false
-		#and anim_player.current_animation != "shoot":
-		await get_tree().create_timer(shoot_cooldown_rifle).timeout
-		can_shoot = true
-
-		
-
-	# Detect the reload key (R key)
-	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
-		start_reload()
-		
 	if event is InputEventKey and event.pressed:
 		if Input.is_action_just_pressed("rifle"):
 			if weapon_switch == 0: #switch weapon to the rifle
@@ -186,6 +177,18 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
+	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
+		shoot()
+		anim_player.stop()
+		anim_player.play("shoot")
+		gunshot.play()
+		muzzle_flash.restart()
+		muzzle_flash.emitting = true
+		can_shoot = false
+		#and anim_player.current_animation != "shoot":
+		await get_tree().create_timer(shoot_cooldown_rifle).timeout
+		can_shoot = true
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
