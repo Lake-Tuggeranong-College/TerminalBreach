@@ -3,15 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
-uid="uid://bkkp3ry1qhfx6"
-
-path="res://.godot/imported/linc.blend-9510a285e091c76e5b4da3e092728a53.scn"
+uid="uid://b7ka2br6c8rt"
+path="res://.godot/imported/enemyrifle.blend-414ceecbee84ec359ca78a262b084427.scn"
 
 [deps]
 
-source_file="res://models/linc.blend"
-dest_files=["res://.godot/imported/linc.blend-9510a285e091c76e5b4da3e092728a53.scn"]
+source_file="res://Scenes/Enemy/enemyrifle.blend"
+dest_files=["res://.godot/imported/enemyrifle.blend-414ceecbee84ec359ca78a262b084427.scn"]
 
 [params]
 
