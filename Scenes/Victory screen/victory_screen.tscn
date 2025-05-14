@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c36fbp5d5qh6t" path="res://audio/Stage Clear.ogg" id="3_bq600"]
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(1.3889, 1.38888)
 script = ExtResource("1_rch70")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,6 +19,7 @@ offset_top = 617.0
 offset_right = 1152.0
 offset_bottom = 648.0
 text = "Return to main menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 1.0
@@ -25,6 +27,7 @@ offset_top = 617.0
 offset_right = 68.0
 offset_bottom = 648.0
 text = "Replay?"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_bq600")
