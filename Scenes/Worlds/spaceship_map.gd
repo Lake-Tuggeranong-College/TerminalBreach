@@ -4,6 +4,7 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var main_menu = $CanvasLayer/MainMenu
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
+@onready var environment = $NavigationRegion3D
 var player
 var tracked = false
 
@@ -17,7 +18,7 @@ func _ready():
 
 	if player.is_multiplayer_authority():
 		player.health_changed.connect(update_health_bar)
-
+	environment.add_to_group("walls")
 
 func _physics_process(_delta):
 	if tracked:
