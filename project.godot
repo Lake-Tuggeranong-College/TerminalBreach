@@ -109,6 +109,11 @@ rifle={
 ]
 }
 
+[physics]
+
+3d/default_gravity=200.0
+3d/default_gravity_vector=Vector3(0, -20, 0)
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

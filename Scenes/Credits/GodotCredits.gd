@@ -103,9 +103,9 @@ var credits = [
 		"Umair",
 		"competitors"
 	],[
-		#"Web Development",
-		#"Nadal"
-	#],[
+		"Web Development",
+		"Nadal"
+	],[
 		#"Web Dev",
 		#"Nadal"
 	#],[

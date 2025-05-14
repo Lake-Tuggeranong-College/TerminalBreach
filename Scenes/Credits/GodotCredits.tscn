@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ckbj0ne1f2vvm" path="res://icons/Black.bmp" id="1_2blsv"]
 [ext_resource type="VideoStream" path="res://animation/Dog-Dance.ogv" id="3_x6aq5"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="4_brv2e"]
-[ext_resource type="AudioStream" uid="uid://b7bexm2o5qyi8" path="res://audio/unused.ogg" id="4_mpmcm"]
 [ext_resource type="VideoStream" path="res://animation/Cat-Dance.ogv" id="5_ci4x3"]
+[ext_resource type="AudioStream" uid="uid://bhmaiwisj2yhn" path="res://audio/Credits 2.ogg" id="6_dry38"]
 
 [node name="GodotCredits" type="Node2D"]
 script = ExtResource("1")
@@ -73,7 +73,7 @@ loop = true
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_mpmcm")
+stream = ExtResource("6_dry38")
 autoplay = true
 parameters/looping = true
 
