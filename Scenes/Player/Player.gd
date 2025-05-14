@@ -21,6 +21,7 @@ var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
 var ammo = 16
+var ammo_rifle =20
 
 var reload_time = 3
 var is_reloading = false
@@ -80,10 +81,6 @@ func _ready():
 	await get_tree().process_frame  # Wait a frame
 	var hud = null
 	
-	weapons["pistol"] = preload("res://Scenes/Guns/pistol.tscn").instantiate()
-	weapons["rifle"] = preload("res://Scenes/Guns/riflecomplete.tscn").instantiate()
-	current_weapon = weapons["pistol"]
-	
 
 	while hud == null:
 		hud = get_tree().get_first_node_in_group("hud")
@@ -118,7 +115,10 @@ func _ready():
 
 func update_ammo_counter():
 	if ammo_counter:
-		ammo_counter.text = str(ammo) + "/16"
+		if weapon_switch == 0:
+			ammo_counter.text = str(ammo) + "/16"
+		elif weapon_switch == 1:
+			ammo_counter.text = str(ammo_rifle) + "/20"
 	else:
 		print("no label cuh")
 	
@@ -152,6 +152,7 @@ func _unhandled_input(event):
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown_pistol).timeout
 		can_shoot = true
+		update_ammo_counter()
 	if event is InputEventKey and event.pressed:
 		if Input.is_action_just_pressed("rifle"):
 			if weapon_switch == 0: #switch weapon to the rifle
@@ -159,6 +160,7 @@ func _unhandled_input(event):
 				$Camera3D/Rifle.show()
 				weapon_switch = 1
 				var shoot_cooldown = 0.1
+				update_ammo_counter()
 			elif weapon_switch == 1: #switch weapon to the pistol
 				$Camera3D/Pistol.show()
 				$Camera3D/Rifle.hide()
@@ -166,7 +168,7 @@ func _unhandled_input(event):
 				var shoot_cooldown = 0.2
 				#switch_weapon("rifle")
 				#print("Switched weapon")
-				
+				update_ammo_counter()
 
 
 
@@ -189,6 +191,7 @@ func _physics_process(delta):
 		#and anim_player.current_animation != "shoot":
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
 		can_shoot = true
+		update_ammo_counter()
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -264,7 +267,10 @@ func shoot():
 		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 		# Decrease ammo by 1
-		ammo -= 1
+		if weapon_switch == 0:
+			ammo -= 1
+		elif weapon_switch == 1:
+			ammo_rifle -= 1
 
 		# Update the ammo counter
 		update_ammo_counter()
@@ -288,8 +294,10 @@ func start_reload():
 	# anim_player.play("reload")
 
 	await get_tree().create_timer(reload_time).timeout  # Wait for reload time
-
-	ammo = 16  # Reset ammo after reload
+	if weapon_switch == 0:
+		ammo = 16  # Reset ammo after reload
+	elif weapon_switch == 1:
+		ammo_rifle = 20  # Reset ammo after reload
 	update_ammo_counter()  # Update the counter after reload
 	is_reloading = false
 
