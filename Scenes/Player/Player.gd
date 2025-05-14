@@ -12,7 +12,6 @@ signal health_changed(health_value)
 @onready var ammo_counter = null
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
 @onready var reticle = $CanvasLayer/HUD/Reticle
-@onready var player_anim_player = $man/AnimationPlayer
 
 #player shooting
 var bullet_spawn
@@ -207,7 +206,6 @@ func _physics_process(delta):
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
-		player_anim_player.play("plugwalk")
 	else:
 		anim_player.play("idle")
 
