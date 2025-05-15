@@ -184,6 +184,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
 		shoot()
+
 #		anim_player.stop()
 #		anim_player.play("shoot")
 #		gunshot.play()
@@ -194,6 +195,7 @@ func _physics_process(delta):
 #		await get_tree().create_timer(shoot_cooldown_rifle).timeout
 #		can_shoot = true
 #		update_ammo_counter()
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -214,6 +216,7 @@ func _physics_process(delta):
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
+		rifle_anim_player.play ("move")
 	else:
 		anim_player.play("idle")
 		rifle_anim_player.play("idle")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=25 format=3 uid="uid://xcjrjq5cbn7y"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="PackedScene" uid="uid://bkmywv3rot0ui" path="res://models/man.blend" id="2_1bble"]
@@ -69,10 +69,43 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.1, 1, 0, 0, 0, 1, 0.663433, 1, 0, 0, 0, 1, 0.673333, 1, 0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_xiy3f"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("riflecomplete")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0666667, 1, -0.00433853, 0.0413296, 0, 0.333333, 1, 0.0579942, 0.119341, 0, 0.566667, 1, -0.011234, 0.0621722, 0, 0.833333, 1, -0.102425, 0.149793, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("riflecomplete")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array()
+
+[sub_resource type="Animation" id="Animation_rs2ly"]
+resource_name = "shoot"
+length = 0.1
+loop_mode = 2
+step = 0.2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("riflecomplete")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(-0.01, 1, 0, 0.0200448, 0.117462, 0.08, 1, 0, 0.0200448, -0.0483531)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pav85"]
 _data = {
 "RESET": SubResource("Animation_68i2q"),
-"idle": SubResource("Animation_6eeri")
+"idle": SubResource("Animation_6eeri"),
+"move": SubResource("Animation_xiy3f"),
+"shoot": SubResource("Animation_rs2ly")
 }
 
 [sub_resource type="Animation" id="Animation_jhgv2"]
@@ -237,7 +270,7 @@ transform = Transform3D(0.791264, 0, 0, 0, 0.59396, 0, 0, 0, 0.703391, 0.31132, 
 visible = false
 
 [node name="riflecomplete" parent="Camera3D/Rifle" index="0"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0, 0.0200448, 0)
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.0350001, 0, 0.0200448, 0)
 
 [node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/Rifle"]
 libraries = {
