@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=225 format=4 uid="uid://txw564016hgy"]
-
+[gd_scene load_steps=220 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="1_yd3bh"]
@@ -43,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://biqw5pexpt1pg" path="res://textures/metalbase(walls)/metal-siding-base_roughness.png" id="37_wt8lh"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="40_mrqha"]
 [ext_resource type="AudioStream" uid="uid://c42vmaf4d2f3e" path="res://audio/Background Main.ogg" id="41_g10px"]
-[ext_resource type="PackedScene" uid="uid://i0kugr6d80t7" path="res://newcontrl.tscn" id="42_rxpww"]
+[ext_resource type="PackedScene" path="res://newcontrl.tscn" id="42_rxpww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)

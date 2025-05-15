@@ -185,6 +185,7 @@ func _physics_process(delta):
 		shoot()
 		anim_player.stop()
 		anim_player.play("shoot")
+		rifle_anim_player.play ("shoot")
 		gunshot.play()
 		muzzle_flash.restart()
 		muzzle_flash.emitting = true
@@ -213,6 +214,7 @@ func _physics_process(delta):
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
+		rifle_anim_player.play ("move")
 	else:
 		anim_player.play("idle")
 		rifle_anim_player.play("idle")
