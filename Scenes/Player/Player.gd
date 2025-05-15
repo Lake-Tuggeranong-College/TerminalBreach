@@ -20,7 +20,7 @@ var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
 var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
-var can_switch_weapon = true
+
 
 var ammo = 16
 var ammo_rifle =20
@@ -52,13 +52,7 @@ func take_damageP(amount) -> void:
 	health -= amount
 #	print("damage taken")
 	if health <= 0:
-#		print("Game Over!")
-		# Reset the player's health and position
-		#health = max_health
-		#position = Vector3.ZERO
-		# Emit the health_changed signal with the reset health value
-		#health_changed.emit(health)
-		#start_reload()
+
 		get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
@@ -102,18 +96,7 @@ func _ready():
 	if is_ready and ammo_counter:
 		update_ammo_counter()	
 	
-#func switch_weapon(weapon_name : String):
-#	if weapons.has(weapon_name):
-		#if current_weapon:
-		#	$Camera3D/Pistol.hide()
-			#weapon_holder.remove_child(current_weapon)
-			#current_weapon.queue_free()
-		
-		#current_weapon = weapons[weapon_name].duplicate()
-		#weapon_holder.add_child(current_weapon)
-		#print("switch")
 
-#
 
 func update_ammo_counter():
 	if ammo_counter:
@@ -145,33 +128,20 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
-#		anim_player.stop()
-#		anim_player.play("shoot")
-#		gunshot.play()
-#		muzzle_flash.restart()
-#		muzzle_flash.emitting = true
-#		can_shoot = false
-#		#and anim_player.current_animation != "shoot":
-#		await get_tree().create_timer(shoot_cooldown_pistol).timeout
-#		can_shoot = true
-#		update_ammo_counter()
-	if event is InputEventKey and event.pressed:
-		if Input.is_action_just_pressed("rifle") and not is_reloading:
-			if weapon_switch == 0: #switch weapon to the rifle
-				$Camera3D/Pistol.hide()
-				$Camera3D/Rifle.show()
-				weapon_switch = 1
-				var shoot_cooldown = 0.1
-				update_ammo_counter()
-			elif weapon_switch == 1: #switch weapon to the pistol
-				$Camera3D/Pistol.show()
-				$Camera3D/Rifle.hide()
-				weapon_switch = 0
-				var shoot_cooldown = 0.2
-				#switch_weapon("rifle")
-				#print("Switched weapon")
-				update_ammo_counter()
 
+	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("rifle") and not is_reloading:
+		if weapon_switch == 0: #switch weapon to the rifle
+			$Camera3D/Pistol.hide()
+			$Camera3D/Rifle.show()
+			weapon_switch = 1
+			update_ammo_counter()
+		elif weapon_switch == 1: #switch weapon to the pistol
+			$Camera3D/Pistol.show()
+			$Camera3D/Rifle.hide()
+			weapon_switch = 0
+			#switch_weapon("rifle")
+			#print("Switched weapon")
+			update_ammo_counter()
 
 
 func _physics_process(delta):
@@ -184,18 +154,6 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
 		shoot()
-
-#		anim_player.stop()
-#		anim_player.play("shoot")
-#		gunshot.play()
-#		muzzle_flash.restart()
-#		muzzle_flash.emitting = true
-#		can_shoot = false
-#		#and anim_player.current_animation != "shoot":
-#		await get_tree().create_timer(shoot_cooldown_rifle).timeout
-#		can_shoot = true
-#		update_ammo_counter()
-
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -305,17 +263,6 @@ func shoot():
 	# Update the ammo counter
 	update_ammo_counter()
 
-
-
-func reset_ammo_with_delay() -> void:
-	# Wait for the specified delay
-	await get_tree().create_timer(reload_time).timeout
-	
-	# After the delay, reset ammo to 1
-	ammo = 16
-
-
-
 func start_reload():
 	is_reloading = true
 	if ammo_counter:
@@ -330,8 +277,6 @@ func start_reload():
 		ammo_rifle = 20  # Reset ammo after reload
 	update_ammo_counter()  # Update the counter after reload
 	is_reloading = false
-
-
 
 func show_hitmarker():
 	if hitmarker:
