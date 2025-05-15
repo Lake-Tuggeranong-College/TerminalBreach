@@ -140,7 +140,7 @@ func _unhandled_input(event):
 		
 
 	# Detect the reload key (R key)
-	if Input.is_action_just_pressed("reload") and not is_reloading and ammo < 16:
+	if Input.is_action_just_pressed("reload") and not is_reloading:
 		start_reload()
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
@@ -276,7 +276,7 @@ func shoot():
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
 	can_shoot = true
 	
-	if ammo > 0:
+	if ammo > 0 and weapon_switch == 0:
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.global_transform = bullet_spawn.global_transform
@@ -287,13 +287,22 @@ func shoot():
 		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 		# Decrease ammo by 1
-		if weapon_switch == 0:
-			ammo -= 1
-		elif weapon_switch == 1:
-			ammo_rifle -= 1
+		ammo -= 1
+	elif ammo_rifle > 0 and weapon_switch == 1:
+		var bullet = bullet_scene.instantiate()
+		get_tree().root.add_child(bullet)
+		bullet.global_transform = bullet_spawn.global_transform
+		bullet.scale = Vector3(0.1, 0.1, 0.1)
+		
 
-		# Update the ammo counter
-		update_ammo_counter()
+		# Connect bullet collision to hitmarker function
+		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+
+		# Decrease ammo_rifle by 1
+		ammo_rifle -= 1
+
+	# Update the ammo counter
+	update_ammo_counter()
 
 
 
