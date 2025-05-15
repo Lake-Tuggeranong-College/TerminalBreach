@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=225 format=4 uid="uid://txw564016hgy"]
-
+[gd_scene load_steps=220 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="1_yd3bh"]
