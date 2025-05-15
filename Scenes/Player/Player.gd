@@ -265,6 +265,7 @@ func shoot():
 	# If ammo is greater than 0, proceed with shooting
 	anim_player.stop()
 	anim_player.play("shoot")
+	rifle_anim_player.play("shoot")
 	gunshot.play()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
