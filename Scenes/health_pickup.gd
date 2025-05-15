@@ -30,7 +30,7 @@ func _on_body_entered(body: Node3D) -> void:
 	#in more simple terms, the player gains 20 health if they collide with the pickup
 	#the pickup then disappears
 	if body.has_method("health_pickup"):
-		if body.health < body.max_health - pickup_health_percent * body.max_health: 
+		if body.health < body.max_health: 
 		#print("player collide")
 			body.health_pickup(pickup_health_percent)
 			queue_free()
