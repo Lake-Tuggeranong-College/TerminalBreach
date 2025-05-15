@@ -25,10 +25,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 75.0
-offset_top = 272.0
-offset_right = -705.0
-offset_bottom = -108.0
+offset_left = 157.0
+offset_top = 337.0
+offset_right = -623.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00552, 1.03959)
@@ -36,34 +36,23 @@ script = ExtResource("1_07mw3")
 
 [node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(474.221, 137.755)
+position = Vector2(638.476, 170.259)
 scale = Vector2(1.14467, 1.07512)
 texture = ExtResource("4_asrc3")
 
-[node name="MainMenu" type="PanelContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -49.7508
-offset_top = -312.324
-offset_right = 284.249
-offset_bottom = -119.324
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="MainMenu"]
-layout_mode = 2
-
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 168.072
-offset_top = -201.041
-offset_right = 779.072
-offset_bottom = -62.0408
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -459.987
+offset_top = -397.554
+offset_right = 108.013
+offset_bottom = -339.554
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_eftnw")
 theme_override_font_sizes/font_size = 56
 text = "Terminal Breach"
@@ -72,20 +61,20 @@ vertical_alignment = 1
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
-offset_left = 929.867
-offset_top = 333.785
-offset_right = 1071.87
-offset_bottom = 362.785
+offset_left = 1292.86
+offset_top = 512.702
+offset_right = 1434.87
+offset_bottom = 541.702
 theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Credits"
 
 [node name="?" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = -74.5883
-offset_top = 331.862
-offset_right = -58.5883
-offset_bottom = 362.862
+offset_left = -156.138
+offset_top = 510.778
+offset_right = -140.138
+offset_bottom = 541.778
 text = "?"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -95,11 +84,13 @@ autoplay = true
 parameters/looping = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 322.249
-offset_top = -44.324
-offset_right = 656.249
-offset_bottom = 148.676
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -334.0
+offset_bottom = 193.0
+grow_horizontal = 0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
@@ -125,6 +116,7 @@ theme_override_fonts/font = SubResource("FontVariation_q3ytf")
 text = "Quit"
 
 [node name="Transition" parent="." instance=ExtResource("6_tbhif")]
+visible = false
 position = Vector2(-74.5884, -258.756)
 
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]

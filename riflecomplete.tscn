@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44cpgyxkkeqg"]
+
+[ext_resource type="PackedScene" uid="uid://carig0omq7672" path="res://models/riflecomplete.blend" id="1_xauy2"]
+
+[node name="riflecomplete" instance=ExtResource("1_xauy2")]
+
+[node name="Plane_017" parent="." index="2"]
+transform = Transform3D(0, -0.487491, 0, 0.309053, 0, 0, 0, 0, -0.309053, -0.224643, 1.61469, 6.56638)
