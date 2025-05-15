@@ -249,7 +249,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4161, -0.130484)
 
 [node name="Pistol" parent="Camera3D" instance=ExtResource("5_ikpur")]
 transform = Transform3D(0.005, 0, 0, 0, 0.00499952, 6.94618e-05, 0, -6.94618e-05, 0.00499952, 0.300754, -0.339554, -0.478369)
-visible = false
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/Pistol"]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)
@@ -268,6 +267,7 @@ collision_mask = 2
 
 [node name="Rifle" parent="Camera3D" instance=ExtResource("7_hb2iv")]
 transform = Transform3D(0.791264, 0, 0, 0, 0.59396, 0, 0, 0, 0.703391, 0.31132, -0.19584, -0.519724)
+visible = false
 
 [node name="riflecomplete" parent="Camera3D/Rifle" index="0"]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.0350001, 0, 0.0200448, 0)

@@ -20,6 +20,7 @@ var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
 var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
+var can_switch_weapon = true
 
 var ammo = 16
 var ammo_rifle =20
@@ -144,18 +145,18 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
-		anim_player.stop()
-		anim_player.play("shoot")
-		gunshot.play()
-		muzzle_flash.restart()
-		muzzle_flash.emitting = true
-		can_shoot = false
-		#and anim_player.current_animation != "shoot":
-		await get_tree().create_timer(shoot_cooldown_pistol).timeout
-		can_shoot = true
-		update_ammo_counter()
+#		anim_player.stop()
+#		anim_player.play("shoot")
+#		gunshot.play()
+#		muzzle_flash.restart()
+#		muzzle_flash.emitting = true
+#		can_shoot = false
+#		#and anim_player.current_animation != "shoot":
+#		await get_tree().create_timer(shoot_cooldown_pistol).timeout
+#		can_shoot = true
+#		update_ammo_counter()
 	if event is InputEventKey and event.pressed:
-		if Input.is_action_just_pressed("rifle"):
+		if Input.is_action_just_pressed("rifle") and not is_reloading:
 			if weapon_switch == 0: #switch weapon to the rifle
 				$Camera3D/Pistol.hide()
 				$Camera3D/Rifle.show()
@@ -183,17 +184,18 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
 		shoot()
-		anim_player.stop()
-		anim_player.play("shoot")
-		rifle_anim_player.play ("shoot")
-		gunshot.play()
-		muzzle_flash.restart()
-		muzzle_flash.emitting = true
-		can_shoot = false
-		#and anim_player.current_animation != "shoot":
-		await get_tree().create_timer(shoot_cooldown_rifle).timeout
-		can_shoot = true
-		update_ammo_counter()
+
+#		anim_player.stop()
+#		anim_player.play("shoot")
+#		gunshot.play()
+#		muzzle_flash.restart()
+#		muzzle_flash.emitting = true
+#		can_shoot = false
+#		#and anim_player.current_animation != "shoot":
+#		await get_tree().create_timer(shoot_cooldown_rifle).timeout
+#		can_shoot = true
+#		update_ammo_counter()
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -261,6 +263,19 @@ func toggle_crouch():
 
 func shoot():
 	# If ammo is greater than 0, proceed with shooting
+	anim_player.stop()
+	anim_player.play("shoot")
+	gunshot.play()
+	muzzle_flash.restart()
+	muzzle_flash.emitting = true
+	can_shoot = false
+	#and anim_player.current_animation != "shoot":
+	if weapon_switch ==0:
+		await get_tree().create_timer(shoot_cooldown_pistol).timeout
+	elif weapon_switch ==1:
+		await get_tree().create_timer(shoot_cooldown_rifle).timeout
+	can_shoot = true
+	
 	if ammo > 0:
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
