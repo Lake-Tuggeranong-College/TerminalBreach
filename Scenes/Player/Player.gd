@@ -5,6 +5,7 @@ signal health_changed(health_value)
 @onready var camera = $Camera3D
 @onready var anim_player = $AnimationPlayer
 @onready var rifle_anim_player = $Camera3D/Rifle/RifleAnimationPlayer
+@onready var player_anim_player = $Camera3D/man/AnimationPlayer
 @onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 @onready var gunshot = $gunshot
@@ -175,8 +176,10 @@ func _physics_process(delta):
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		anim_player.play("move")
 		rifle_anim_player.play ("move")
+		player_anim_player.play("move-Legacy Slot_001")
 	else:
 		anim_player.play("idle")
+		player_anim_player.play("idle")
 		rifle_anim_player.play("idle")
 
 	move_and_slide()
@@ -188,6 +191,7 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		anim_player.play("idle")
 		rifle_anim_player.play("idle")
+		player_anim_player.play("Idle")
 		
 # Called every frame
 func _process(delta: float):
@@ -224,6 +228,7 @@ func shoot():
 	anim_player.stop()
 	anim_player.play("shoot")
 	rifle_anim_player.play("shoot")
+	player_anim_player.play("shoot")
 	gunshot.play()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
