@@ -152,7 +152,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
+	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1 and is_reloading == false:
 		shoot()
 
 	# Handle Jump.
