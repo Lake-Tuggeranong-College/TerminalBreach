@@ -28,6 +28,7 @@ var ammo_rifle =20
 
 var reload_time = 3
 var is_reloading = false
+var is_shooting = true
 var weapons = {}
 var current_weapon = null
 
@@ -153,7 +154,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 		
-	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1:
+	if Input.is_action_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 1 and is_reloading == false:
 		shoot()
 
 	# Handle Jump.

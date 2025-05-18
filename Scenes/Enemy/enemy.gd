@@ -13,6 +13,7 @@ var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
 var health = 100
+signal death
 
 #enemy gravity
 var speed = 5.0
@@ -72,7 +73,7 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("Armature_001|mixamo_com|Layer0_001")
+		anim.play("DONTUSE")
 		gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
@@ -135,3 +136,13 @@ func detected_player():
 	player_detected = true
 	#print("player detected")
 	#print(player_detected)
+	
+
+func die():
+	emit_signal("death")
+	queue_free()
+
+
+func _on_death() -> void:
+	emit_signal("death")
+	queue_free()

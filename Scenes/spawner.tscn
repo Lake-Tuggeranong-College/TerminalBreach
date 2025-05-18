@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c43tfk8mpm0lp"]
+
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_j54vq"]
+[ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="2_q3vvh"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_j54vq")
+enemy_scene = ExtResource("2_q3vvh")
+spawn_radius = 10.03
+wave_increment = 5
