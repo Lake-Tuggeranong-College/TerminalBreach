@@ -27,6 +27,7 @@ var ammo_rifle =20
 
 var reload_time = 3
 var is_reloading = false
+var is_shooting = true
 var weapons = {}
 var current_weapon = null
 

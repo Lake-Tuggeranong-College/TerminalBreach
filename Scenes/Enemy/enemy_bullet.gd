@@ -1,12 +1,14 @@
 extends Area3D
-
+#@export var lifetime: float = 5.0
 @export var speed: float = 50.0
 @export var bullet_scene = "res://Scenes/bullet.tscn"
 
-#func _ready(delta):
+#func _ready():
+	#set_timer(lifetime)
 	# Apply an initial velocity in the forward direction
 #	linear_velocity = transform.basis.z * -speed
 #	global_transform.origin -= transform.basis.z.normalized() * speed * delta
+
 
 func _process (delta):
 	# move the bullet forwards
@@ -25,4 +27,8 @@ func _on_body_entered(body):
 		body.take_damageP(20)
 
 	queue_free()
-	
+
+#func set_timer(time: float):
+	##await(get_tree().create_timer(time), "timeout")
+	#var timer = get_tree().create_timer(time)
+	#queue_free()

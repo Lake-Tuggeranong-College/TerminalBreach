@@ -233,7 +233,7 @@ bones/62/rotation = Quaternion(0.721693, 0.183764, -0.0489448, 0.665578)
 bones/63/rotation = Quaternion(0.395295, 0.0594246, -0.019514, 0.916422)
 
 [node name="AnimationPlayer" parent="enemymodel" index="1"]
-autoplay = "Armature|mixamo_com|Layer0"
+autoplay = "EnemyIdle"
 
 [node name="Pistol" parent="enemymodel" instance=ExtResource("2_u1s3k")]
 transform = Transform3D(-0.435252, 0, 1.92928e-07, 0, 0.639167, 0, -3.80511e-08, 0, -2.20683, -0.0386105, 1.33318, 0.537808)
@@ -277,6 +277,7 @@ libraries = {
 "": SubResource("AnimationLibrary_mudx8")
 }
 
+[connection signal="death" from="." to="." method="_on_death"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="enemymodel"]
