@@ -5,10 +5,12 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var hud = $CanvasLayer/HUD
 @onready var health_bar = $CanvasLayer/HUD/HealthBar
 @onready var environment = $NavigationRegion3D
+@onready var wave_label = $CanvasLayer/HUD/Enemies
+@onready var hitmarker = $CanvasLayer/HUD/Hitmarker
 var player
 var tracked = false
 
-@onready var hitmarker = $CanvasLayer/HUD/Hitmarker
+
 
 
 func _ready():

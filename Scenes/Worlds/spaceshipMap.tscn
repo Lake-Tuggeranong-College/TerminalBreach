@@ -841,6 +841,11 @@ offset_bottom = 461.24
 texture = ExtResource("28_os5cx")
 expand_mode = 1
 
+[node name="Enemies" type="Label" parent="CanvasLayer/HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
 spawn_path = NodePath("../spawn_point")
 
