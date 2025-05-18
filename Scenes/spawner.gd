@@ -2,16 +2,15 @@ extends Node3D
 
 @export var enemy_scene: PackedScene
 @export var spawn_interval: float = 1.0
-@export var spawn_radius: float = 10.0
+@export var spawn_radius: float = 100
 @export var enemies_per_wave_base: int = 5
 @export var wave_increment: int = 2
-
+@onready var Enemies = $CanvasLayer/HUD/Enemies
 var current_wave: int = 0
 var enemies_to_spawn: int = 0
 var enemies_spawned: int = 0
 
 var spawn_timer: Timer
-var wave_label: Label3D
 
 func _ready():
 	spawn_timer = Timer.new()
@@ -19,13 +18,12 @@ func _ready():
 	spawn_timer.timeout.connect(spawn_enemy)
 	spawn_timer.one_shot = false
 	add_child(spawn_timer)
+	var hud = null
 
-	wave_label = Label3D.new()
-	wave_label.text = "Wave: 0 | Enemies: 0"
-	wave_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	wave_label.top_level = true
-	wave_label.transform.origin = Vector3(0, 3, 0)  # adjust height as needed
-	add_child(wave_label)
+	hud = get_tree().get_first_node_in_group("hud")
+	if hud:
+		print("HUD found:", hud)
+		Enemies = hud.get_node_or_null("Enemies")
 
 	start_next_wave()
 
@@ -62,7 +60,7 @@ func monitor_enemies():
 
 func update_wave_label():
 	var alive = get_tree().get_nodes_in_group("enemy").size()
-	wave_label.text = "Wave: %d | Enemies: %d" % [current_wave, alive]
+	Enemies.text = "Wave: %d | Enemies: %d" % [current_wave, alive]
 
 func get_random_position() -> Vector3:
 	var random_dir = Vector3(
