@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://i0kugr6d80t7"]
+[gd_scene load_steps=19 format=3 uid="uid://i0kugr6d80t7"]
 
 [ext_resource type="PackedScene" uid="uid://bk7jwi4rf70bl" path="res://models/controlpanel.blend" id="1_p2gca"]
+[ext_resource type="Texture2D" uid="uid://cyffix7w2r76m" path="res://images/file-20240719-17-gjpv8o.png" id="2_b0w37"]
 [ext_resource type="Texture2D" uid="uid://cowcipyi6tuhp" path="res://images/button-panel-of-the-control-panel-of-a-machine-with-different-push-buttons-and-selectors-emergency-stop-and-colored-alarm-lights-high-tension-2E9B9KD.jpg" id="2_sd2e5"]
 [ext_resource type="Texture2D" uid="uid://d0d5ifd4f7r1e" path="res://images/keyboard_405.png" id="3_j4hhg"]
 [ext_resource type="Texture2D" uid="uid://bp24m4pnq2xw" path="res://images/big-red-button-saying-do-not-press-gray-background-close-up-large-shiny-red-button-words-do-not-press-368338544.webp" id="4_2dov0"]
 [ext_resource type="Texture2D" uid="uid://di3xrrkt7dgb1" path="res://pc-mouse-png-image--comdlpng6949017.jpg" id="5_wqxck"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l8y5p"]
-load_path = "res://.godot/imported/file-20240719-17-gjpv8o.png-e1bd4482ec36200df9b6317517abd4a7.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68cr4"]
-albedo_texture = SubResource("CompressedTexture2D_l8y5p")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2dkv"]
+albedo_texture = ExtResource("2_b0w37")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i1pvi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pn867"]
+albedo_texture = ExtResource("2_b0w37")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rx0k"]
 albedo_texture = ExtResource("2_sd2e5")
@@ -44,12 +45,12 @@ material = SubResource("StandardMaterial3D_srr63")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(-2.54956e-08, 1.29947, 0.145322, 4.69024e-08, 0.706378, -0.267338, -1.22129, -1.97862e-16, -1.33006e-08, -0.378095, 1.15604, 1.81381)
-material_override = SubResource("StandardMaterial3D_68cr4")
+material_override = SubResource("StandardMaterial3D_d2dkv")
 mesh = SubResource("PlaneMesh_i1pvi")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(-1.38514e-08, 1.29947, 0.145322, 2.54814e-08, 0.706378, -0.267338, -0.663507, -1.97862e-16, -1.33006e-08, -0.378095, 1.15604, -2.37684)
-material_override = SubResource("StandardMaterial3D_68cr4")
+material_override = SubResource("StandardMaterial3D_pn867")
 mesh = SubResource("PlaneMesh_i1pvi")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="4"]
