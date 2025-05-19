@@ -131,7 +131,7 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
 
-	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("rifle") and not is_reloading:
+	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("weapon_switch") and not is_reloading:
 		if weapon_switch == 0: #switch weapon to the rifle
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
