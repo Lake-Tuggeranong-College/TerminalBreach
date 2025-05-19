@@ -11,44 +11,46 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xk8km"]
 
-[sub_resource type="Gradient" id="Gradient_cfnn0"]
-offsets = PackedFloat32Array(0, 0.141221, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ca30p"]
-gradient = SubResource("Gradient_cfnn0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
-angle_min = 45.0
-angle_max = 45.0
-gravity = Vector3(0, 0, 0)
-color_ramp = SubResource("GradientTexture1D_ca30p")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flg34"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.960784, 0.670588, 1)
-albedo_texture = ExtResource("3_27dhu")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_b2g4i"]
-material = SubResource("StandardMaterial3D_flg34")
-size = Vector2(0.5, 0.5)
-orientation = 2
-
 [sub_resource type="Animation" id="Animation_68i2q"]
 length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("riflecomplete")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.0200448, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, -0.299262, -0.352646, 0.871799)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("riflecomplete")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("riflecomplete:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.00581, 1.29541, -1.6763)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("riflecomplete:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.323334, -0.389822, 0.861007)]
+}
 
 [sub_resource type="Animation" id="Animation_6eeri"]
 resource_name = "idle"
@@ -78,7 +80,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("riflecomplete")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.0666667, 1, -0.00433853, 0.0413296, 0, 0.333333, 1, 0.0579942, 0.119341, 0, 0.566667, 1, -0.011234, 0.0621722, 0, 0.833333, 1, -0.102425, 0.149793, 0)
+tracks/0/keys = PackedFloat32Array(0.0666667, 1, -0.00433853, 0.0413296, 0, 0.266667, 1, 0.0947214, 0.185401, 0, 0.5, 1, -0.0422634, 0.0895565, -0.0647498, 0.7, 1, -0.154636, 0.129714, -0.0215833, 0.866667, 1, -0.154942, 0.14377, -0.0419586)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -108,60 +110,89 @@ _data = {
 "shoot": SubResource("Animation_rs2ly")
 }
 
+[sub_resource type="Gradient" id="Gradient_cfnn0"]
+offsets = PackedFloat32Array(0, 0.141221, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ca30p"]
+gradient = SubResource("Gradient_cfnn0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
+angle_min = 45.0
+angle_max = 45.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_ca30p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flg34"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.960784, 0.670588, 1)
+albedo_texture = ExtResource("3_27dhu")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b2g4i"]
+material = SubResource("StandardMaterial3D_flg34")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
 [sub_resource type="Animation" id="Animation_jhgv2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/Pistol:rotation")
+tracks/0/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.0138928, 0, 0)]
+"values": [Vector3(1.1394, 2.52446, 2.25795)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D/Pistol:position")
+tracks/1/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.300754, -0.339554, -0.478369)]
+"values": [Vector3(-0.0160332, 2.92707, 0.0545053)]
 }
 
 [sub_resource type="Animation" id="Animation_knepc"]
 resource_name = "idle"
-length = 0.75
+length = 0.001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/Pistol:position")
+tracks/0/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.300754, -0.339554, -0.478369), Vector3(0.300754, -0.372277, -0.478369), Vector3(0.300754, -0.339554, -0.478369)]
+"values": [Vector3(-0.240036, 2.97831, -0.209825)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D/Pistol:rotation")
+tracks/1/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(1.19706, 2.4228, 2.14192)]
 }
 
 [sub_resource type="Animation" id="Animation_qcgne"]
@@ -171,7 +202,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/Pistol:position")
+tracks/0/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -183,7 +214,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D/Pistol:rotation")
+tracks/1/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -199,7 +230,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/Pistol:rotation")
+tracks/0/path = NodePath("Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -246,36 +277,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287798, 1.13315, -0.578018)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4161, -0.130484)
-
-[node name="Pistol" parent="Camera3D" instance=ExtResource("5_ikpur")]
-transform = Transform3D(0.005, 0, 0, 0, 0.00499952, 6.94618e-05, 0, -6.94618e-05, 0.00499952, 0.300754, -0.339554, -0.478369)
-
-[node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/Pistol"]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)
-emitting = false
-amount = 1
-lifetime = 0.25
-one_shot = true
-local_coords = true
-process_material = SubResource("ParticleProcessMaterial_uu53b")
-draw_pass_1 = SubResource("PlaneMesh_b2g4i")
-
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D/Pistol"]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -96.6821, 72.0505, 121.758)
-target_position = Vector3(0, 0, -50)
-collision_mask = 2
-
-[node name="Rifle" parent="Camera3D" instance=ExtResource("7_hb2iv")]
-transform = Transform3D(0.791264, 0, 0, 0, 0.59396, 0, 0, 0, 0.703391, 0.31132, -0.19584, -0.519724)
-visible = false
-
-[node name="riflecomplete" parent="Camera3D/Rifle" index="0"]
-transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.0350001, 0, 0.0200448, 0)
-
-[node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/Rifle"]
-libraries = {
-"": SubResource("AnimationLibrary_pav85")
-}
 
 [node name="bulletSpawn" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.999903, 7.31055e-05, 0.013962, 0, 0.999986, -0.00523596, -0.0139622, 0.00523545, 0.999889, 0.501696, -0.200336, -0.749963)
@@ -353,6 +354,41 @@ bones/30/scale = Vector3(1, 1, 1)
 bones/31/rotation = Quaternion(-0.194935, 0.00585265, 0.848797, 0.491436)
 bones/31/scale = Vector3(1, 1, 1)
 
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/man/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.556935, 0.425347, -0.713374, -0.795479, 0.0261961, -0.605415, -0.238824, 0.904651, 0.352944, 1.42465, -0.830766, 4.20374)
+bone_name = "L.Wrist"
+bone_idx = 2
+
+[node name="Rifle" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("7_hb2iv")]
+transform = Transform3D(6.76202, -3.03546, -0.648764, -4.02045, -5.10537, 0.385731, -0.849066, -3.4573e-08, -6.9933, 2.06209, -1.80717, 6.91393)
+visible = false
+
+[node name="riflecomplete" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle" index="0"]
+transform = Transform3D(0.0272867, 0.0124599, 0.018033, -0.0186349, -0.0019733, 0.029561, 0.0115403, -0.0326475, 0.00509555, -0.323334, -0.389822, 0.861007)
+
+[node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle"]
+libraries = {
+"": SubResource("AnimationLibrary_pav85")
+}
+
+[node name="Pistol" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("5_ikpur")]
+transform = Transform3D(0.0461854, 0.01485, 0.0120988, 0.0161622, -0.0132621, -0.0454192, -0.0102803, 0.045865, -0.0170504, -0.0160332, 2.92707, 0.0545053)
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_uu53b")
+draw_pass_1 = SubResource("PlaneMesh_b2g4i")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -96.6821, 72.0505, 121.758)
+target_position = Vector3(0, 0, -50)
+collision_mask = 2
+
 [node name="AnimationPlayer" parent="Camera3D/man" index="2"]
 autoplay = "move-Legacy Slot_001"
 
@@ -377,5 +413,5 @@ visible = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
-[editable path="Camera3D/Rifle"]
 [editable path="Camera3D/man"]
+[editable path="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle"]
