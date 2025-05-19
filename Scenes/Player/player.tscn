@@ -268,6 +268,7 @@ collision_mask = 2
 [node name="Rifle" parent="Camera3D" instance=ExtResource("7_hb2iv")]
 transform = Transform3D(0.791264, 0, 0, 0, 0.59396, 0, 0, 0, 0.703391, 0.31132, -0.19584, -0.519724)
 visible = false
+script = null
 
 [node name="riflecomplete" parent="Camera3D/Rifle" index="0"]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.0350001, 0, 0.0200448, 0)
