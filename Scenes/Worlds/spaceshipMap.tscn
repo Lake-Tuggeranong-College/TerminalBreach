@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=243 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -841,6 +841,14 @@ size = Vector2(0.425, 3.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xs0c6"]
 data = PackedVector3Array(0.2125, 0, 1.75, -0.2125, 0, 1.75, 0.2125, 0, -1.75, -0.2125, 0, 1.75, -0.2125, 0, -1.75, 0.2125, 0, -1.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iypap"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8opo5"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iuhdj"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="SpaceshipMap" type="Node3D"]
 process_mode = 1
@@ -2599,11 +2607,30 @@ mesh = SubResource("PlaneMesh_1h3j2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight31/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
-[node name="controlpanel" type="Node3D" parent="."]
-transform = Transform3D(0.904854, -1.5821e-07, 0, 1.5821e-07, 0.904854, 0, 0, 0, 0.904854, -2.96738, 0.677676, 38.301)
+[node name="ControlPanel" type="Node" parent="Extra Models"]
 
-[node name="controlpanel2" parent="." instance=ExtResource("42_rxpww")]
+[node name="controlpanel" parent="Extra Models/ControlPanel" instance=ExtResource("42_rxpww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06094, 0.602557, 38.0985)
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Extra Models/ControlPanel/controlpanel"]
+transform = Transform3D(1.99565, 0, 0, 0, 1.46224, 0, 0, 0, 6.30568, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_iypap")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/ControlPanel/controlpanel/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/ControlPanel/controlpanel/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8opo5")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Extra Models/ControlPanel/controlpanel"]
+transform = Transform3D(0.716386, 0, 0, 0, 0.631136, 0, 0, 0, 6.30568, -0.698895, 1.18619, 0)
+visible = false
+mesh = SubResource("BoxMesh_iypap")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/ControlPanel/controlpanel/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/ControlPanel/controlpanel/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_iuhdj")
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.90359, -1.57298)
