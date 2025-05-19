@@ -3,10 +3,10 @@ extends CharacterBody3D
 signal health_changed(health_value)
 
 @onready var camera = $Camera3D
-@onready var anim_player = $AnimationPlayer
-@onready var rifle_anim_player = $Camera3D/Rifle/RifleAnimationPlayer
+#@onready var anim_player = $AnimationPlayer
+#@onready var rifle_anim_player = $Camera3D/Rifle/RifleAnimationPlayer
 @onready var player_anim_player = $Camera3D/man/AnimationPlayer
-@onready var muzzle_flash = $Camera3D/Pistol/MuzzleFlash
+@onready var muzzle_flash = $Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 @onready var gunshot = $gunshot
 @export var crouch_height : float = 1.5  # Crouched height
@@ -133,13 +133,13 @@ func _unhandled_input(event):
 
 	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("rifle") and not is_reloading:
 		if weapon_switch == 0: #switch weapon to the rifle
-			$Camera3D/Pistol.hide()
-			$Camera3D/Rifle.show()
+			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
+			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
 			weapon_switch = 1
 			update_ammo_counter()
 		elif weapon_switch == 1: #switch weapon to the pistol
-			$Camera3D/Pistol.show()
-			$Camera3D/Rifle.hide()
+			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.show()
+			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.hide()
 			weapon_switch = 0
 			#switch_weapon("rifle")
 			#print("Switched weapon")
@@ -172,16 +172,16 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
-	if anim_player.current_animation == "shoot":
+	if player_anim_player.current_animation == "shoot":
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
-		anim_player.play("move")
-		rifle_anim_player.play ("move")
+		#anim_player.play("move")
+		#rifle_anim_player.play ("move")
 		player_anim_player.play("move-Legacy Slot_001")
 	else:
-		anim_player.play("idle")
+		#anim_player.play("idle")
 		player_anim_player.play("idle")
-		rifle_anim_player.play("idle")
+		#rifle_anim_player.play("idle")
 
 	move_and_slide()
 	
@@ -190,8 +190,8 @@ func _physics_process(delta):
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
-		anim_player.play("idle")
-		rifle_anim_player.play("idle")
+		#anim_player.play("idle")
+		#rifle_anim_player.play("idle")
 		player_anim_player.play("Idle")
 		
 # Called every frame
@@ -226,9 +226,9 @@ func toggle_crouch():
 
 func shoot():
 	# If ammo is greater than 0, proceed with shooting
-	anim_player.stop()
-	anim_player.play("shoot")
-	rifle_anim_player.play("shoot")
+	#anim_player.stop()
+	#anim_player.play("shoot")
+	#rifle_anim_player.play("shoot")
 	player_anim_player.play("shoot")
 	gunshot.play()
 	muzzle_flash.restart()
