@@ -119,7 +119,20 @@ func _on_timer_timeout():
 		shoot_bullet()
 
 
-func take_damageE(damage_amount):
+func take_damageEpistol(damage_amount):
+	health -= damage_amount
+	if Global.player != null and player_detected == false:
+		detected_player()
+	if health <=0:
+		var health_pickup_instance = health_pickup_scene.instantiate()
+		
+		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
+		
+		get_tree().current_scene.add_child(health_pickup_instance)
+		
+		queue_free()
+
+func take_damageErifle(damage_amount):
 	health -= damage_amount
 	if Global.player != null and player_detected == false:
 		detected_player()

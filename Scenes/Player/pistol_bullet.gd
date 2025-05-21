@@ -1,7 +1,7 @@
 extends Area3D
 signal enemy_hit
 var speed: float = 75.0
-var damage: int = 20
+var damage: int = 75
 @export var lifetime: float = 5.0
 var ccd_enabled = true
 var direction: Vector3
@@ -39,9 +39,9 @@ func _on_body_entered(body):
 #	print("bullet hit")
 #	print (body.name)
 
-	if body.has_method("take_damageE"):
+	if body.has_method("take_damageEpistol"):
 #		print("ow")
-		body.take_damageE(damage)
+		body.take_damageEpistol(damage)
 
 		enemy_hit.emit()
 		destroy()
