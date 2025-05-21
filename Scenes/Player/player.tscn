@@ -364,7 +364,7 @@ transform = Transform3D(6.76202, -3.03546, -0.648764, -4.02045, -5.10537, 0.3857
 visible = false
 
 [node name="riflecomplete" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle" index="0"]
-transform = Transform3D(0.0272866, 0.0124599, 0.0180331, -0.018635, -0.00197339, 0.0295609, 0.0115404, -0.0326475, 0.00509554, -0.323334, -0.389822, 0.861007)
+transform = Transform3D(0.0272866, 0.0124599, 0.0180331, -0.018635, -0.00197339, 0.0295609, 0.0115404, -0.0326475, 0.00509553, -0.323334, -0.389822, 0.861007)
 
 [node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle"]
 libraries = {
@@ -372,7 +372,7 @@ libraries = {
 }
 
 [node name="Pistol" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("5_ikpur")]
-transform = Transform3D(0.0461854, 0.0148499, 0.0120989, 0.0161622, -0.0132621, -0.0454191, -0.0102803, 0.045865, -0.0170505, -0.0160332, 2.92707, 0.0545053)
+transform = Transform3D(0.0461854, 0.0148499, 0.0120988, 0.0161622, -0.0132621, -0.0454191, -0.0102803, 0.045865, -0.0170505, -0.0160332, 2.92707, 0.0545053)
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol"]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)

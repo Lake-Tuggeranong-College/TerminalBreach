@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cakea5axg6wb3"]
 
-[ext_resource type="Script" path="res://Scenes/Player/player_bullet.gd" id="1_rafk8"]
+[ext_resource type="Script" path="res://Scenes/Player/pistol_bullet.gd" id="1_0j20g"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5ux0h"]
 
@@ -8,10 +8,11 @@
 albedo_color = Color(0.533333, 0.0313726, 0.0313726, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.03
 
-[node name="playerBullet" type="Area3D"]
-transform = Transform3D(4.37107e-08, -0.999985, -0.00556765, -2.43368e-10, 0.00556765, -0.999985, 1, 4.37114e-08, 1.93782e-15, 0, 0, 0)
-script = ExtResource("1_rafk8")
+[node name="pistolBullet" type="Area3D"]
+transform = Transform3D(4.37107e-08, -1.00396, -0.0015925, -2.43368e-10, 0.00558978, -0.286022, 1, 4.38852e-08, 5.54268e-16, 0, 0, 0)
+script = ExtResource("1_0j20g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.29742, 8.71895e-08, -7.10543e-15, -7.10543e-15, -8.84756e-08, -2.1817, -1.00206e-07, 1.99899, -9.59262e-08, 0, 0, 0)
