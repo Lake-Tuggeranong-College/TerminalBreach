@@ -2635,3 +2635,16 @@ shape = SubResource("ConcavePolygonShape3D_iuhdj")
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.90359, -1.57298)
 spawn_radius = 1.0
+spawn_points = Array[NodePath]([NodePath("../Spawner2"), NodePath("../Spawner4"), NodePath("../Spawner5"), NodePath("../Spawner3")])
+
+[node name="Spawner5" type="Marker3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 53.8046, 0, 0)
+
+[node name="Spawner4" type="Marker3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.014, 2.45731, 37.9425)
+
+[node name="Spawner3" type="Marker3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.275616, 0, -41.2297)
+
+[node name="Spawner2" type="Marker3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 0.457, 0, 0, 0, 0.457, -51.9522, 2.19952, -7.76313)

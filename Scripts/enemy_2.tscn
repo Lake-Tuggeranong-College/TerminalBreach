@@ -1,0 +1,157 @@
+[gd_scene load_steps=17 format=3 uid="uid://cf5svrlaeo53y"]
+
+[ext_resource type="Script" path="res://enemy_2.gd" id="1_pw4t4"]
+[ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="2_0h7bw"]
+[ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_ys0j2"]
+[ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="4_00p7u"]
+[ext_resource type="AudioStream" uid="uid://cyp0dip0hu5qd" path="res://audio/gunshot.ogg" id="5_k8k24"]
+[ext_resource type="PackedScene" uid="uid://ckxre2ux3i824" path="res://enemy_2.tscn" id="6_8g2ha"]
+
+[sub_resource type="GDScript" id="GDScript_t1skp"]
+script/source = "extends Node3D
+
+#@onready var nav_agent = $NavigationAgent3D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Gradient" id="Gradient_or8bq"]
+offsets = PackedFloat32Array(0, 0.141221, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_is51c"]
+gradient = SubResource("Gradient_or8bq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rw2b2"]
+angle_min = 45.0
+angle_max = 45.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_is51c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4smqo"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.960784, 0.670588, 1)
+albedo_texture = ExtResource("3_ys0j2")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8vdlg"]
+material = SubResource("StandardMaterial3D_4smqo")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7x2r"]
+
+[sub_resource type="Animation" id="Animation_d17cx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemymodel/Pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0386105, 1.33318, 0.537808)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyrifle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.104136, 0.911454, -0.682338)
+
+[sub_resource type="Animation" id="Animation_30v3c"]
+resource_name = "bob"
+length = 0.75
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemymodel/Pistol:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.366667, 0.566667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0386105, 1.27359, 0.537808), Vector3(-0.0386105, 1.30742, 0.537808), Vector3(-0.0386105, 1.22834, 0.495484), Vector3(-0.0541507, 1.34137, 0.53161), Vector3(-0.0386105, 1.27359, 0.537808)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("enemyrifle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.104136, 0.911454, -0.682338, 0.166667, 1, 0.104136, 0.945904, -0.682338, 0.3, 1, 0.104136, 0.865318, -0.682338, 0.433333, 1, 0.104136, 0.94606, -0.682338, 0.533333, 1, 0.104136, 0.978338, -0.682338, 0.6, 1, 0.104136, 0.953565, -0.682338, 0.733333, 1, 0.104136, 0.910885, -0.682338)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mudx8"]
+_data = {
+"RESET": SubResource("Animation_d17cx"),
+"bob": SubResource("Animation_30v3c")
+}
+
+[node name="Enemy2" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_pw4t4")
+
+[node name="Pistol" parent="." instance=ExtResource("2_0h7bw")]
+transform = Transform3D(0.565828, 0, -1.42109e-13, 0, 0.830917, 0, 3.19744e-14, 0, 2.86888, 0.0501936, 0.931614, -0.69915)
+visible = false
+script = SubResource("GDScript_t1skp")
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="Pistol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0588368, -0.313209)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_rw2b2")
+draw_pass_1 = SubResource("PlaneMesh_8vdlg")
+
+[node name="bullet_spawn" type="Node3D" parent="Pistol"]
+transform = Transform3D(1, 2.64698e-23, 3.38813e-21, 0, 0.999962, -0.00872654, 0, 0.00872654, 0.999962, 0, 0, -0.438941)
+
+[node name="enemyrifle" parent="." instance=ExtResource("4_00p7u")]
+transform = Transform3D(0.0242919, -0.000162792, 0.00590574, -0.000341057, 0.0249102, 0.00208951, -0.00589813, -0.00211089, 0.0242024, 0.104136, 0.911454, -0.682338)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.00243455, 0.270049, 0)
+shape = SubResource("CapsuleShape3D_q7x2r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="health_pickup_spawn" type="Node3D" parent="."]
+
+[node name="enemy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_k8k24")
+pitch_scale = 1.01
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mudx8")
+}
+
+[node name="enemy2" parent="." instance=ExtResource("6_8g2ha")]
+transform = Transform3D(1.2, 0, -6.7811e-14, 0, 1.2, 0, 6.7811e-14, 0, 1.2, 0, -0.788791, 0)
+
+[connection signal="death" from="." to="." method="_on_death"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
