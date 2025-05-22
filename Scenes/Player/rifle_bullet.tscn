@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd16edotomxbw"]
+
+[ext_resource type="Script" path="res://Scenes/Player/rifle_bullet.gd" id="1_dcf2g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5ux0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m7wu"]
+albedo_color = Color(0.346858, 0.266607, 0.0180907, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[node name="rifleBullet" type="Area3D"]
+transform = Transform3D(4.37107e-08, -1.00396, -0.0015925, -2.43368e-10, 0.00558978, -0.286022, 1, 4.38852e-08, 5.54268e-16, 0, 0, 0)
+script = ExtResource("1_dcf2g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.29742, 8.71895e-08, -7.10543e-15, -7.10543e-15, -8.84756e-08, -2.1817, -1.00206e-07, 1.99899, -9.59262e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_5ux0h")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, -2.52576e-15, -1.10404e-22, 0, -4.37114e-08, 1, -2.52576e-15, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.991307, -2.91096e-16, -7.10543e-15, -2.15227e-16, 5.16964, -1.86265e-09, -7.10543e-15, 1.86265e-09, 1.00503, 0, 0, 0)
+material = SubResource("StandardMaterial3D_1m7wu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

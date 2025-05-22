@@ -255,7 +255,7 @@ bone_name = "mixamorig_RightHand"
 bone_idx = 34
 
 [node name="enemyrifle" parent="enemymodel/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("5_fla7h")]
-transform = Transform3D(0.0721257, 1.91509, 0.159533, 0.177483, 0.152325, -1.9088, -1.91351, 0.0863139, -0.171033, 2.00537, 23.8453, 6.84997)
+transform = Transform3D(0.0721268, 1.91509, 0.159537, 0.177488, 0.152329, -1.9088, -1.91351, 0.0863158, -0.171038, 2.00537, 23.8453, 6.84997)
 
 [node name="AnimationPlayer" parent="enemymodel" index="1"]
 autoplay = "EnemyIdle"

@@ -5,14 +5,14 @@ extends CharacterBody3D
 @onready var enemy = $enemy
 @onready var pistol = $enemymodel/Pistol # Reference the gun node (pistol) in the enemy scene
 @onready var player = null #get_node("/root/Player")  
-var SPEED = 2
+var SPEED = 5
 const JUMP_VELOCITY = 4.5
 var bullet_scene = preload("res://Scenes/Enemy/enemy_bullet.tscn")
 @export var shooting_offset: Vector3 = Vector3(0, 1, 3)  # Adjust where bullets should spawn
 var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
-var health = 100
+var health = 10
 signal death
 
 #enemy gravity
@@ -73,8 +73,8 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("Armature_001|mixamo_com|Layer0_001")
-		#gunanim.play("bob")
+		anim.play("DONTUSE")
+		gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()
@@ -119,20 +119,7 @@ func _on_timer_timeout():
 		shoot_bullet()
 
 
-func take_damageEpistol(damage_amount):
-	health -= damage_amount
-	if Global.player != null and player_detected == false:
-		detected_player()
-	if health <=0:
-		var health_pickup_instance = health_pickup_scene.instantiate()
-		
-		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
-		
-		get_tree().current_scene.add_child(health_pickup_instance)
-		
-		queue_free()
-
-func take_damageErifle(damage_amount):
+func take_damageE(damage_amount):
 	health -= damage_amount
 	if Global.player != null and player_detected == false:
 		detected_player()
