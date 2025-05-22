@@ -13,7 +13,7 @@ var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
 var health = 100
-signal death
+signal died
 
 #enemy gravity
 var speed = 5.0
@@ -32,7 +32,7 @@ var health_pickup_spawn
 
 
 func _ready() -> void:
-	bullet_spawn = get_node("enemymodel/Pistol/bullet_spawn")
+	bullet_spawn = get_node("enemymodel/Pistol")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
@@ -73,8 +73,8 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("Armature_001|mixamo_com|Layer0_001")
-		gunanim.play("bob")
+		#anim.play("Armature_001|mixamo_com|Layer0_001")
+		#gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()

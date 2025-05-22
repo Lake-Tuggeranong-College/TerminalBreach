@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_j54vq"]
 [ext_resource type="PackedScene" uid="uid://5k1o5ctvtah6" path="res://Scenes/Enemy/enemy.tscn" id="2_q3vvh"]
-[ext_resource type="PackedScene" uid="uid://ckxre2ux3i824" path="res://enemy_2.tscn" id="3_t6ep0"]
+[ext_resource type="PackedScene" uid="uid://cfenm4sv815po" path="res://Scenes/Enemy/enemy_2.tscn" id="3_th6ne"]
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_j54vq")
 enemy_scene = ExtResource("2_q3vvh")
-enemy_scene2 = ExtResource("3_t6ep0")
+enemy_scene2 = ExtResource("3_th6ne")
 spawn_radius = 10.03
 wave_increment = 5

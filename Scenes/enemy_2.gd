@@ -5,15 +5,15 @@ extends CharacterBody3D
 @onready var enemy = $enemy
 @onready var pistol = $enemymodel/Pistol # Reference the gun node (pistol) in the enemy scene
 @onready var player = null #get_node("/root/Player")  
-var SPEED = 5
+var SPEED = 2
 const JUMP_VELOCITY = 4.5
 var bullet_scene = preload("res://Scenes/Enemy/enemy_bullet.tscn")
 @export var shooting_offset: Vector3 = Vector3(0, 1, 3)  # Adjust where bullets should spawn
 var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
-var health = 10
-signal death
+var health = 100
+signal died
 
 #enemy gravity
 var speed = 5.0
@@ -32,7 +32,7 @@ var health_pickup_spawn
 
 
 func _ready() -> void:
-	bullet_spawn = get_node("enemymodel/Pistol/bullet_spawn")
+	bullet_spawn = get_node("Pistol")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
@@ -73,8 +73,8 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("DONTUSE")
-		gunanim.play("bob")
+		#anim.play("Armature_001|mixamo_com|Layer0_001")
+		#gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity
 		move_and_slide()
