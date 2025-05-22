@@ -17,14 +17,15 @@ signal health_changed(health_value)
 
 #player shooting
 var bullet_spawn
-var bullet_scene = preload("res://Scenes/Player/player_bullet.tscn")
+var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
+var rifle_bullet_scene = preload("res://Scenes/Player/rifle_bullet.tscn")
 var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
 
 var ammo = 16
-var ammo_rifle =20
+var ammo_rifle = 20
 
 var reload_time = 3
 var is_reloading = false
@@ -242,26 +243,26 @@ func shoot():
 	can_shoot = true
 	
 	if ammo > 0 and weapon_switch == 0:
-		var bullet = bullet_scene.instantiate()
-		get_tree().root.add_child(bullet)
-		bullet.global_transform = bullet_spawn.global_transform
-		bullet.scale = Vector3(0.1, 0.1, 0.1)
+		var pistol_bullet = pistol_bullet_scene.instantiate()
+		get_tree().root.add_child(pistol_bullet)
+		pistol_bullet.global_transform = bullet_spawn.global_transform
+		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
 		
 
 		# Connect bullet collision to hitmarker function
-		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+		pistol_bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 		# Decrease ammo by 1
 		ammo -= 1
 	elif ammo_rifle > 0 and weapon_switch == 1:
-		var bullet = bullet_scene.instantiate()
-		get_tree().root.add_child(bullet)
-		bullet.global_transform = bullet_spawn.global_transform
-		bullet.scale = Vector3(0.1, 0.1, 0.1)
+		var rifle_bullet = rifle_bullet_scene.instantiate()
+		get_tree().root.add_child(rifle_bullet)
+		rifle_bullet.global_transform = bullet_spawn.global_transform
+		rifle_bullet.scale = Vector3(0.1, 0.1, 0.1)
 		
 
 		# Connect bullet collision to hitmarker function
-		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+		rifle_bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 		# Decrease ammo_rifle by 1
 		ammo_rifle -= 1
