@@ -2722,7 +2722,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06094, 0.602557, 38.0985)
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.90359, -1.57298)
-spawn_radius = 1.0
+spawn_radius = 15.0
 spawn_points = Array[NodePath]([NodePath("../Spawner2"), NodePath("../Spawner4"), NodePath("../Spawner5"), NodePath("../Spawner3")])
 
 [node name="Spawner5" type="Marker3D" parent="."]

@@ -13,7 +13,7 @@ var bullet_instance = 0
 var shoot_timer: Timer
 var bullet_spawn
 var health = 100
-signal death
+signal died
 
 #enemy gravity
 var speed = 5.0
@@ -32,7 +32,7 @@ var health_pickup_spawn
 
 
 func _ready() -> void:
-	bullet_spawn = get_node("enemymodel/Pistol/bullet_spawn")
+	bullet_spawn = get_node("enemymodel/Pistol")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):

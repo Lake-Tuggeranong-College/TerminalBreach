@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cf5svrlaeo53y"]
+[gd_scene load_steps=17 format=3 uid="uid://cfenm4sv815po"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_2.gd" id="1_adg0q"]
+[ext_resource type="Script" path="res://Scenes/enemy_2.gd" id="1_adg0q"]
 [ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="2_kvjue"]
 [ext_resource type="AudioStream" uid="uid://cyp0dip0hu5qd" path="res://audio/gunshot.ogg" id="3_uo0co"]
 [ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="4_hr711"]
@@ -13,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("enemymodel/Pistol:position")
+tracks/0/path = NodePath("Pistol:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +37,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("enemymodel/Pistol:position")
+tracks/0/path = NodePath("Pistol:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,7 +104,9 @@ material = SubResource("StandardMaterial3D_4smqo")
 size = Vector2(0.5, 0.5)
 orientation = 2
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+[sub_resource type="CylinderMesh" id="CylinderMesh_of7us"]
+
+[node name="Enemy2" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_adg0q")
 
 [node name="enemyrifle" parent="." instance=ExtResource("2_kvjue")]
@@ -132,7 +134,7 @@ libraries = {
 }
 
 [node name="Pistol" parent="." instance=ExtResource("4_hr711")]
-transform = Transform3D(0.565828, 0, -1.42109e-13, 0, 0.830917, 0, 3.19744e-14, 0, 2.86888, 0.0501936, 0.931614, -0.69915)
+transform = Transform3D(0.565828, 0, -1.42109e-13, 0, 0.830917, 0, 3.19744e-14, 0, 2.86888, -0.0386105, 1.33318, 0.537808)
 visible = false
 script = SubResource("GDScript_t1skp")
 
@@ -149,5 +151,7 @@ draw_pass_1 = SubResource("PlaneMesh_8vdlg")
 [node name="bullet_spawn" type="Node3D" parent="Pistol"]
 transform = Transform3D(1, 2.64698e-23, 3.38813e-21, 0, 0.999962, -0.00872654, 0, 0.00872654, 0.999962, 0, 0, -0.438941)
 
-[connection signal="death" from="." to="." method="_on_death"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_of7us")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
