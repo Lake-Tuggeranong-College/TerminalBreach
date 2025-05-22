@@ -178,10 +178,10 @@ func _physics_process(delta):
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		#anim_player.play("move")
 		#rifle_anim_player.play ("move")
-		player_anim_player.play("move-Legacy Slot_001")
+		player_anim_player.play("riflemove")
 	else:
 		#anim_player.play("idle")
-		player_anim_player.play("idle")
+		player_anim_player.play("rifleidle")
 		#rifle_anim_player.play("idle")
 
 	move_and_slide()
@@ -193,7 +193,7 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		#anim_player.play("idle")
 		#rifle_anim_player.play("idle")
-		player_anim_player.play("Idle")
+		player_anim_player.play("idle")
 		
 # Called every frame
 func _process(delta: float):
@@ -230,15 +230,16 @@ func shoot():
 	#anim_player.stop()
 	#anim_player.play("shoot")
 	#rifle_anim_player.play("shoot")
-	player_anim_player.play("shoot")
 	gunshot.play()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
 	can_shoot = false
 	#and anim_player.current_animation != "shoot":
 	if weapon_switch ==0:
+		player_anim_player.play("shoot")
 		await get_tree().create_timer(shoot_cooldown_pistol).timeout
 	elif weapon_switch ==1:
+		player_anim_player.play("rifleshoot")
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
 	can_shoot = true
 	
