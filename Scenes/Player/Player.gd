@@ -178,10 +178,10 @@ func _physics_process(delta):
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		#anim_player.play("move")
 		#rifle_anim_player.play ("move")
-		player_anim_player.play("riflemove")
+		player_anim_player.play("move")
 	else:
 		#anim_player.play("idle")
-		player_anim_player.play("rifleidle")
+		player_anim_player.play("idle")
 		#rifle_anim_player.play("idle")
 
 	move_and_slide()
