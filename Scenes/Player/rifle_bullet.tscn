@@ -21,7 +21,7 @@ shape = SubResource("CylinderShape3D_5ux0h")
 transform = Transform3D(1, -2.52576e-15, -1.10404e-22, 0, -4.37114e-08, 1, -2.52576e-15, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.991307, -2.91096e-16, -7.10543e-15, -2.15227e-16, 5.16964, -1.86265e-09, -7.10543e-15, 1.86265e-09, 1.00503, 0, 0, 0)
+transform = Transform3D(0.5, 7.21405e-16, 5.32907e-15, -1.7696e-16, 2.608, -2.12903e-22, -5.32907e-15, 9.31323e-10, 0.507, -1.9064e-10, 2.73875, 0.00434438)
 material = SubResource("StandardMaterial3D_1m7wu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
