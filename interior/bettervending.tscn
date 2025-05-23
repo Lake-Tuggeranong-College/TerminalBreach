@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7d2khnhfhx4e"]
+
+[ext_resource type="PackedScene" uid="uid://bo7oufjbjbf8h" path="res://interior/BETTERVENDING.blend" id="1_v0l0e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oacyp"]
+transparency = 1
+albedo_color = Color(0.792157, 1, 1, 0.333333)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m8k6b"]
+material = SubResource("StandardMaterial3D_oacyp")
+
+[node name="BETTERVENDING" instance=ExtResource("1_v0l0e")]
+
+[node name="GlassPanel" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(0.318231, 0, 0, 0, -4.37114e-08, 0.714865, 0, -1, -3.12477e-08, 0.0923298, 0.209384, -0.40231)
+mesh = SubResource("PlaneMesh_m8k6b")
+
+[node name="glass1" parent="Sketchfab_model/Collada visual scene group" index="0"]
+visible = false
