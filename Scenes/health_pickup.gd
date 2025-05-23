@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var lifetime: float = 2
+@export var lifetime: float = 4
 var pickup_health_percent = 0.2
 
 
