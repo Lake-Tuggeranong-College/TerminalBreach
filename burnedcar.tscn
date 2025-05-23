@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf1rp0pgt4q2q"]
+
+[ext_resource type="PackedScene" uid="uid://bbhjhkgh3bmuo" path="res://burnedcar.blend" id="1_cct0l"]
+
+[node name="burnedcar" instance=ExtResource("1_cct0l")]

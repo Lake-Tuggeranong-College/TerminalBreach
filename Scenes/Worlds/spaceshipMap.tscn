@@ -1,4 +1,4 @@
-[gd_scene load_steps=274 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=275 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="40_mrqha"]
 [ext_resource type="AudioStream" uid="uid://c42vmaf4d2f3e" path="res://audio/Background Main.ogg" id="41_g10px"]
 [ext_resource type="PackedScene" uid="uid://i0kugr6d80t7" path="res://newcontrl.tscn" id="42_rxpww"]
+[ext_resource type="PackedScene" uid="uid://bbhjhkgh3bmuo" path="res://burnedcar.blend" id="43_664bl"]
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
@@ -3027,3 +3028,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.275616, 0, -41.2297)
 
 [node name="Spawner2" type="Marker3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 0.457, 0, 0, 0, 0.457, -51.9522, 2.19952, -7.76313)
+
+[node name="burnedcar" parent="." instance=ExtResource("43_664bl")]
+transform = Transform3D(-0.00320748, 0, -0.0146531, 0, 0.015, 0, 0.0146531, 0, -0.00320748, -38.5006, 0, 20.8304)
