@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7d2khnhfhx4e"]
+
+[ext_resource type="PackedScene" uid="uid://bo7oufjbjbf8h" path="res://interior/BETTERVENDING.blend" id="1_3wms7"]
+
+[node name="BETTERVENDING" instance=ExtResource("1_3wms7")]
+
+[node name="glass1" parent="Sketchfab_model/Collada visual scene group" index="0"]
+visible = false
