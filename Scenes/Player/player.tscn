@@ -356,7 +356,6 @@ bones/31/rotation = Quaternion(-0.194935, 0.00585267, 0.848797, 0.491436)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/man/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.556935, 0.425347, -0.713374, -0.795479, 0.0261961, -0.605415, -0.238824, 0.904651, 0.352944, 1.37822, -0.908853, 6.32747)
 bone_name = "L.Wrist"
 bone_idx = 2
 
