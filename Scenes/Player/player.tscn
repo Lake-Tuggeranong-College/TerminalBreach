@@ -337,7 +337,7 @@ bones/30/scale = Vector3(1, 1, 1)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/man/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.976349, 0.0415661, 0.212167, -0.00659698, 0.986615, -0.162932, -0.216099, 0.157679, 0.963555, -0.0853048, 4.61748, 0.194878)
+transform = Transform3D(0.976349, 0.0415662, 0.212167, -0.00659706, 0.986615, -0.162932, -0.216099, 0.157679, 0.963555, -0.0853048, 4.61748, 0.194878)
 bone_name = "L.Wrist"
 bone_idx = 2
 

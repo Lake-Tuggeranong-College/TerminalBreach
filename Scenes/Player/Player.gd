@@ -24,8 +24,8 @@ var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
 
-var ammo = 16
-var ammo_rifle = 20
+var ammo = 12
+var ammo_rifle = 32
 
 var reload_time = 3
 var is_reloading = false
@@ -104,9 +104,9 @@ func _ready():
 func update_ammo_counter():
 	if ammo_counter:
 		if weapon_switch == 0:
-			ammo_counter.text = str(ammo) + "/16"
+			ammo_counter.text = str(ammo) + "/12"
 		elif weapon_switch == 1:
-			ammo_counter.text = str(ammo_rifle) + "/20"
+			ammo_counter.text = str(ammo_rifle) + "/32"
 	else:
 		print("no label cuh")
 	
@@ -280,9 +280,9 @@ func start_reload():
 
 	await get_tree().create_timer(reload_time).timeout  # Wait for reload time
 	if weapon_switch == 0:
-		ammo = 16  # Reset ammo after reload
+		ammo = 12  # Reset ammo after reload
 	elif weapon_switch == 1:
-		ammo_rifle = 20  # Reset ammo after reload
+		ammo_rifle = 32  # Reset ammo after reload
 	update_ammo_counter()  # Update the counter after reload
 	is_reloading = false
 
