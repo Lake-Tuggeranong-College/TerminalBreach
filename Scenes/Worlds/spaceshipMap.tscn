@@ -1,4 +1,4 @@
-[gd_scene load_steps=274 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=275 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://biqw5pexpt1pg" path="res://textures/metalbase(walls)/metal-siding-base_roughness.png" id="37_wt8lh"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="40_mrqha"]
 [ext_resource type="AudioStream" uid="uid://c42vmaf4d2f3e" path="res://audio/Background Main.ogg" id="41_g10px"]
+[ext_resource type="PackedScene" uid="uid://b7d2khnhfhx4e" path="res://interior/bettervending.tscn" id="42_hqovd"]
 [ext_resource type="PackedScene" uid="uid://i0kugr6d80t7" path="res://newcontrl.tscn" id="42_rxpww"]
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
 
@@ -3010,6 +3011,11 @@ shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="controlpanel" parent="Extra Models/ControlPanel" instance=ExtResource("42_rxpww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06094, 0.602557, 38.0985)
+
+[node name="VendingMachine" type="Node" parent="Extra Models"]
+
+[node name="BETTERVENDING" parent="Extra Models/VendingMachine" instance=ExtResource("42_hqovd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 64.5261, 1.494, 2.63843)
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.90359, -1.57298)
