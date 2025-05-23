@@ -19,8 +19,8 @@ signal died
 var speed = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const max_distance = 10.0  # Maximum distance to follow and shoot the player
-var player_detected = false
+const max_distance = 1000.0  # Maximum distance to follow and shoot the player
+var player_detected = true
 
 var health_pickup_scene = preload("res://Scenes/health_pickup.tscn")
 var health_pickup_spawn
@@ -73,7 +73,7 @@ func _physics_process(_delta):
 
 	# Vector Maths for movement
 	if Global.player != null and player_detected == true:
-		anim.play("Armature_001|mixamo_com|Layer0_001")
+		#anim.play("Armature_001|mixamo_com|Layer0_001")
 		#gunanim.play("bob")
 		var new_velocity = direction * SPEED
 		velocity = new_velocity

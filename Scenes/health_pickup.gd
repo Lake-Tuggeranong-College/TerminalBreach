@@ -1,12 +1,15 @@
 extends Node3D
 
-
+@export var lifetime: float = 2
 var pickup_health_percent = 0.2
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	float_object_up()
+	await get_tree().create_timer(3.0).timeout
+	queue_free()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,3 +37,8 @@ func _on_body_entered(body: Node3D) -> void:
 		#print("player collide")
 			body.health_pickup(pickup_health_percent)
 			queue_free()
+
+func set_timer(time: float):
+	#await(get_tree().create_timer(time), "timeout")
+	var timer = get_tree().create_timer(time)
+	queue_free()

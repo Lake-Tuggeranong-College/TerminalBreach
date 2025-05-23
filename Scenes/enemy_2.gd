@@ -19,8 +19,8 @@ signal died
 var speed = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const max_distance = 10.0  # Maximum distance to follow and shoot the player
-var player_detected = false
+const max_distance = 1000.0  # Maximum distance to follow and shoot the player
+var player_detected = true
 
 var health_pickup_scene = preload("res://Scenes/health_pickup.tscn")
 var health_pickup_spawn
@@ -32,7 +32,7 @@ var health_pickup_spawn
 
 
 func _ready() -> void:
-	bullet_spawn = get_node("Pistol")
+	bullet_spawn = get_node("Pistol/bullet_spawn")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
@@ -119,7 +119,20 @@ func _on_timer_timeout():
 		shoot_bullet()
 
 
-func take_damageE(damage_amount):
+func take_damageEpistol(damage_amount):
+	health -= damage_amount
+	if Global.player != null and player_detected == false:
+		detected_player()
+	if health <=0:
+		var health_pickup_instance = health_pickup_scene.instantiate()
+		
+		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
+		
+		get_tree().current_scene.add_child(health_pickup_instance)
+		
+		queue_free()
+
+func take_damageErifle(damage_amount):
 	health -= damage_amount
 	if Global.player != null and player_detected == false:
 		detected_player()
