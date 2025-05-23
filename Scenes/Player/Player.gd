@@ -176,18 +176,21 @@ func _physics_process(delta):
 	if player_anim_player.current_animation == "shoot":
 		pass
 	elif input_dir != Vector2.ZERO and is_on_floor():
-		#anim_player.play("move")
-		#rifle_anim_player.play ("move")
-		player_anim_player.play("move")
+
+		if weapon_switch == 0:  # Pistol
+			player_anim_player.play("move")
+		elif weapon_switch == 1:  # Rifle
+			player_anim_player.play("riflemove")
 	else:
-		#anim_player.play("idle")
-		player_anim_player.play("idle")
-		#rifle_anim_player.play("idle")
+		if weapon_switch == 0:  # Pistol
+			player_anim_player.play("idle")
+		elif weapon_switch == 1:  # Rifle
+			player_anim_player.play("rifleidle")
 
 	move_and_slide()
 	
 
-	
+	wwwwwww
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
