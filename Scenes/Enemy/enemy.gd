@@ -19,8 +19,9 @@ signal died
 var speed = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const max_distance = 1000.0  # Maximum distance to follow and shoot the player
+const max_distance = 20.0  # Maximum distance to follow and shoot the player
 var player_detected = true
+var player_shootable = false
 
 var health_pickup_scene = preload("res://Scenes/health_pickup.tscn")
 var health_pickup_spawn
@@ -32,7 +33,7 @@ var health_pickup_spawn
 
 
 func _ready() -> void:
-	bullet_spawn = get_node("enemymodel/Pistol")
+	bullet_spawn = get_node("enemymodel/Pistol/bullet_spawn")
 	health_pickup_spawn = get_node("health_pickup_spawn")
 
 func update_target_location (target_location):
@@ -67,7 +68,7 @@ func _physics_process(_delta):
 	
 	#print(player_detected)
 	#checks whether the player has entered the into the range of the enemy and has not detected the player yet
-	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_detected == false:
+	if Global.player != null and is_within_distance(Global.player.global_transform.origin) and player_shootable == false:
 		detected_player()
 	
 
@@ -115,7 +116,7 @@ func shoot_bullet():
 
 
 func _on_timer_timeout():
-	if Global.player != null and player_detected == true:
+	if Global.player != null and player_shootable == true:
 		shoot_bullet()
 
 
@@ -146,7 +147,7 @@ func take_damageErifle(damage_amount):
 		queue_free()
 
 func detected_player():
-	player_detected = true
+	player_shootable = true
 	#print("player detected")
 	#print(player_detected)
 	
