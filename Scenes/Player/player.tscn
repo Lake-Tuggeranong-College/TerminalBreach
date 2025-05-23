@@ -261,7 +261,6 @@ properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_2v3wm")
-crouch_height = null
 standing_height = 2.15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -356,6 +355,7 @@ bones/31/rotation = Quaternion(-0.194935, 0.00585267, 0.848797, 0.491436)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/man/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.556935, 0.425347, -0.713375, -0.795479, 0.0261962, -0.605415, -0.238824, 0.904651, 0.352944, 1.37822, -0.908852, 6.32747)
 bone_name = "L.Wrist"
 bone_idx = 2
 
