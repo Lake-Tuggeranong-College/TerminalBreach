@@ -37,7 +37,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-1.00581, 1.29541, -1.6763), Vector3(-1.00581, 1.29541, -1.6763)]
+"values": [Vector3(-0.877784, 1.27227, -1.64744), Vector3(-1.00581, 1.29541, -1.6763)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -49,7 +49,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.001),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.204885, -0.349671, 1.00027), Vector3(-0.323334, -0.389822, 0.861007)]
+"values": [Vector3(-0.225119, -0.309354, 0.958355), Vector3(-0.323334, -0.389822, 0.861007)]
 }
 
 [sub_resource type="Animation" id="Animation_6eeri"]
@@ -303,8 +303,6 @@ transform = Transform3D(-0.0994226, 0, -0.0107305, 0, 0.1, 0, 0.0107305, 0, -0.0
 transform = Transform3D(-0.859548, 0.511055, 0, -0.511055, -0.859548, 0, 0, 0, 1, 1.40149, 16.4226, -0.771757)
 
 [node name="Skeleton3D" parent="Camera3D/man/Armature" index="0"]
-
-bones/0/position = Vector3(0.081903, -0.374712, 1.78721)
 bones/0/rotation = Quaternion(0.669523, -0.148151, -0.170817, 0.707539)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/rotation = Quaternion(-0.0438387, -0.25868, -0.313499, 0.912623)
@@ -359,16 +357,14 @@ bones/31/rotation = Quaternion(-0.194935, 0.00585267, 0.848797, 0.491436)
 bones/31/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/man/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.556935, 0.425347, -0.713375, -0.795479, 0.0261962, -0.605415, -0.238824, 0.904651, 0.352944, 1.37822, -0.908852, 6.32747)
 bone_name = "L.Wrist"
 bone_idx = 2
 
 [node name="Rifle" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("7_hb2iv")]
 transform = Transform3D(6.76202, -3.03546, -0.648764, -4.02045, -5.10537, 0.385731, -0.849066, -1.19209e-07, -6.9933, 2.01719, -1.82895, 6.91241)
-visible = false
 
 [node name="riflecomplete" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle" index="0"]
-transform = Transform3D(0.0272866, 0.0124599, 0.0180331, -0.018635, -0.00197339, 0.0295609, 0.0115404, -0.0326475, 0.00509553, -0.204885, -0.349671, 1.00027)
+transform = Transform3D(0.0248716, 0.0122345, 0.0213711, -0.0222944, -0.00171218, 0.0269264, 0.0104577, -0.0327474, 0.00657643, -0.225119, -0.309354, 0.958355)
 
 [node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle"]
 libraries = {
@@ -377,6 +373,7 @@ libraries = {
 
 [node name="Pistol" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D" instance=ExtResource("5_ikpur")]
 transform = Transform3D(0.0461854, 0.0148499, 0.0120988, 0.0161622, -0.0132621, -0.0454191, -0.0102803, 0.045865, -0.0170505, -0.0160332, 2.92707, 0.0545053)
+visible = false
 
 [node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol"]
 transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)
