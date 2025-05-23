@@ -188,7 +188,6 @@ func _physics_process(delta):
 			player_anim_player.play("rifleidle")
 
 	move_and_slide()
-	
 
 
 func _on_animation_player_animation_finished(anim_name):
