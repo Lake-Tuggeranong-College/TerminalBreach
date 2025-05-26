@@ -41,6 +41,10 @@ window/quality/msaa_2d=3
 
 project/assembly_name="Frontier Lands"
 
+[global_group]
+
+nav="nav region"
+
 [input]
 
 up={

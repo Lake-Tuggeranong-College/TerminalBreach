@@ -8,5 +8,7 @@
 script = ExtResource("1_j54vq")
 enemy_scene = ExtResource("2_q3vvh")
 enemy_scene2 = ExtResource("3_th6ne")
+spawn_interval = 0.1
 spawn_radius = 10.03
+enemies_per_wave_base = 10
 wave_increment = 5

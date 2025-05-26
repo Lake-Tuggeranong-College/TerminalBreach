@@ -217,6 +217,9 @@ bones/61/rotation = Quaternion(-0.219305, 0.0771809, -0.0424205, 0.971673)
 bones/62/rotation = Quaternion(0.59734, 0.144292, -0.050905, 0.787257)
 bones/63/rotation = Quaternion(0.300026, 0.0534071, -0.0144962, 0.952325)
 
+[node name="AnimationPlayer" parent="enemy2" index="1"]
+autoplay = "RifleIdle"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="enemy2"]

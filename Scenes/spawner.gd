@@ -42,19 +42,16 @@ func spawn_enemy():
 		spawn_timer.stop()
 		return
 
-	var batch_count = min(randi_range(1, 2), enemies_to_spawn - enemies_spawned)
-	for i in batch_count:
-		# Pick a random spawn point
-		var spawn_point_pos = get_random_spawn_point_position()
-		# Pick a random enemy scene
-		var scene_idx = randi_range(0, enemy_scenes.size() - 1)
-		var enemy_instance = enemy_scenes[scene_idx].instantiate()
-		enemy_instance.global_transform.origin = spawn_point_pos
-		get_tree().current_scene.add_child(enemy_instance)
-		if enemy_instance.has_signal("died"):
-			enemy_instance.died.connect(func(): call_deferred("update_wave_label"))
-		enemies_spawned += 1
-		update_wave_label()
+	# Only spawn one enemy per timer tick
+	var spawn_point_pos = get_random_spawn_point_position()
+	var scene_idx = randi_range(0, enemy_scenes.size() - 1)
+	var enemy_instance = enemy_scenes[scene_idx].instantiate()
+	enemy_instance.global_transform.origin = spawn_point_pos
+	get_tree().current_scene.add_child(enemy_instance)
+	if enemy_instance.has_signal("died"):
+		enemy_instance.died.connect(func(): call_deferred("update_wave_label"))
+	enemies_spawned += 1
+	update_wave_label()
 
 	if enemies_spawned >= enemies_to_spawn:
 		await monitor_enemies()
