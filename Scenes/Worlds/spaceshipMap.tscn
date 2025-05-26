@@ -3018,18 +3018,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06094, 0.602557, 38.0985)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 64.5261, 1.494, 2.63843)
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
-transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.90359, -1.57298)
-spawn_radius = 15.0
-spawn_points = Array[NodePath]([NodePath("../Spawner2"), NodePath("../Spawner4"), NodePath("../Spawner5"), NodePath("../Spawner3")])
+transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.74916, -1.57298)
+spawn_radius = 2.0
+spawn_points = Array[NodePath]([NodePath("../Spawner2"), NodePath("../Spawner4"), NodePath("../Spawner5"), NodePath("../Spawner3"), NodePath("../Spawner7"), NodePath("../Spawner6")])
 
 [node name="Spawner5" type="Marker3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 53.8046, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 53.8046, 1.74037, 0)
 
 [node name="Spawner4" type="Marker3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.014, 2.45731, 37.9425)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.11937, 2.45731, 37.9425)
 
 [node name="Spawner3" type="Marker3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.275616, 0, -41.2297)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.2811, 2.37589, -41.2297)
 
 [node name="Spawner2" type="Marker3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 0.457, 0, 0, 0, 0.457, -51.9522, 2.19952, -7.76313)
+
+[node name="Spawner7" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8586, 1.71011, 12.3924)
+
+[node name="Spawner6" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4848, 2.74672, 22.4782)

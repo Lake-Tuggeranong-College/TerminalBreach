@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfenm4sv815po"]
+[gd_scene load_steps=18 format=3 uid="uid://cfenm4sv815po"]
 
 [ext_resource type="Script" path="res://Scenes/enemy_2.gd" id="1_adg0q"]
 [ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="2_kvjue"]
 [ext_resource type="AudioStream" uid="uid://cyp0dip0hu5qd" path="res://audio/gunshot.ogg" id="3_uo0co"]
 [ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="4_hr711"]
 [ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="5_uwcec"]
+[ext_resource type="PackedScene" uid="uid://dag6jjxd7tx60" path="res://animation/enemy2.glb" id="6_5hm0e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7x2r"]
 
@@ -152,6 +153,70 @@ draw_pass_1 = SubResource("PlaneMesh_8vdlg")
 transform = Transform3D(1, 2.64698e-23, 3.38813e-21, 0, 0.999962, -0.00872654, 0, 0.00872654, 0.999962, 0, 0, -0.438941)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CylinderMesh_of7us")
 
+[node name="enemy2" parent="." instance=ExtResource("6_5hm0e")]
+transform = Transform3D(-0.869383, 0, 0.494139, 0, 1, 0, -0.494139, 0, -0.869383, 0, -0.462749, 0)
+
+[node name="Armature" parent="enemy2" index="0"]
+transform = Transform3D(0.00845979, 0.00533216, 0, 0, 0, -0.01, -0.00533216, 0.00845979, 0, 0, -0.149488, 0)
+
+[node name="Skeleton3D" parent="enemy2/Armature" index="1"]
+bones/0/position = Vector3(-0.00901195, -0.890234, -101.404)
+bones/0/rotation = Quaternion(-0.749859, -0.00500496, 0.0445869, 0.660075)
+bones/1/rotation = Quaternion(0.00991847, 0.0194097, -0.0162968, 0.99963)
+bones/2/rotation = Quaternion(0.0129398, 0.00692769, -0.00558488, 0.999877)
+bones/3/rotation = Quaternion(0.0129093, 0.0069277, -0.00546281, 0.999878)
+bones/4/rotation = Quaternion(0.0572528, 0.0458694, 0.0168767, 0.997163)
+bones/5/rotation = Quaternion(0.0267343, -0.093387, 0.0189521, 0.995091)
+bones/7/rotation = Quaternion(-0.699818, -0.281655, 0.54686, -0.363139)
+bones/8/rotation = Quaternion(0.188118, 0.0732757, 0.0562462, 0.977793)
+bones/9/rotation = Quaternion(0.0426047, -0.00454735, 0.621277, 0.782418)
+bones/10/rotation = Quaternion(-0.025361, -0.869018, -0.0778226, 0.487963)
+bones/11/rotation = Quaternion(0.133182, 0.0169681, 0.435678, 0.890033)
+bones/12/rotation = Quaternion(0.0151066, -0.00292977, 0.00326547, 0.999876)
+bones/13/rotation = Quaternion(-0.131138, 0.00338755, 0.0289925, 0.990934)
+bones/15/rotation = Quaternion(0.523388, -0.0278021, 0.0259405, 0.851246)
+bones/16/rotation = Quaternion(0.535048, -0.00311287, -0.0967737, 0.839255)
+bones/17/rotation = Quaternion(0.295509, 0.00659196, -0.038209, 0.954553)
+bones/19/rotation = Quaternion(0.557605, 0.000427261, -0.0318309, 0.829496)
+bones/20/rotation = Quaternion(0.526479, -0.00262461, -0.0900609, 0.8454)
+bones/21/rotation = Quaternion(0.257669, 0.00369276, -0.038545, 0.965457)
+bones/23/rotation = Quaternion(0.612109, 0.00952177, -0.061861, 0.788292)
+bones/24/rotation = Quaternion(0.415382, -0.0016785, -0.0685437, 0.907059)
+bones/25/rotation = Quaternion(0.359601, 0.00183112, -0.0593283, 0.931216)
+bones/27/rotation = Quaternion(0.626641, 0.00582907, -0.09943, 0.772917)
+bones/28/rotation = Quaternion(0.376846, 0.00103764, -0.0708951, 0.923558)
+bones/29/rotation = Quaternion(0.229225, -0.000915556, -0.041139, 0.972503)
+bones/31/rotation = Quaternion(0.685655, -0.317421, 0.508923, 0.412455)
+bones/32/rotation = Quaternion(0.231301, -0.177039, -0.127354, 0.948123)
+bones/33/rotation = Quaternion(0.0542618, 0.00366222, -0.751792, 0.657154)
+bones/34/rotation = Quaternion(0.252236, 0.281442, 0.163152, 0.911345)
+bones/35/rotation = Quaternion(0.399272, -0.23371, -0.272712, 0.843558)
+bones/36/rotation = Quaternion(-0.221473, -0.139775, 0.15421, 0.952697)
+bones/37/rotation = Quaternion(-0.20487, -0.0146183, 0.406658, 0.890193)
+bones/39/rotation = Quaternion(0.0987587, -0.000854526, -0.0769073, 0.992135)
+bones/40/rotation = Quaternion(0.452166, 0.00115971, 0.0645778, 0.889592)
+bones/41/rotation = Quaternion(0.570694, -0.00903345, 0.0487684, 0.819663)
+bones/43/rotation = Quaternion(0.446706, -0.00131232, -0.00540186, 0.894664)
+bones/44/rotation = Quaternion(0.768787, 0.0054933, 0.0892356, 0.633225)
+bones/45/rotation = Quaternion(0.712023, -0.0105288, 0.0765399, 0.697893)
+bones/47/rotation = Quaternion(0.509481, -0.0293896, 0.0582299, 0.858006)
+bones/48/rotation = Quaternion(0.555766, 0.00210575, 0.0685437, 0.828506)
+bones/49/rotation = Quaternion(0.444934, -0.00283825, 0.05353, 0.893958)
+bones/51/rotation = Quaternion(0.579734, -0.0307629, 0.0840486, 0.809876)
+bones/52/rotation = Quaternion(0.478833, -0.000488292, 0.0635697, 0.875602)
+bones/53/rotation = Quaternion(0.331739, 0.000885043, 0.0450151, 0.942296)
+bones/55/rotation = Quaternion(0.101932, 0.0643939, 0.992185, -0.0321359)
+bones/56/rotation = Quaternion(-0.1236, -0.0675375, 0.0195929, 0.989837)
+bones/57/rotation = Quaternion(0.437117, -0.0860012, 0.0675985, 0.892728)
+bones/58/rotation = Quaternion(0.283977, -0.0450457, 0.0133672, 0.957679)
+bones/60/rotation = Quaternion(-0.130955, -0.024018, 0.989652, 0.0534989)
+bones/61/rotation = Quaternion(-0.219305, 0.0771809, -0.0424205, 0.971673)
+bones/62/rotation = Quaternion(0.59734, 0.144292, -0.050905, 0.787257)
+bones/63/rotation = Quaternion(0.300026, 0.0534071, -0.0144962, 0.952325)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="enemy2"]

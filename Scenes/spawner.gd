@@ -51,9 +51,8 @@ func spawn_enemy():
 		var enemy_instance = enemy_scenes[scene_idx].instantiate()
 		enemy_instance.global_transform.origin = spawn_point_pos
 		get_tree().current_scene.add_child(enemy_instance)
-		enemy_instance.add_to_group("enemy")
 		if enemy_instance.has_signal("died"):
-			enemy_instance.died.connect(update_wave_label)
+			enemy_instance.died.connect(func(): call_deferred("update_wave_label"))
 		enemies_spawned += 1
 		update_wave_label()
 
