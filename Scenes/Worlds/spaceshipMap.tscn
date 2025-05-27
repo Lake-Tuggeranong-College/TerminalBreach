@@ -3023,7 +3023,7 @@ shape = SubResource("ConcavePolygonShape3D_7a476")
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.74916, -1.57298)
 spawn_radius = 1.0
 wave_increment = 10
-spawn_points = Array[NodePath]([NodePath("Spawner2"), NodePath("Spawner4"), NodePath("Spawner5"), NodePath("Spawner3"), NodePath("Spawner7"), NodePath("Spawner6"), NodePath("Spawner8"), NodePath("Spawner9"), NodePath("Spawner10"), NodePath("Spawner11"), NodePath("Spawner12"), NodePath("Spawner13"), NodePath("Spawner14"), NodePath("Spawner15"), NodePath("Spawner16"), NodePath("Spawner17"), NodePath("Spawner18"), NodePath("Spawner19"), NodePath("Spawner20")])
+spawn_points = Array[NodePath]([NodePath("Spawner2"), NodePath("Spawner4"), NodePath("Spawner5"), NodePath("Spawner3"), NodePath("Spawner7"), NodePath("Spawner6"), NodePath("Spawner8"), NodePath("Spawner9"), NodePath("Spawner10"), NodePath("Spawner11"), NodePath("Spawner12"), NodePath("Spawner13"), NodePath("Spawner14"), NodePath("Spawner15"), NodePath("Spawner16"), NodePath("Spawner17"), NodePath("Spawner18"), NodePath("Spawner19"), NodePath("Spawner20"), NodePath("Spawner21"), NodePath("Spawner22"), NodePath("Spawner23"), NodePath("Spawner24"), NodePath("Spawner25"), NodePath("Spawner26"), NodePath("Spawner27"), NodePath("Spawner28"), NodePath("Spawner29"), NodePath("Spawner30"), NodePath("Spawner31"), NodePath("Spawner32"), NodePath("Spawner33"), NodePath("Spawner34"), NodePath("Spawner35"), NodePath("Spawner36"), NodePath("Spawner37"), NodePath("Spawner38")])
 
 [node name="Spawner2" type="Marker3D" parent="Spawner"]
 transform = Transform3D(3, 0, 0, 0, 0.453749, -0.0544113, 0, 0.0544113, 0.453749, -52.2315, 1.18417, -6.0925)
