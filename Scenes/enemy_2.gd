@@ -130,7 +130,7 @@ func take_damageEpistol(damage_amount):
 		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
 		
 		get_tree().current_scene.add_child(health_pickup_instance)
-		
+		emit_signal("died")
 		queue_free()
 
 func take_damageErifle(damage_amount):
@@ -143,7 +143,7 @@ func take_damageErifle(damage_amount):
 		health_pickup_instance.global_transform = health_pickup_spawn.global_transform
 		
 		get_tree().current_scene.add_child(health_pickup_instance)
-		
+		emit_signal("died")
 		queue_free()
 
 func detected_player():

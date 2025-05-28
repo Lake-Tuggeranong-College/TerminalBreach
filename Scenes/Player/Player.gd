@@ -38,7 +38,7 @@ var current_weapon = null
 var max_health = 100
 var current_health = max_health
 var health_regen:float = 1 #amount of health regenerated every second
-var health:float = 100.0
+var health:float = 100
 
 #player movement
 const JUMP_VELOCITY = 10.0
