@@ -172,6 +172,12 @@ var credits = [
 		"Just a guy",
 		"Nadal"
 	],[
+		"Cracked at Fortnite",
+		"Jebediah Sparks -- 3x FNCS Champion",
+		"IeatDoritoes",
+		"Dimitri Hucklebuck -- 6x FNCS Silver Medalist",
+		"The Console Demon From The Hood Who's Misunderstood fortnitebeast283"
+	],[
 		"Thanks for playing!"]
 	
 ]
