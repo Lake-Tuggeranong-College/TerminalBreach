@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbjg2qsjwch7o"]
+[gd_scene load_steps=9 format=3 uid="uid://dbjg2qsjwch7o"]
 
 [ext_resource type="Script" path="res://Scenes/Credits/GodotCredits.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ckbj0ne1f2vvm" path="res://icons/Black.bmp" id="1_2blsv"]
 [ext_resource type="VideoStream" path="res://animation/Dog-Dance.ogv" id="3_x6aq5"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="4_brv2e"]
 [ext_resource type="VideoStream" path="res://animation/Cat-Dance.ogv" id="5_ci4x3"]
-[ext_resource type="AudioStream" uid="uid://bhmaiwisj2yhn" path="res://audio/Credits 2.ogg" id="6_dry38"]
+[ext_resource type="AudioStream" uid="uid://bhmaiwisj2yhn" path="res://audio/credits 2.ogg" id="6_nalc7"]
+[ext_resource type="VideoStream" path="res://animation/mixer man.ogv" id="6_tspwy"]
+[ext_resource type="VideoStream" path="res://animation/freddy-dance.ogv" id="7_yk0nh"]
 
 [node name="GodotCredits" type="Node2D"]
 script = ExtResource("1")
@@ -74,8 +76,28 @@ autoplay = true
 loop = true
 metadata/_edit_use_anchors_ = true
 
+[node name="mixer man" type="VideoStreamPlayer" parent="CreditsContainer"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 54.0
+offset_right = 623.0
+offset_bottom = 422.0
+stream = ExtResource("6_tspwy")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CreditsContainer"]
+layout_mode = 0
+offset_left = 1221.0
+offset_top = 55.0
+offset_right = 1861.0
+offset_bottom = 487.0
+stream = ExtResource("7_yk0nh")
+autoplay = true
+loop = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_dry38")
+stream = ExtResource("6_nalc7")
 autoplay = true
 parameters/looping = true
 
