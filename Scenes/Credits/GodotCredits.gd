@@ -172,7 +172,8 @@ var credits = [
 		"Just a guy",
 		"Nadal",
 	],[
-		"Ladiesman217",
+		"Are you"
+		"Ladiesman217?",
 	],[
 		"Cracked at Fortnite",
 		"Jebediah Sparks -- 3x FNCS Champion",
