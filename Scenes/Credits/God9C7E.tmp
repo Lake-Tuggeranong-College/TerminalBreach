@@ -86,7 +86,7 @@ stream = ExtResource("6_tspwy")
 autoplay = true
 loop = true
 
-[node name="feddy" type="VideoStreamPlayer" parent="CreditsContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CreditsContainer"]
 layout_mode = 0
 offset_left = 1221.0
 offset_top = 55.0
