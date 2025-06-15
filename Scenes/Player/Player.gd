@@ -48,7 +48,7 @@ var is_crouching : bool = false
 @onready var weapon_holder = $weapon_holder
 
 var is_ready = false
-
+var enemies_highlighted = false
 var weapon_switch = 0
 
 func take_damageP(amount) -> void:
@@ -119,6 +119,11 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * .005)
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+		
+	if Input.is_action_just_pressed("esp"):
+		enemies_highlighted = !enemies_highlighted
+		toggle_enemy_highlights(enemies_highlighted)
+
 	
 	
 	
@@ -306,3 +311,13 @@ func show_hitmarker():
 func health_pickup(pickup_health_percent):
 	health += max_health * pickup_health_percent
 	health_changed.emit(health)
+	
+	
+func toggle_enemy_highlights(state):
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		if enemy.has_method("highlight") and enemy.has_method("unhighlight"):
+			if state:
+				enemy.highlight()
+			else:
+				enemy.unhighlight()
