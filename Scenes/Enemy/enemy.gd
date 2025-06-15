@@ -159,3 +159,10 @@ func die():
 func _on_death() -> void:
 	emit_signal("death")
 	queue_free()
+	
+	
+func highlight():
+	$HighlightMesh.visible = true
+
+func unhighlight():
+	$HighlightMesh.visible = false
