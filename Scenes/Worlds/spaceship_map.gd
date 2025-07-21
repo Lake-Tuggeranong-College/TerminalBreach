@@ -18,13 +18,17 @@ func _ready():
 	#add_player(multiplayer.get_unique_id())
 	hitmarker.hide()
 	get_tree().paused == false
-	print(Global.single_player_mode)
-	print(Global.address_server)
+	print("Single player mode: ", Global.single_player_mode)
+	Global.address_server = "192.168.68.106"
+	print("Server: ", Global.address_server)
 	if not Global.single_player_mode:
 		if Global.address_server:
 			# Join multiplayer server
 			print("joining")
-			enet_peer.create_client(Global.address_server, Global.PORT)
+			var error = enet_peer.create_client(Global.address_server, Global.PORT)
+
+			if error:
+				print("error: ", error)
 			multiplayer.multiplayer_peer = enet_peer
 		else:
 			# Host multiplayer server
@@ -88,6 +92,7 @@ func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
 	
 func _on_multiplayer_spawner_spawned(node):
+	print("spawned")
 	if node.is_multiplayer_authority():
 		node.health_changed.connect(update_health_bar)
 
