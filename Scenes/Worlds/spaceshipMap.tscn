@@ -3132,3 +3132,5 @@ transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 
 
 [node name="Spawner38" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 49.9314, 2.22106, -10.1435)
+
+[connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]

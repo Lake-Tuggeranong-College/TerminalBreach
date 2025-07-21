@@ -32,7 +32,10 @@ func _ready():
 			multiplayer.multiplayer_peer = enet_peer
 		else:
 			# Host multiplayer server
-			enet_peer.create_server(Global.PORT)
+			print("hosting...")
+			var error = enet_peer.create_server(Global.PORT)
+			if error:
+				print("Server error: "+error)
 			multiplayer.multiplayer_peer = enet_peer
 			multiplayer.peer_connected.connect(add_player)
 			multiplayer.peer_disconnected.connect(remove_player)
@@ -68,6 +71,7 @@ func _process(delta):
 
 func add_player(peer_id):
 	print("adding player")
+	print(peer_id)
 	player = Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
