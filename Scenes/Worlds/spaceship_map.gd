@@ -19,7 +19,7 @@ func _ready():
 	hitmarker.hide()
 	get_tree().paused == false
 	print("Single player mode: ", Global.single_player_mode)
-	Global.address_server = "192.168.68.106"
+	#Global.address_server = "192.168.68.106"
 	print("Server: ", Global.address_server)
 	if not Global.single_player_mode:
 		if Global.address_server:

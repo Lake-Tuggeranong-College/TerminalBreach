@@ -5,8 +5,8 @@ const PORT = 9999
 #var enet_peer = ENetMultiplayerPeer.new()
 
 var single_player_mode = true
-#var address_server = null
-var address_server :String = "192.168.68.106"
+var address_server = null
+#var address_server :String = "192.168.68.106"
 
 	
 
