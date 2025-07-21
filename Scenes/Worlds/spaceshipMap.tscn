@@ -1049,6 +1049,7 @@ offset_bottom = 23.0
 environment = SubResource("Environment_r27kf")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/Player/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="Roof" type="Node" parent="."]
