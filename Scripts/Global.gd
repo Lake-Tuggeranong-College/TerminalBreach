@@ -1,5 +1,12 @@
 extends Node
 
+
+const PORT = 9999
+var enet_peer = ENetMultiplayerPeer.new()
+
+var single_player_mode = true
+var address_entry = "0.0.0.0"
+
 var checkboxChecked := false
 # if status is true, increases the size of the window and scales on-screen elements to window size
 # allows for better viewing on retina (or similar resolution) displays

@@ -18,9 +18,17 @@ func _ready():
 	hitmarker.hide()
 	get_tree().paused == false
 
-	if player.is_multiplayer_authority():
-		player.health_changed.connect(update_health_bar)
-	environment.add_to_group("walls")
+	if not Global.single_player_mode:
+		if Global.address_entry:
+			multiplayer.multiplayer_peer = Global.enet_peer
+		else:
+			Global.enet_peer.create_server(Global.PORT)
+			multiplayer.multiplayer_peer = Global.enet_peer
+			multiplayer.peer_connected.connect(add_player)
+			multiplayer.peer_disconnected.connect(remove_player)
+			add_player(multiplayer.get_unique_id())
+		
+		environment.add_to_group("walls")
 
 func _physics_process(_delta):
 	if tracked:
@@ -43,12 +51,6 @@ func _process(delta):
 		#print("enemy dead")
 		#get_tree().change_scene_to_file("res://Scenes/Victory screen/victory_screen.tscn")
 		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-func _on_single_player_button_pressed():
-	main_menu.hide()
-	hud.show()
-	#multiplayer.multiplayer_peer = enet_peer
-	add_player(multiplayer.get_unique_id())
 
 
 func add_player(peer_id):
@@ -75,6 +77,8 @@ func _on_quit_pressed() -> void:
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
 	
-
+func _on_multiplayer_spawner_spawned(node):
+	if node.is_multiplayer_authority():
+		node.health_changed.connect(update_health_bar)
 
 	
