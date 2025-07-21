@@ -10,23 +10,32 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 var player
 var tracked = false
 
+var enet_peer = ENetMultiplayerPeer.new()
 
 
 
 func _ready():
-	add_player(multiplayer.get_unique_id())
+	#add_player(multiplayer.get_unique_id())
 	hitmarker.hide()
 	get_tree().paused == false
-
+	print(Global.single_player_mode)
+	print(Global.address_server)
 	if not Global.single_player_mode:
-		if Global.address_entry:
-			multiplayer.multiplayer_peer = Global.enet_peer
+		if Global.address_server:
+			# Join multiplayer server
+			print("joining")
+			enet_peer.create_client(Global.address_server, Global.PORT)
+			multiplayer.multiplayer_peer = enet_peer
 		else:
-			Global.enet_peer.create_server(Global.PORT)
-			multiplayer.multiplayer_peer = Global.enet_peer
+			# Host multiplayer server
+			enet_peer.create_server(Global.PORT)
+			multiplayer.multiplayer_peer = enet_peer
 			multiplayer.peer_connected.connect(add_player)
 			multiplayer.peer_disconnected.connect(remove_player)
 			add_player(multiplayer.get_unique_id())
+	#else:
+	#	add_player(multiplayer.get_unique_id())
+
 		
 		environment.add_to_group("walls")
 
@@ -54,6 +63,7 @@ func _process(delta):
 
 
 func add_player(peer_id):
+	print("adding player")
 	player = Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)

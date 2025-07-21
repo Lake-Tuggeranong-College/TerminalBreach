@@ -1043,9 +1043,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
-spawn_path = NodePath("../spawn_point")
-
 [node name="spawn_point" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

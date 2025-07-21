@@ -29,7 +29,8 @@ func _on_host_button_pressed():
 	
 func _on_join_button_pressed():
 	Global.single_player_mode = false
-	Global.enet_peer.create_client(address_entry.text, Global.PORT)
+	Global.address_server = address_entry.text
+	#Global.enet_peer.create_client(address_entry.text, Global.PORT)
 	print("Join Mode - pressed")
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
 
