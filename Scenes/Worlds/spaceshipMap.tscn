@@ -1043,15 +1043,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="SpawnPoint" type="MultiplayerSpawner" parent="."]
-spawn_path = NodePath("../spawn_point")
-
 [node name="spawn_point" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r27kf")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Scenes/Player/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="Roof" type="Node" parent="."]
@@ -3135,3 +3133,5 @@ transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 
 
 [node name="Spawner38" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 49.9314, 2.22106, -10.1435)
+
+[connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]

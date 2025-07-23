@@ -10,17 +10,41 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 var player
 var tracked = false
 
+var enet_peer = ENetMultiplayerPeer.new()
 
 
 
 func _ready():
-	add_player(multiplayer.get_unique_id())
+	#add_player(multiplayer.get_unique_id())
 	hitmarker.hide()
 	get_tree().paused == false
+	print("Single player mode: ", Global.single_player_mode)
+	#Global.address_server = "192.168.68.106"
+	print("Server: ", Global.address_server)
+	if not Global.single_player_mode:
+		if Global.address_server:
+			# Join multiplayer server
+			print("joining")
+			var error = enet_peer.create_client(Global.address_server, Global.PORT)
 
-	if player.is_multiplayer_authority():
-		player.health_changed.connect(update_health_bar)
-	environment.add_to_group("walls")
+			if error:
+				print("error: ", error)
+			multiplayer.multiplayer_peer = enet_peer
+		else:
+			# Host multiplayer server
+			print("hosting...")
+			var error = enet_peer.create_server(Global.PORT)
+			if error:
+				print("Server error: "+error)
+			multiplayer.multiplayer_peer = enet_peer
+			multiplayer.peer_connected.connect(add_player)
+			multiplayer.peer_disconnected.connect(remove_player)
+			add_player(multiplayer.get_unique_id())
+	#else:
+	#	add_player(multiplayer.get_unique_id())
+
+		
+		environment.add_to_group("walls")
 
 func _physics_process(_delta):
 	if tracked:
@@ -44,14 +68,10 @@ func _process(delta):
 		#get_tree().change_scene_to_file("res://Scenes/Victory screen/victory_screen.tscn")
 		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-func _on_single_player_button_pressed():
-	main_menu.hide()
-	hud.show()
-	#multiplayer.multiplayer_peer = enet_peer
-	add_player(multiplayer.get_unique_id())
-
 
 func add_player(peer_id):
+	print("adding player")
+	print(peer_id)
 	player = Player.instantiate()
 	player.name = str(peer_id)
 	add_child(player)
@@ -75,6 +95,9 @@ func _on_quit_pressed() -> void:
 func _on_spaceship_pressed():
 	get_tree().change_scene_to_file("res://spaceshipMap.tscn")
 	
-
+func _on_multiplayer_spawner_spawned(node):
+	print("spawned")
+	if node.is_multiplayer_authority():
+		node.health_changed.connect(update_health_bar)
 
 	
