@@ -57,6 +57,12 @@ var weapon_switch = 0
 	if is_multiplayer_authority():
 		current_health = max(current_health - amount, 0)
 		update_health.rpc(current_health) # Tell clients to update UI
+		if current_health <= 0:
+			get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			# Emit the health_changed signal with the updated health value
+			health_changed.emit(health)
 		
 
 @rpc("any_peer", "reliable") func update_health(new_health: int):

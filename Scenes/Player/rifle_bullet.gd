@@ -41,7 +41,7 @@ func _on_body_entered(body):
 
 	if body.has_method("take_damage"):
 #		print("ow")
-		body.take_damageErifle(damage)
+		body.take_damage(damage)
 
 		enemy_hit.emit()
 		destroy()
