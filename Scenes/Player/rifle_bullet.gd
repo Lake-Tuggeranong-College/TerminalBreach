@@ -39,7 +39,7 @@ func _on_body_entered(body):
 #	print("bullet hit")
 #	print (body.name)
 
-	if body.has_method("take_damageErifle"):
+	if body.has_method("take_damage"):
 #		print("ow")
 		body.take_damageErifle(damage)
 
