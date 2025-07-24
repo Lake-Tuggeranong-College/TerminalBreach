@@ -28,7 +28,7 @@ func _ready():
 		print("HUD found:", hud)
 		Enemies = hud.get_node_or_null("Enemies")
 
-	start_next_wave()
+	#start_next_wave()
 
 func start_next_wave():
 	current_wave += 1
