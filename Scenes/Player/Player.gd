@@ -202,7 +202,7 @@ func _process(delta: float):
 	# Speeds are subject to change
 	if Input.is_action_pressed("player_run") and is_crouching == false:
 		speed = 12.0
-	elif Input.is_action_just_pressed("ui_crouch"):
+	elif Input.is_action_just_pressed("ui_crouch"): 
 		print("Crouch")
 		toggle_crouch()
 		speed = 3.5
@@ -224,6 +224,7 @@ func _process(delta: float):
 		
 func toggle_crouch():
 	is_crouching = !is_crouching
+
 
 func shoot():
 	# If ammo is greater than 0, proceed with shooting
