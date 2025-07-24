@@ -14,6 +14,8 @@ signal health_changed(health_value)
 @onready var ammo_counter = null
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
 @onready var reticle = $CanvasLayer/HUD/Reticle
+@export var max_health: int = 100
+
 
 #player shooting
 var bullet_spawn
@@ -35,8 +37,7 @@ var current_weapon = null
 
 
 #player health
-var max_health = 100
-var current_health = max_health
+var current_health: int = 100
 var health_regen:float = 1 #amount of health regenerated every second
 var health:float = 100
 
@@ -46,10 +47,22 @@ var speed = 5.0
 var gravity = 20.0
 var is_crouching : bool = false
 @onready var weapon_holder = $weapon_holder
+@onready var health_bar = $HealthBar
 
 var is_ready = false
 
 var weapon_switch = 0
+
+@rpc("any_peer") func take_damage(amount: int):
+	if is_multiplayer_authority():
+		current_health = max(current_health - amount, 0)
+		update_health.rpc(current_health) # Tell clients to update UI
+		
+
+@rpc("any_peer", "reliable") func update_health(new_health: int):
+	current_health = new_health
+	if health_bar:
+		health_bar.value = float(current_health) / float(max_health) * 100.0
 
 func take_damageP(amount) -> void:
 	health -= amount
