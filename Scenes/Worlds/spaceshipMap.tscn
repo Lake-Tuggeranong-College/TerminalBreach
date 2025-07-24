@@ -1,4 +1,4 @@
-[gd_scene load_steps=275 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=276 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -760,9 +760,9 @@ data = PackedVector3Array(14.75, 0, 1.75, -14.75, 0, 1.75, 14.75, 0, -1.75, -14.
 material = SubResource("StandardMaterial3D_dfic2")
 size = Vector3(3.6, 0.1, 0.1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_wby6m"]
+[sub_resource type="BoxMesh" id="BoxMesh_2fi4r"]
 material = SubResource("StandardMaterial3D_dfic2")
-size = Vector3(27.35, 0.1, 0.1)
+size = Vector3(29.35, 0.1, 0.1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8o37v"]
 material = SubResource("StandardMaterial3D_rhh2n")
@@ -790,6 +790,10 @@ size = Vector2(27.35, 3.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f5yx6"]
 data = PackedVector3Array(13.675, 0, 1.75, -13.675, 0, 1.75, 13.675, 0, -1.75, -13.675, 0, 1.75, -13.675, 0, -1.75, 13.675, 0, -1.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wby6m"]
+material = SubResource("StandardMaterial3D_dfic2")
+size = Vector3(27.35, 0.1, 0.1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6aumy"]
 material = SubResource("StandardMaterial3D_rhh2n")
@@ -2691,7 +2695,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_gs31i")
 
 [node name="WindowPane" type="MeshInstance3D" parent="NavigationRegion3D/Exterior Walls/WindowWall5"]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -23.2441, 3.25, -35.5)
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -23.2, 3.25, -35.5)
 mesh = SubResource("PlaneMesh_n58uf")
 skeleton = NodePath("../..")
 
@@ -2711,13 +2715,13 @@ mesh = SubResource("BoxMesh_7hsqx")
 skeleton = NodePath("../../../../Extra Models")
 
 [node name="WindowFrameBottom" type="MeshInstance3D" parent="NavigationRegion3D/Exterior Walls/WindowWall5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.25, 1.475, -35.5)
-mesh = SubResource("BoxMesh_wby6m")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 1.475, -35.5)
+mesh = SubResource("BoxMesh_2fi4r")
 skeleton = NodePath("../../../../Extra Models")
 
 [node name="WindowFrameTop" type="MeshInstance3D" parent="NavigationRegion3D/Exterior Walls/WindowWall5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.25, 4.975, -35.5)
-mesh = SubResource("BoxMesh_wby6m")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.175, 4.975, -35.5)
+mesh = SubResource("BoxMesh_2fi4r")
 skeleton = NodePath("../../../../Extra Models")
 
 [node name="WindowWall6" type="Node" parent="NavigationRegion3D/Exterior Walls"]
