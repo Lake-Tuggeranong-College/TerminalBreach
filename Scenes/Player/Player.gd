@@ -260,7 +260,7 @@ func _process(delta: float):
 func toggle_crouch():
 	is_crouching = !is_crouching
 
-
+@rpc("any_peer")
 func shoot():
 	# If ammo is greater than 0, proceed with shooting
 	#anim_player.stop()
