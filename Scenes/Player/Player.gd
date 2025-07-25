@@ -39,7 +39,7 @@ var current_weapon = null
 #player health
 var current_health: int = 100
 var health_regen:float = 1 #amount of health regenerated every second
-var health:float = 100
+var health = 10
 
 #player movement
 const JUMP_VELOCITY = 10.0
@@ -71,7 +71,8 @@ var weapon_switch = 0
 		#health_bar.value = float(current_health) / float(max_health) * 100.0
 
 @rpc("any_peer")
-func take_damage():
+func take_damage(amount: int):
+#	current_health = max(current_health - amount, 0)
 	health -= 1
 	print("damage taken")
 	if health <= 0:
@@ -87,7 +88,7 @@ func take_damage():
 
 #func take_damageP(amount) -> void:
 	#health -= amount
-##	print("damage taken")
+#	print("damage taken")
 	#if health <= 0:
 #
 		#get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
