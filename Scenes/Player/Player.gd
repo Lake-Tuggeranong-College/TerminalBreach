@@ -53,33 +53,48 @@ var is_ready = false
 
 var weapon_switch = 0
 
-@rpc("any_peer") func take_damage(amount: int):
-	if is_multiplayer_authority():
-		current_health = max(current_health - amount, 0)
-		update_health.rpc(current_health) # Tell clients to update UI
-		if current_health <= 0:
-			get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			# Emit the health_changed signal with the updated health value
-			health_changed.emit(health)
-		
+#@rpc("any_peer") func take_damage(amount: int):
+	#if is_multiplayer_authority():
+		#current_health = max(current_health - amount, 0)
+		#update_health.rpc(current_health) # Tell clients to update UI
+		#if current_health <= 0:
+			#get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
+			#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		#else:
+			## Emit the health_changed signal with the updated health value
+			#health_changed.emit(health)
+		#
+#
+#@rpc("any_peer", "reliable") func update_health(new_health: int):
+	#current_health = new_health
+	#if health_bar:
+		#health_bar.value = float(current_health) / float(max_health) * 100.0
 
-@rpc("any_peer", "reliable") func update_health(new_health: int):
-	current_health = new_health
-	if health_bar:
-		health_bar.value = float(current_health) / float(max_health) * 100.0
-
-func take_damageP(amount) -> void:
-	health -= amount
-#	print("damage taken")
+@rpc("any_peer")
+func take_damage():
+	health -= 1
+	print("damage taken")
 	if health <= 0:
-
-		get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		print("Game Over!")
+		# Reset the player's health and position
+		health = max_health
+		position = Vector3.ZERO
+		# Emit the health_changed signal with the reset health value
+		health_changed.emit(health)
 	else:
 		# Emit the health_changed signal with the updated health value
 		health_changed.emit(health)
+
+#func take_damageP(amount) -> void:
+	#health -= amount
+##	print("damage taken")
+	#if health <= 0:
+#
+		#get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#else:
+		## Emit the health_changed signal with the updated health value
+		#health_changed.emit(health)
 	
 
 func _enter_tree():
