@@ -7,8 +7,8 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var environment = $NavigationRegion3D
 @onready var wave_label = $CanvasLayer/HUD/Enemies
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker
-var player
-var tracked = false
+var players = {}
+var tracked_player_id = null  # (for local player reference)
 
 var enet_peer = ENetMultiplayerPeer.new()
 
@@ -47,8 +47,11 @@ func _ready():
 		environment.add_to_group("walls")
 
 func _physics_process(_delta):
-	if tracked:
-		get_tree().call_group("enemy", "update_target_location", player.global_transform.origin)
+	if tracked_player_id and players.has(tracked_player_id):
+		var local_player = players[tracked_player_id]
+		if is_instance_valid(local_player):
+			get_tree().call_group("enemy", "update_target_location", local_player.global_transform.origin)
+
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("test world"):
@@ -70,19 +73,28 @@ func _process(delta):
 
 
 func add_player(peer_id):
-	print("adding player")
-	print(peer_id)
-	player = Player.instantiate()
-	player.name = str(peer_id)
-	add_child(player)
-	tracked = true
-	if player.is_multiplayer_authority():
-		player.health_changed.connect(update_health_bar)
+	if players.has(peer_id):
+		return  # Avoid duplicate
+	var new_player = Player.instantiate()
+	new_player.name = str(peer_id)
+	add_child(new_player)
+	players[peer_id] = new_player
+	
+	# If it's the local player
+	if new_player.is_multiplayer_authority():
+		tracked_player_id = peer_id
+		new_player.health_changed.connect(update_health_bar)
 
 func remove_player(peer_id):
-	var player = get_node_or_null(str(peer_id))
-	if player:
-		player.queue_free()
+	if players.has(peer_id):
+		var p = players[peer_id]
+		if is_instance_valid(p):
+			p.queue_free()
+		players.erase(peer_id)
+
+	if tracked_player_id == peer_id:
+		tracked_player_id = null
+		update_health_bar(0)
 
 func update_health_bar(health_value):
 	health_bar.value = health_value

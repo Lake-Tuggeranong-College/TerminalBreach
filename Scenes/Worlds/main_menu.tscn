@@ -36,7 +36,7 @@ script = ExtResource("1_07mw3")
 
 [node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(638.476, 170.259)
+position = Vector2(638.476, 227.974)
 scale = Vector2(1.14467, 1.07512)
 texture = ExtResource("4_asrc3")
 
@@ -79,7 +79,7 @@ text = "?"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xuwlm")
-pitch_scale = 0.99
+pitch_scale = 1.89
 autoplay = true
 parameters/looping = true
 
@@ -101,6 +101,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="SinglePlayer" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_26gi0")
 text = "Single Player"
