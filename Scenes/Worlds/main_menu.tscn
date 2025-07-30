@@ -175,9 +175,9 @@ position = Vector2(-74.5884, -258.756)
 [node name="ErrorLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 392.832
+offset_left = 369.958
 offset_top = -67.3342
-offset_right = 909.832
+offset_right = 886.958
 offset_bottom = -44.3342
 theme_override_fonts/font = ExtResource("2_xlx0f")
 theme_override_font_sizes/font_size = 18
