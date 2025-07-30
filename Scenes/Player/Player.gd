@@ -81,10 +81,8 @@ func take_damage(amount: int):
 		health = max_health
 		position = Vector3.ZERO
 		# Emit the health_changed signal with the reset health value
-		health_changed.emit(health)
-	else:
-		# Emit the health_changed signal with the updated health value
-		health_changed.emit(health)
+	health_changed.emit(health)
+
 
 #func take_damageP(amount) -> void:
 	#health -= amount
@@ -273,7 +271,9 @@ func shoot():
 	#and anim_player.current_animation != "shoot":
 	if weapon_switch ==0:
 		player_anim_player.play("shoot")
-		await get_tree().create_timer(shoot_cooldown_pistol).timeout
+		if raycast.is_colliding():
+			var hit_player = raycast.get_collider()
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority()) 
 	elif weapon_switch ==1:
 		player_anim_player.play("rifleshoot")
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
@@ -282,7 +282,9 @@ func shoot():
 	if ammo > 0 and weapon_switch == 0:
 		var pistol_bullet = pistol_bullet_scene.instantiate()
 		get_node("MultiplayerSynchronizer").add_child(pistol_bullet)
+
 		get_tree().root.add_child(pistol_bullet)
+
 		pistol_bullet.global_transform = bullet_spawn.global_transform
 		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
 		

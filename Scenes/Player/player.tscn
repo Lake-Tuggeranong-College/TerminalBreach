@@ -396,6 +396,8 @@ collision_mask = 2
 [node name="AnimationPlayer" parent="Camera3D/man" index="2"]
 autoplay = "move-Legacy Slot_001"
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_p6wdk")
