@@ -239,19 +239,20 @@ func shoot():
 	#and anim_player.current_animation != "shoot":
 	if weapon_switch ==0:
 		player_anim_player.play("shoot")
-		if raycast.is_colliding():
-			var hit_player = raycast.get_collider()
-			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority()) 
+		await get_tree().create_timer(shoot_cooldown_pistol).timeout
 	elif weapon_switch ==1:
 		player_anim_player.play("rifleshoot")
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
 	can_shoot = true
 	
 	if ammo > 0 and weapon_switch == 0:
+		if raycast.is_colliding():
+			var hit_player = raycast.get_collider()
+			hit_player.take_damage.rpc_id(hit_player.get_multiplayer_authority()) 
 		var pistol_bullet = pistol_bullet_scene.instantiate()
 		get_node("MultiplayerSynchronizer").add_child(pistol_bullet)
 
-		get_tree().root.add_child(pistol_bullet)
+		get_tree().add_child(pistol_bullet)
 
 		pistol_bullet.global_transform = bullet_spawn.global_transform
 		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
