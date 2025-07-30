@@ -281,7 +281,7 @@ func shoot():
 	
 	if ammo > 0 and weapon_switch == 0:
 		var pistol_bullet = pistol_bullet_scene.instantiate()
-		get_tree().root.add_child(pistol_bullet)
+		get_node("MultiplayerSynchronizer").add_child(pistol_bullet)
 		pistol_bullet.global_transform = bullet_spawn.global_transform
 		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
 		
