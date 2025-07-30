@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b25721k0oqnlb"]
+[gd_scene load_steps=14 format=3 uid="uid://b25721k0oqnlb"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/main_menu.gd" id="1_07mw3"]
 [ext_resource type="FontFile" uid="uid://cikbh0cijo3yi" path="res://Fonts/cyberformhalf.ttf" id="1_ix8f7"]
@@ -18,6 +18,43 @@ base_font = ExtResource("2_xlx0f")
 
 [sub_resource type="FontVariation" id="FontVariation_q3ytf"]
 base_font = ExtResource("2_xlx0f")
+
+[sub_resource type="Animation" id="Animation_uv3rf"]
+resource_name = "fade_error"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ErrorLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_voa73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ErrorLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60gsq"]
+_data = {
+"RESET": SubResource("Animation_voa73"),
+"fade_error": SubResource("Animation_uv3rf")
+}
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -79,7 +116,6 @@ text = "?"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_xuwlm")
-pitch_scale = 1.89
 autoplay = true
 parameters/looping = true
 
@@ -108,14 +144,17 @@ text = "Single Player"
 
 [node name="HostButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xlx0f")
 text = "Host"
 
 [node name="JoinButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xlx0f")
 text = "Join"
 
 [node name="AddressEntry" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xlx0f")
 placeholder_text = "Enter Address to Join Here"
 alignment = 1
 
@@ -132,6 +171,21 @@ text = "Quit"
 [node name="Transition" parent="." instance=ExtResource("6_tbhif")]
 visible = false
 position = Vector2(-74.5884, -258.756)
+
+[node name="ErrorLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 392.832
+offset_top = -67.3342
+offset_right = 909.832
+offset_bottom = -44.3342
+theme_override_fonts/font = ExtResource("2_xlx0f")
+theme_override_font_sizes/font_size = 18
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_60gsq")
+}
 
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="?" to="." method="_on__button_down"]
