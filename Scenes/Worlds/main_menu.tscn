@@ -145,12 +145,16 @@ text = "Single Player"
 [node name="HostButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_xlx0f")
-text = "Host"
+
+text = "Host Game"
+
 
 [node name="JoinButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_xlx0f")
-text = "Join"
+
+text = "Join Game"
+
 
 [node name="AddressEntry" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

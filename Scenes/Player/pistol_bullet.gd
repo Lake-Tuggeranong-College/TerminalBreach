@@ -35,6 +35,7 @@ func set_timer(time: float):
 	var timer = get_tree().create_timer(time)
 	queue_free()
 	
+
 func _on_body_entered(body):
 	#print("bullet hit")
 	#print (body.name)
