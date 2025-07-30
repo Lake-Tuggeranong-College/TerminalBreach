@@ -263,7 +263,13 @@ properties/2/replication_mode = 1
 script = ExtResource("1_2v3wm")
 standing_height = 2.15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_67y6s")
+
+[node name="StaticBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_67y6s")
 

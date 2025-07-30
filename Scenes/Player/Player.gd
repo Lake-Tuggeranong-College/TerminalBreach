@@ -39,7 +39,7 @@ var current_weapon = null
 #player health
 var current_health: int = 100
 var health_regen:float = 1 #amount of health regenerated every second
-var health = 10
+var health = 100
 
 #player movement
 const JUMP_VELOCITY = 10.0
@@ -73,7 +73,7 @@ var weapon_switch = 0
 @rpc("any_peer")
 func take_damage(amount: int):
 #	current_health = max(current_health - amount, 0)
-	health -= 1
+	health -= 20
 	print("damage taken")
 	if health <= 0:
 		print("Game Over!")
@@ -132,8 +132,8 @@ func _ready():
 		print("ammo counte rnot foun")
 		
 	if is_ready and ammo_counter:
-		update_ammo_counter()	
-	
+		update_ammo_counter()
+
 
 
 func update_ammo_counter():
@@ -281,6 +281,7 @@ func shoot():
 	
 	if ammo > 0 and weapon_switch == 0:
 		var pistol_bullet = pistol_bullet_scene.instantiate()
+		get_node("MultiplayerSynchronizer").add_child(pistol_bullet)
 		get_tree().root.add_child(pistol_bullet)
 		pistol_bullet.global_transform = bullet_spawn.global_transform
 		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
