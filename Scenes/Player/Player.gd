@@ -73,7 +73,7 @@ var weapon_switch = 0
 @rpc("any_peer")
 func take_damage(amount: int):
 #	current_health = max(current_health - amount, 0)
-	health -= 1
+	health -= 20
 	print("damage taken")
 	if health <= 0:
 		print("Game Over!")
@@ -81,10 +81,8 @@ func take_damage(amount: int):
 		health = max_health
 		position = Vector3.ZERO
 		# Emit the health_changed signal with the reset health value
-		health_changed.emit(health)
-	else:
-		# Emit the health_changed signal with the updated health value
-		health_changed.emit(health)
+	health_changed.emit(health)
+
 
 #func take_damageP(amount) -> void:
 	#health -= amount
@@ -273,7 +271,9 @@ func shoot():
 	#and anim_player.current_animation != "shoot":
 	if weapon_switch ==0:
 		player_anim_player.play("shoot")
-		await get_tree().create_timer(shoot_cooldown_pistol).timeout
+		if raycast.is_colliding():
+			var hit_player = raycast.get_collider()
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority()) 
 	elif weapon_switch ==1:
 		player_anim_player.play("rifleshoot")
 		await get_tree().create_timer(shoot_cooldown_rifle).timeout
