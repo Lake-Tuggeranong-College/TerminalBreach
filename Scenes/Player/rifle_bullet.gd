@@ -1,11 +1,13 @@
 extends Area3D
 signal enemy_hit
 var speed: float = 75.0
-var damage: int = 20
+var damage: int = 15
 @export var lifetime: float = 5.0
 var ccd_enabled = true
 var direction: Vector3
 var step_size = 0.1
+var shooter: Node = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +19,7 @@ func _ready():
 		#set_position(translation + direction * speed * get_process_delta_time())
 		#connect("body_entered", self, "_on_body_entered")
 
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	destroy()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -36,8 +38,13 @@ func set_timer(time: float):
 	queue_free()
 	
 func _on_body_entered(body):
-#	print("bullet hit")
-#	print (body.name)
+	if body == shooter:
+		return  # Prevent bullet from hitting the shooter
+
+	if body.has_method("take_damage"):
+		body.take_damage(damage)
+		enemy_hit.emit()
+		destroy()
 
 	if body.has_method("take_damage"):
 #		print("ow")

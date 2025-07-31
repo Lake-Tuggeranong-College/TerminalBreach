@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ehl5eldv70gi"]
+
+[ext_resource type="Script" path="res://Scenes/dont look/node_2d.gd" id="1_vmn8j"]
+[ext_resource type="Texture2D" uid="uid://ckbj0ne1f2vvm" path="res://icons/Black.bmp" id="2_xnb1l"]
+[ext_resource type="VideoStream" path="res://audio/clanka.ogv" id="3_x43v0"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(270, 152)
+scale = Vector2(0.91, 0.91)
+script = ExtResource("1_vmn8j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -546.154
+offset_top = -310.989
+offset_right = 1819.85
+offset_bottom = 1047.01
+texture = ExtResource("2_xnb1l")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 317.582
+offset_top = -167.033
+offset_right = 2073.58
+offset_bottom = 1753.97
+scale = Vector2(1.7, 1.7)
+stream = ExtResource("3_x43v0")
+autoplay = true
+loop = true

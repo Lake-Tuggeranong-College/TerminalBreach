@@ -73,7 +73,7 @@ script = ExtResource("1_07mw3")
 
 [node name="7Ddc6769-3759-4691-97e3-3555e34b3368" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(638.476, 227.974)
+position = Vector2(639.47, 226.051)
 scale = Vector2(1.14467, 1.07512)
 texture = ExtResource("4_asrc3")
 
@@ -187,6 +187,16 @@ libraries = {
 "": SubResource("AnimationLibrary_60gsq")
 }
 
+[node name="ryan" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1251.09
+offset_top = -324.166
+offset_right = 1435.09
+offset_bottom = -270.166
+theme_override_fonts/font = ExtResource("2_xlx0f")
+theme_override_font_sizes/font_size = 33
+text = "For ryan"
+
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="?" to="." method="_on__button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
@@ -195,3 +205,4 @@ libraries = {
 [connection signal="pressed" from="MarginContainer/VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ryan" to="." method="_on_ryan_pressed"]
