@@ -1065,10 +1065,10 @@ script = SubResource("GDScript_07fs1")
 
 [node name="Hitmarker" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 0
-offset_left = 794.76
-offset_top = 444.24
-offset_right = 810.76
-offset_bottom = 461.24
+offset_left = 795.0
+offset_top = 444.0
+offset_right = 811.0
+offset_bottom = 461.0
 texture = ExtResource("28_os5cx")
 expand_mode = 1
 
