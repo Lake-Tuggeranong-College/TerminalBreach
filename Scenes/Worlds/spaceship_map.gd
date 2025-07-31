@@ -34,8 +34,6 @@ func _ready():
 			# Host multiplayer server
 			print("hosting...")
 			var error = enet_peer.create_server(Global.PORT)
-			if error:
-				print("Server error: "+error)
 			multiplayer.multiplayer_peer = enet_peer
 			multiplayer.peer_connected.connect(add_player)
 			multiplayer.peer_disconnected.connect(remove_player)
