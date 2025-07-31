@@ -284,7 +284,7 @@ func shoot():
 		var pistol_bullet = pistol_bullet_scene.instantiate()
 		get_node("MultiplayerSynchronizer").add_child(pistol_bullet)
 
-		get_tree().add_child(pistol_bullet)
+		#get_tree().add_child(pistol_bullet)
 
 		pistol_bullet.global_transform = bullet_spawn.global_transform
 		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
