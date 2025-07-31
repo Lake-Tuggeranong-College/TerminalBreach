@@ -15,8 +15,8 @@ signal health_changed(health_value)
 @onready var hitmarker = $/root/SpaceshipMap/CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
 @onready var reticle = $/root/SpaceshipMap/CanvasLayer/HUD/Reticle
 @export var max_health: int = 100
-@export var pistol_damage: int = 5
-@export var rifle_damage: int = 10
+@export var pistol_damage: int = 10
+@export var rifle_damage: int = 15
 @onready var weapon_holder = $weapon_holder
 
 
@@ -28,7 +28,6 @@ var rifle_bullet_scene = preload("res://Scenes/Player/rifle_bullet.tscn")
 var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
-
 
 var ammo = 12
 var ammo_rifle = 32
@@ -102,23 +101,8 @@ func _ready():
 
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud:
-		print("✅ HUD found:", hud)
-
 		hitmarker = hud.get_node_or_null("Hitmarker")
 		reticle = hud.get_node_or_null("Reticle")
-
-		if hitmarker == null:
-			print("❌ Hitmarker not found under HUD")
-		else:
-			print("✅ Hitmarker found under HUD")
-
-		if reticle == null:
-			print("❌ Reticle not found under HUD")
-		else:
-			print("✅ Reticle found under HUD")
-	else:
-		print("❌ No node in group 'hud' found!")
-
 
 	camera.position.y = standing_height / 1.3
 
@@ -330,8 +314,6 @@ func start_reload():
 	is_reloading = false
 
 func show_hitmarker():
-	print("✅ Hitmarker triggered")
-
 	hitmarker.visible = true
 	hitmarker.modulate = Color(1, 1, 1, 1)  # Fully opaque white
 	hitmarker.size_flags_horizontal = Control.SIZE_FILL
