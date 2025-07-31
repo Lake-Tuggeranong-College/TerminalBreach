@@ -334,7 +334,6 @@ func show_hitmarker():
 
 	hitmarker.visible = true
 	hitmarker.modulate = Color(1, 1, 1, 1)  # Fully opaque white
-	hitmarker.position = Vector2(640, 360)  # Center-ish for 1280x720
 	hitmarker.size_flags_horizontal = Control.SIZE_FILL
 	hitmarker.size_flags_vertical = Control.SIZE_FILL
 	hitmarker.z_index = 1000  # Bring to front if using Control node
