@@ -313,6 +313,7 @@ func shoot():
 
 
 
+
 func start_reload():
 	is_reloading = true
 	if ammo_counter:
