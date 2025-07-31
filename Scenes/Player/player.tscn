@@ -399,10 +399,6 @@ autoplay = "move-Legacy Slot_001"
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.820661, 0, 0.571416, 0, 1, 0, -0.571416, 0, 0.820661, 0, 0, 0)
 
-[node name="IP_address_label" type="VBoxContainer" parent="Camera3D"]
-offset_right = 149.0
-offset_bottom = 39.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_p6wdk")
