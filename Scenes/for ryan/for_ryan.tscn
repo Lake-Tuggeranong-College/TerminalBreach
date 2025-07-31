@@ -24,3 +24,4 @@ offset_bottom = 1753.97
 scale = Vector2(1.7, 1.7)
 stream = ExtResource("3_x43v0")
 autoplay = true
+loop = true
