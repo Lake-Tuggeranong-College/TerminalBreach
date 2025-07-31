@@ -136,3 +136,9 @@ func upnp_setup():
 	assert(map_result == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % map_result)
 	
 	print("Success! Join Address: %s" % upnp.query_external_address())
+	
+
+
+
+func _on_ryan_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/for ryan/for_ryan.tscn")
