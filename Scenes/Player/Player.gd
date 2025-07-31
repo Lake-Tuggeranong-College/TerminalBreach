@@ -69,6 +69,7 @@ func take_damage(amount: int):
 		position = Vector3.ZERO
 		ammo = 12
 		ammo_rifle = 32
+		update_ammo_counter()
 	health_changed.emit(health)
 
 @rpc("authority", "reliable")
