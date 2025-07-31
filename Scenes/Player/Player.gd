@@ -67,6 +67,8 @@ func take_damage(amount: int):
 		print("Game Over for %s!" % name)
 		health = max_health
 		position = Vector3.ZERO
+		ammo = 12
+		ammo_rifle = 32
 	health_changed.emit(health)
 
 @rpc("authority", "reliable")
