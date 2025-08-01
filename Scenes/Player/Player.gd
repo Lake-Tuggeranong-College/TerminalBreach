@@ -71,6 +71,14 @@ func take_damage(amount: int):
 		update_ammo_counter()
 	health_changed.emit(health)
 
+@rpc("authority")
+func die():
+	var player_id = multiplayer.get_unique_id()
+	
+	rpc_id(1, "request_respawn", player_id)
+	
+	queue_free()
+
 @rpc("authority", "reliable")
 func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
 	var bullet_scene = rifle_bullet_scene if is_rifle else pistol_bullet_scene
