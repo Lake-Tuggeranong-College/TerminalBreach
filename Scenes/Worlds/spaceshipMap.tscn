@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=288 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -43,6 +43,8 @@
 [ext_resource type="PackedScene" uid="uid://b7d2khnhfhx4e" path="res://interior/bettervending.tscn" id="42_hqovd"]
 [ext_resource type="PackedScene" uid="uid://i0kugr6d80t7" path="res://newcontrl.tscn" id="42_rxpww"]
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
+[ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
+[ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -1006,7 +1008,6 @@ script = ExtResource("1_ua7sc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_g10px")
-autoplay = true
 parameters/looping = true
 
 [node name="PausedMenu" parent="." instance=ExtResource("40_mrqha")]
@@ -3217,5 +3218,16 @@ transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 
 
 [node name="Spawner38" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 49.9314, 2.22106, -10.1435)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("44_qnwor")]
+transform = Transform3D(2.41405, 0, 0.701695, 0, 3.32657, 0, -0.599878, 0, 2.82379, -61.2273, -2.1346, -16.9719)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_Scene"]
+stream = ExtResource("45_pett1")
+attenuation_model = 2
+volume_db = 12.19
+unit_size = 2.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
