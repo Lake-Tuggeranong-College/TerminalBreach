@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ebyukika44kj"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_fxtgm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ysktc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jm5h4"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_fxtgm")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+priority = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_ysktc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_jm5h4")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
