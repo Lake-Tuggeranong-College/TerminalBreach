@@ -8,20 +8,21 @@
 albedo_color = Color(0.346858, 0.266607, 0.0180907, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
 
 [node name="rifleBullet" type="Area3D"]
-transform = Transform3D(4.37107e-08, -1.00396, -0.0015925, -2.43368e-10, 0.00558978, -0.286022, 1, 4.38852e-08, 5.54268e-16, 0, 0, 0)
+transform = Transform3D(-9.48575e-13, -0.999985, -0.00556724, -2.4335e-10, 0.00556724, -0.999985, 1, 4.08562e-13, -2.43352e-10, 0, 0, 0)
 script = ExtResource("1_dcf2g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.29742, 8.71895e-08, -7.10543e-15, -7.10543e-15, -8.84756e-08, -2.1817, -1.00206e-07, 1.99899, -9.59262e-08, 0, 0, 0)
+transform = Transform3D(1, 4.36168e-08, -1.90655e-15, 0, -4.37114e-08, -1, -4.36168e-08, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_5ux0h")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, -2.52576e-15, -1.10404e-22, 0, -4.37114e-08, 1, -2.52576e-15, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.5, 7.21405e-16, 5.32907e-15, -1.7696e-16, 2.608, -2.12903e-22, -5.32907e-15, 9.31323e-10, 0.507, -1.9064e-10, 2.73875, 0.00434438)
+transform = Transform3D(0.186856, 2.79099e-16, -8.88178e-16, -1.36527e-16, 0.933632, 6.98492e-10, -4.44089e-15, 3.49246e-10, 0.177274, 3.46886e-12, -0.0498316, -7.90418e-05)
 material = SubResource("StandardMaterial3D_1m7wu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

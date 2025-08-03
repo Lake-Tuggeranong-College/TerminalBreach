@@ -59,3 +59,36 @@ func _on_spaceship_pressed():
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/options.tscn")
+
+@rpc("authority")
+func request_respawn(player_id: int) -> void:
+	print("Respawning player %d in 3 seconds..." % player_id)
+	
+	# Respawn cooldown (wait for 3 seconds)
+	await get_tree().create_timer(3.0).timeout
+	
+	spawn_player(player_id)
+
+
+func spawn_player(player_id: int) -> void:
+	var player_scene = preload("res://Scenes/Player/player.tscn")
+	var new_player = player_scene.instantiate()
+	
+	# Assign a spawn position (replace with your own logic)
+	new_player.position = get_spawn_position()
+	
+	# Add the player to the scene
+	add_child(new_player)
+	
+	# Set multiplayer authority so this player controls their own instance
+	new_player.set_multiplayer_authority(player_id)
+	
+	new_player.name = str(player_id)
+	
+	print("Player %d respawned!" % player_id)
+
+
+func get_spawn_position():
+	# TODO: Replace with your spawn logic
+	# For example, pick a random position or a fixed point
+	Global.position = Vector3.ZERO

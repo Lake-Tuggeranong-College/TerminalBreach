@@ -12,8 +12,14 @@ signal health_changed(health_value)
 @export var crouch_height : float = 1.5  # Crouched height
 @export var standing_height : float = 2.5  # Standing height
 @onready var ammo_counter = null
-@onready var hitmarker = $CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
-@onready var reticle = $CanvasLayer/HUD/Reticle
+@onready var hitmarker = $/root/SpaceshipMap/CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
+@onready var reticle = $/root/SpaceshipMap/CanvasLayer/HUD/Reticle
+@export var max_health: int = 100
+@export var pistol_damage: int = 10
+@export var rifle_damage: int = 15
+@onready var weapon_holder = $weapon_holder
+
+
 
 #player shooting
 var bullet_spawn
@@ -22,7 +28,6 @@ var rifle_bullet_scene = preload("res://Scenes/Player/rifle_bullet.tscn")
 var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
-
 
 var ammo = 12
 var ammo_rifle = 32
@@ -35,33 +40,61 @@ var current_weapon = null
 
 
 #player health
-var max_health = 100
-var current_health = max_health
+var current_health: int = 100
 var health_regen:float = 1 #amount of health regenerated every second
-var health:float = 100
+var health = 100
 
 #player movement
 const JUMP_VELOCITY = 10.0
 var speed = 5.0
 var gravity = 20.0
 var is_crouching : bool = false
-@onready var weapon_holder = $weapon_holder
+
 
 var is_ready = false
 var enemies_highlighted = false
 var weapon_switch = 0
 
-func take_damageP(amount) -> void:
-	health -= amount
-#	print("damage taken")
-	if health <= 0:
 
-		get_tree().change_scene_to_file("res://Scenes/Victory screen/lose_screen.tscn")
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
-		# Emit the health_changed signal with the updated health value
-		health_changed.emit(health)
+
+@rpc("any_peer")
+func take_damage(amount: int):
+	if not is_multiplayer_authority(): return  # Prevent clients from modifying health
+	health -= amount
+	print("%s took damage. Remaining: %d" % [name, health])
+	if health <= 0:
+		print("Game Over for %s!" % name)
+		health = max_health
+		position = Vector3.ZERO
+		ammo = 12
+		ammo_rifle = 32
+		update_ammo_counter()
+	health_changed.emit(health)
+
+@rpc("authority")
+func die():
+	var player_id = multiplayer.get_unique_id()
 	
+	rpc_id(1, "request_respawn", player_id)
+	
+	queue_free()
+
+@rpc("authority", "reliable")
+func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
+	var bullet_scene = rifle_bullet_scene if is_rifle else pistol_bullet_scene
+	var bullet = bullet_scene.instantiate()
+	bullet.global_transform = transform
+	bullet.damage = rifle_damage if is_rifle else pistol_damage
+
+	# 🔥 Assign the shooter so the bullet can ignore them
+	bullet.shooter = self
+
+	get_tree().current_scene.add_child(bullet)
+
+	# ✅ Only connect hitmarker if this peer is the shooter
+	if multiplayer.get_unique_id() == shooter_peer:
+		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
@@ -70,22 +103,17 @@ func _enter_tree():
 func _ready():
 	Global.player = self
 	if not is_multiplayer_authority(): return
+
 	bullet_spawn = get_node("Camera3D/bulletSpawn")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
-	# Find HUD in the world
-	Global.player = self
-	#print("Player _ready() called!")
 
-	await get_tree().process_frame  # Wait a frame
-	var hud = null
-	
+	await get_tree().process_frame  # Wait for HUD to be ready
 
-	while hud == null:
-		hud = get_tree().get_first_node_in_group("hud")
-		if hud:
-			print("HUD found:", hud)
-			hitmarker = hud.get_node_or_null("Hitmarker")
+	var hud = get_tree().get_first_node_in_group("hud")
+	if hud:
+		hitmarker = hud.get_node_or_null("Hitmarker")
+		reticle = hud.get_node_or_null("Reticle")
 
 	camera.position.y = standing_height / 1.3
 
@@ -97,8 +125,8 @@ func _ready():
 		print("ammo counte rnot foun")
 		
 	if is_ready and ammo_counter:
-		update_ammo_counter()	
-	
+		update_ammo_counter()
+
 
 
 func update_ammo_counter():
@@ -127,29 +155,29 @@ func _unhandled_input(event):
 	
 	
 	
-
 		
-
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading:
 		start_reload()
 		
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
-
 	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("weapon_switch") and not is_reloading:
-		if weapon_switch == 0: #switch weapon to the rifle
+		if weapon_switch == 0:  # switch to rifle
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
 			weapon_switch = 1
+			set_weapon_visibility(weapon_switch)
+			set_weapon_visibility.rpc(weapon_switch)
 			update_ammo_counter()
-		elif weapon_switch == 1: #switch weapon to the pistol
+		elif weapon_switch == 1:  # switch to pistol
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.show()
 			$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.hide()
 			weapon_switch = 0
-			#switch_weapon("rifle")
-			#print("Switched weapon")
+			set_weapon_visibility(weapon_switch)
+			set_weapon_visibility.rpc(weapon_switch)
 			update_ammo_counter()
+
 
 
 func _physics_process(delta):
@@ -184,13 +212,16 @@ func _physics_process(delta):
 
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("move")
+			play_remote_anim.rpc("move")
 		elif weapon_switch == 1:  # Rifle
 			player_anim_player.play("riflemove")
 	else:
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("idle")
+			play_remote_anim.rpc("idle")
 		elif weapon_switch == 1:  # Rifle
 			player_anim_player.play("rifleidle")
+			play_remote_anim.rpc("rifleidle")
 
 	move_and_slide()
 
@@ -207,7 +238,7 @@ func _process(delta: float):
 	# Speeds are subject to change
 	if Input.is_action_pressed("player_run") and is_crouching == false:
 		speed = 12.0
-	elif Input.is_action_just_pressed("ui_crouch"):
+	elif Input.is_action_just_pressed("ui_crouch"): 
 		print("Crouch")
 		toggle_crouch()
 		speed = 3.5
@@ -230,51 +261,58 @@ func _process(delta: float):
 func toggle_crouch():
 	is_crouching = !is_crouching
 
+@rpc("any_peer")
 func shoot():
-	# If ammo is greater than 0, proceed with shooting
-	#anim_player.stop()
-	#anim_player.play("shoot")
-	#rifle_anim_player.play("shoot")
+	if not can_shoot:
+		return
+
+	can_shoot = false
+
+	# Determine weapon stats
+	var is_rifle = weapon_switch == 1
+	var damage = rifle_damage if is_rifle else pistol_damage
+	var cooldown = shoot_cooldown_rifle if is_rifle else shoot_cooldown_pistol
+
+	# Play local effects
 	gunshot.play()
 	muzzle_flash.restart()
 	muzzle_flash.emitting = true
-	can_shoot = false
-	#and anim_player.current_animation != "shoot":
-	if weapon_switch ==0:
-		player_anim_player.play("shoot")
-		await get_tree().create_timer(shoot_cooldown_pistol).timeout
-	elif weapon_switch ==1:
-		player_anim_player.play("rifleshoot")
-		await get_tree().create_timer(shoot_cooldown_rifle).timeout
-	can_shoot = true
-	
-	if ammo > 0 and weapon_switch == 0:
-		var pistol_bullet = pistol_bullet_scene.instantiate()
-		get_tree().root.add_child(pistol_bullet)
-		pistol_bullet.global_transform = bullet_spawn.global_transform
-		pistol_bullet.scale = Vector3(0.1, 0.1, 0.1)
-		
 
-		# Connect bullet collision to hitmarker function
-		pistol_bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+	# Play local and remote animation
+	var anim_name = "rifleshoot" if is_rifle else "shoot"
+	player_anim_player.play(anim_name)
+	play_remote_anim.rpc(anim_name)
 
-		# Decrease ammo by 1
-		ammo -= 1
-	elif ammo_rifle > 0 and weapon_switch == 1:
-		var rifle_bullet = rifle_bullet_scene.instantiate()
-		get_tree().root.add_child(rifle_bullet)
-		rifle_bullet.global_transform = bullet_spawn.global_transform
-		rifle_bullet.scale = Vector3(0.1, 0.1, 0.1)
-		
+	# Raycast instant damage
+	if raycast.is_colliding():
+		var target = raycast.get_collider()
+		if target.has_method("take_damage"):
+			var authority_id = target.get_multiplayer_authority()
+			target.take_damage.rpc_id(authority_id, damage)
 
-		# Connect bullet collision to hitmarker function
-		rifle_bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
+	# Spawn bullet across network
+	var shooter_id = multiplayer.get_unique_id()
+	var spawn_transform = bullet_spawn.global_transform
 
-		# Decrease ammo_rifle by 1
+	if is_rifle and ammo_rifle > 0:
+		spawn_bullet(true, spawn_transform, shooter_id)
+		spawn_bullet.rpc(true, spawn_transform, shooter_id)
 		ammo_rifle -= 1
+	elif not is_rifle and ammo > 0:
+		spawn_bullet(false, spawn_transform, shooter_id)
+		spawn_bullet.rpc(false, spawn_transform, shooter_id)
+		ammo -= 1
 
-	# Update the ammo counter
+
 	update_ammo_counter()
+
+	await get_tree().create_timer(cooldown).timeout
+	can_shoot = true
+
+
+
+
+
 
 func start_reload():
 	is_reloading = true
@@ -292,32 +330,28 @@ func start_reload():
 	is_reloading = false
 
 func show_hitmarker():
-	if hitmarker:
-		if reticle:
-			reticle.visible = false  # Hide reticle when hitmarker appears
-#
-		#print("Showing hitmarker!")
-		hitmarker.visible = true
-		await get_tree().create_timer(0.2).timeout  # Keep hitmarker for 0.2s
-		hitmarker.visible = false
-		
-		if reticle:
-			reticle.visible = true  # Show reticle again after hitmarker disappears
-			
-		#print("Hiding hitmarker!")
-	#else:
-		#print("ERROR: Hitmarker is NULL!")
+	hitmarker.visible = true
+	hitmarker.modulate = Color(1, 1, 1, 1)  # Fully opaque white
+	hitmarker.size_flags_horizontal = Control.SIZE_FILL
+	hitmarker.size_flags_vertical = Control.SIZE_FILL
+	hitmarker.z_index = 1000  # Bring to front if using Control node
 
-func health_pickup(pickup_health_percent):
-	health += max_health * pickup_health_percent
-	health_changed.emit(health)
-	
-	
-func toggle_enemy_highlights(state):
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	for enemy in enemies:
-		if enemy.has_method("highlight") and enemy.has_method("unhighlight"):
-			if state:
-				enemy.highlight()
-			else:
-				enemy.unhighlight()
+	await get_tree().create_timer(0.2).timeout
+	hitmarker.visible = false
+
+
+
+
+@rpc("call_remote")
+func play_remote_anim(anim_name: String):
+	if player_anim_player.has_animation(anim_name):
+		player_anim_player.play(anim_name)
+		
+@rpc("call_remote")
+func set_weapon_visibility(weapon_index: int):
+	if weapon_index == 0:
+		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.show()
+		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.hide()
+	elif weapon_index == 1:
+		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
+		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()

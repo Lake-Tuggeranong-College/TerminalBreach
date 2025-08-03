@@ -28,10 +28,77 @@ func _on_host_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
 	
 func _on_join_button_pressed():
+	var ip = address_entry.text.strip_edges()
+	
+	if ip == "":
+		show_error("Please enter a valid IP address before joining.")
+		return
+
 	Global.single_player_mode = false
-	Global.address_server = address_entry.text
-	#Global.enet_peer.create_client(address_entry.text, Global.PORT)
-	print("Join Mode - pressed")
+	Global.address_server = ip
+
+	# Create the peer
+	var peer = ENetMultiplayerPeer.new()
+	var error = peer.create_client(ip, Global.PORT)
+
+	if error != OK:
+		show_error("Failed to create client.")
+		return
+
+	multiplayer.multiplayer_peer = peer
+
+	# Connect signal to check if connection fails
+	if multiplayer.connection_failed.is_connected(_on_connection_failed):
+		multiplayer.connection_failed.disconnect(_on_connection_failed)
+	multiplayer.connection_failed.connect(_on_connection_failed)
+
+	if multiplayer.connected_to_server.is_connected(_on_connected_to_server):
+		multiplayer.connected_to_server.disconnect(_on_connected_to_server)
+	multiplayer.connected_to_server.connect(_on_connected_to_server)
+	
+	# Start a timer as a fallback in case the signals don't fire
+	start_connection_timeout()
+	
+	print("Trying to connect to:", ip)
+
+func start_connection_timeout():
+	var timer = Timer.new()
+	timer.wait_time = 3.0
+	timer.one_shot = true
+	timer.name = "ConnectionTimeout"
+	add_child(timer)
+	timer.timeout.connect(_on_connection_timeout)
+	timer.start()
+
+func _on_connection_timeout():
+	if multiplayer.multiplayer_peer.get_connection_status() != MultiplayerPeer.CONNECTION_CONNECTED:
+		show_error("Connection timed out. Host may be offline or IP is incorrect.")
+		multiplayer.multiplayer_peer = null  # Disconnect gracefully
+
+	# Clean up the timer
+	if has_node("ConnectionTimeout"):
+		get_node("ConnectionTimeout").queue_free()
+
+
+func _on_connection_failed():
+	print("Connection to host failed.")
+	show_error("Could not connect to host. Please check the IP address and try again.")
+
+func show_error(message: String):
+	var error_label = $ErrorLabel
+	var anim = $AnimationPlayer
+	
+	error_label.text = message
+	error_label.visible = true
+	error_label.modulate.a = 1.0  # Reset alpha in case it's faded
+	
+	anim.stop()  # Stop any current animations on it
+	anim.play("fade_error")
+
+func _on_connected_to_server():
+	print("Successfully connected to host.")
+	if has_node("ConnectionTimeout"):
+		get_node("ConnectionTimeout").queue_free()
 	get_tree().change_scene_to_file("res://Scenes/Worlds/spaceshipMap.tscn")
 
 
@@ -69,3 +136,9 @@ func upnp_setup():
 	assert(map_result == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % map_result)
 	
 	print("Success! Join Address: %s" % upnp.query_external_address())
+	
+
+
+
+func _on_ryan_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/for ryan/for_ryan.tscn")

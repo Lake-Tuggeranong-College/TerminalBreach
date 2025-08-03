@@ -6,6 +6,8 @@ var damage: int = 75
 var ccd_enabled = true
 var direction: Vector3
 var step_size = 0.1
+var shooter: Node = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,14 +37,13 @@ func set_timer(time: float):
 	var timer = get_tree().create_timer(time)
 	queue_free()
 	
+
 func _on_body_entered(body):
-#	print("bullet hit")
-#	print (body.name)
+	if body == shooter:
+		return  # Prevent bullet from hitting the shooter
 
-	if body.has_method("take_damageEpistol"):
-#		print("ow")
-		body.take_damageEpistol(damage)
-
+	if body.has_method("take_damage"):
+		body.take_damage(damage)
 		enemy_hit.emit()
 		destroy()
 

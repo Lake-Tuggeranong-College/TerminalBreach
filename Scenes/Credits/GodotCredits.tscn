@@ -5,7 +5,7 @@
 [ext_resource type="VideoStream" path="res://animation/Dog-Dance.ogv" id="3_x6aq5"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="4_brv2e"]
 [ext_resource type="VideoStream" path="res://animation/Cat-Dance.ogv" id="5_ci4x3"]
-[ext_resource type="AudioStream" uid="uid://bhmaiwisj2yhn" path="res://audio/credits 2.ogg" id="6_nalc7"]
+[ext_resource type="AudioStream" uid="uid://bhmaiwisj2yhn" path="res://audio/Credits 2.ogg" id="6_nalc7"]
 [ext_resource type="VideoStream" path="res://animation/mixer man.ogv" id="6_tspwy"]
 [ext_resource type="VideoStream" path="res://animation/freddy-dance.ogv" id="7_yk0nh"]
 
