@@ -66,9 +66,12 @@ func take_damage(amount: int):
 	if health <= 0:
 		print("Game Over for %s!" % name)
 		global_position = Vector3(100,100,100)
-		deathanimplayer.play("DeathAnim")
+		#var death_anims = ["DeathAnim1", "DeathAnim2", "DeathAnim3", "DeathAnim4", "DeathAnim5"]
+		#var chosen_anim = death_anims[randi() % death_anims.size()]
+		#print("Playing animation: ", chosen_anim)
+		deathanimplayer.play("DeathAnim1")
 		healthbar.hide()
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(4.59).timeout
 		healthbar.show()
 		health = max_health
 		position = Vector3.ZERO
