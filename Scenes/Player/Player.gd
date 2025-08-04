@@ -21,7 +21,7 @@ signal health_changed(health_value)
 @onready var deathanimplayer = $DeathAnim
 @onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar
 @onready var dontwannadie = $DeathAnim/Idontwannadie
-
+@onready var deathsound = $DeathAnim/deathsound
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -70,6 +70,7 @@ func take_damage(amount: int):
 		#var chosen_anim = death_anims[randi() % death_anims.size()]
 		#print("Playing animation: ", chosen_anim)
 		deathanimplayer.play("DeathAnim1")
+		deathsound.play()
 		healthbar.hide()
 		await get_tree().create_timer(4.59).timeout
 		healthbar.show()

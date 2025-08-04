@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=36 format=3 uid="uid://xcjrjq5cbn7y"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_27dhu"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://buvlkhddosc45" path="res://Fonts/CorruptionFont.ttf" id="7_eg2uk"]
 [ext_resource type="PackedScene" uid="uid://q531qdb3m0yw" path="res://Scenes/Guns/riflecomplete.tscn" id="7_hb2iv"]
 [ext_resource type="Texture2D" uid="uid://b2vp1fhrqxnb0" path="res://images/eye.png" id="8_7vqxj"]
+[ext_resource type="AudioStream" uid="uid://beq0o01hry63r" path="res://radioglitchsound292597mp3.wav" id="9_c4r5u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
 
@@ -1124,6 +1125,12 @@ position = Vector2(1122, 500)
 scale = Vector2(1.05, 1.05)
 skew = 0.774926
 texture = ExtResource("8_7vqxj")
+
+[node name="deathsound" type="AudioStreamPlayer2D" parent="DeathAnim"]
+position = Vector2(820, 423)
+stream = ExtResource("9_c4r5u")
+volume_db = -6.265
+max_distance = 100.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
