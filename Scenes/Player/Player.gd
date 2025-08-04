@@ -18,8 +18,9 @@ signal health_changed(health_value)
 @export var pistol_damage: int = 10
 @export var rifle_damage: int = 15
 @onready var weapon_holder = $weapon_holder
-
-
+@onready var deathanimplayer = $DeathAnim
+@onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar
+@onready var dontwannadie = $DeathAnim/Idontwannadie
 
 #player shooting
 var bullet_spawn
@@ -52,7 +53,7 @@ var is_crouching : bool = false
 
 
 var is_ready = false
-
+var enemies_highlighted = false
 var weapon_switch = 0
 
 
@@ -64,6 +65,11 @@ func take_damage(amount: int):
 	print("%s took damage. Remaining: %d" % [name, health])
 	if health <= 0:
 		print("Game Over for %s!" % name)
+		global_position = Vector3(100,100,100)
+		deathanimplayer.play("DeathAnim")
+		healthbar.hide()
+		await get_tree().create_timer(5).timeout
+		healthbar.show()
 		health = max_health
 		position = Vector3.ZERO
 		ammo = 12
@@ -73,11 +79,12 @@ func take_damage(amount: int):
 
 @rpc("authority")
 func die():
+	await get_tree().create_timer(3).timeout
+	queue_free()
 	var player_id = multiplayer.get_unique_id()
-	
 	rpc_id(1, "request_respawn", player_id)
 	
-	queue_free()
+	
 
 @rpc("authority", "reliable")
 func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
@@ -103,7 +110,7 @@ func _enter_tree():
 func _ready():
 	Global.player = self
 	if not is_multiplayer_authority(): return
-
+	dontwannadie.hide()
 	bullet_spawn = get_node("Camera3D/bulletSpawn")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
@@ -147,6 +154,11 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * .005)
 		camera.rotate_x(-event.relative.y * .005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+		
+	#if Input.is_action_just_pressed("esp"):
+		#enemies_highlighted = !enemies_highlighted
+		#toggle_enemy_highlights(enemies_highlighted)
+
 	
 	
 	

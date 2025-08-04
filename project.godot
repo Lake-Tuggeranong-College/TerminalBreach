@@ -40,6 +40,7 @@ project/assembly_name="Frontier Lands"
 [global_group]
 
 nav="nav region"
+Player=""
 
 [input]
 
