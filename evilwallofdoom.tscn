@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctdr8x54ptgoy"]
+
+[ext_resource type="Script" path="res://evil_wall_of_doom.gd" id="1_827kd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i0c5"]
+size = Vector3(0.3, 10, 15)
+
+[node name="StaticBody3D" type="StaticBody3D" groups=["wall"]]
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("1_827kd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7i0c5")

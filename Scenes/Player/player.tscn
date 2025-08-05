@@ -262,6 +262,423 @@ properties/2/path = NodePath("Camera3D:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
+[sub_resource type="Animation" id="Animation_wjg53"]
+resource_name = "DeathAnim1"
+length = 6.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathAnim/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.61538),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathAnim/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.92308),
+"transitions": PackedFloat32Array(1, 0.499999),
+"update": 0,
+"values": [Color(0.954458, 3.60981e-06, 1.34766e-06, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathAnim/Idontwannadie:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0769231, 3.53846),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DeathAnim/Idontwannadie:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DeathAnim/Idontwannadie:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.230769, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.830769, 0.9, 0.975, 1.05, 1.125, 1.2, 1.275, 1.35, 1.43077, 1.5, 1.575, 1.65, 1.725, 1.79469, 1.86969, 1.94469, 2.01969, 2.02546, 2.09469, 2.16969, 2.24469, 2.31969, 2.39469, 2.46969, 2.54469, 2.62546, 2.69469, 2.76969, 2.84469, 2.91969, 2.99469, 3.06969, 3.14469, 3.22546, 3.29469, 3.36969, 3.44469, 3.51969),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(423, 288), Vector2(128, 470), Vector2(791, 113), Vector2(326, 213), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(311, 174), Vector2(423, 288), Vector2(790, 683), Vector2(234, 334), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(429, 248), Vector2(69.0001, 69), Vector2(128, 470), Vector2(791, 113), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(835, 444), Vector2(423, 288), Vector2(128, 470), Vector2(791, 113), Vector2(326, 213), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(67, 441), Vector2(423, 288), Vector2(128, 470), Vector2(234, 334), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(429, 248), Vector2(69.0001, 69), Vector2(128, 470), Vector2(791, 113), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(835, 444)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DeathAnim/Idontwannadie:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DeathAnim/Idontwannadie:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DeathAnim/Idontwannadie:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.075, 2.53846, 2.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.968627, 0.968627, 0.556863), Color(1, 0, 0, 1), Color(1, 0, 0, 0.607843)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DeathAnim/youareweak:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.53846, 6.46154),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DeathAnim/youareweak:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.525, 4.05, 4.61538),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["YOU", "ARE", "WEAK"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DeathAnim/youareweak:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.525, 4.61538),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(667, 343), Vector2(606, 346)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("DeathAnim/Idontwannadie2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.153846, 3.525),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("DeathAnim/Idontwannadie2:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.075, 2.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.968627, 0.968627, 0.556863), Color(1, 0, 0, 0.607843)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("DeathAnim/Idontwannadie2:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.225, 0.3, 0.375, 0.45, 0.9, 0.975, 1.05, 1.2, 1.275, 1.35, 1.425, 1.5, 2.025, 2.1, 2.175, 2.25, 2.325, 2.625, 3.3, 3.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(792, 494), Vector2(151, 332), Vector2(803, 698), Vector2(574, 435), Vector2(364, 545), Vector2(983, 537), Vector2(568, 573), Vector2(1009, 622), Vector2(791, 262), Vector2(467, 438), Vector2(240, 404), Vector2(265, 99), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(200, 697), Vector2(233, 231), Vector2(1114, 631)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("DeathAnim/Idontwannadie2:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.45, 0.525, 0.6, 0.675, 0.75, 0.825, 1.5, 1.575, 1.65, 1.725, 1.8, 1.875, 1.95, 2.1, 2.175, 2.25, 2.325, 2.4, 2.475, 2.55, 2.625, 2.7, 2.775, 2.85, 2.925, 3, 3.075, 3.15, 3.225, 3.3, 3.375, 3.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.113262, -0.113462, -0.438078, 0.579449, -0.387463, 0.130752, -0.1632, -0.506863, 0.439519, 0.141905, -0.309069, 0.81482, -0.166958, 0.4153, -0.336957, -3.43407, -0.639407, -0.0999646, 0.637842, -0.293646, 0.0664174, -0.186181, 0.40199, -0.350674, 0.12637, -1.16672, -3.27328, -5.9363, -6.71241, -6.13895, -6.42144, -6.42144]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("DeathAnim/Eye:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.675, 1.2, 1.95, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("DeathAnim/Eye:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(800, 527), Vector2(800, 527)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("DeathAnim/Eye:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(2.025, 2.175, 2.325),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.47822, -0.174533, 0.151844]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("DeathAnim/Eye:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.0588235)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("DeathAnim/Eye:skew")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("DeathAnim/Eye:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.75, 0.84037, 0.9, 0.975, 1.05, 1.125, 2.025, 2.1, 2.175, 2.25, 2.325),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1.05, 1.05), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(2.5, 2.5), Vector2(2, 2), Vector2(1, 1), Vector2(2.5, 2.5), Vector2(1.9, 1.9)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("DeathAnim/youareweak:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(5.07692, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("DeathAnim/Imdrowning:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(161, 600), Vector2(567, 487), Vector2(714, 159), Vector2(491, 602), Vector2(108, 282), Vector2(753, 716), Vector2(375, 581), Vector2(616, 51.0001), Vector2(982, 492), Vector2(184, 682), Vector2(927, 637), Vector2(228, 670), Vector2(899, 608), Vector2(187, 628), Vector2(793, 120), Vector2(909, 597), Vector2(986, 325), Vector2(154, 624), Vector2(154, 201), Vector2(147, 214), Vector2(963, 240), Vector2(982, 476), Vector2(1012, 530), Vector2(406, 396), Vector2(963, 299), Vector2(204, 460), Vector2(892, 603), Vector2(932, 454), Vector2(843, 718), Vector2(879, 403), Vector2(162, 478), Vector2(135, 477), Vector2(956, 660), Vector2(995, 405), Vector2(472, 608), Vector2(195, 481), Vector2(922, 613), Vector2(949, 444), Vector2(794, 153), Vector2(171, 672), Vector2(994, 693), Vector2(153, 648), Vector2(83, 311), Vector2(111, 530), Vector2(946, 243), Vector2(214, 681), Vector2(220, 452), Vector2(889, 155), Vector2(228, 569), Vector2(243, 401), Vector2(897, 215), Vector2(293, 644), Vector2(937, 331), Vector2(762, 522), Vector2(174, 269), Vector2(84, 375), Vector2(953, 593), Vector2(616, 455), Vector2(965, 421), Vector2(697, 584), Vector2(899, 393), Vector2(681, 515), Vector2(842, 175), Vector2(409, 439), Vector2(118, 250), Vector2(897, 542), Vector2(224, 589), Vector2(849, 123), Vector2(236, 654), Vector2(987, 122), Vector2(215, 610)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("DeathAnim/Imdrowning:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("DeathAnim/Imdrowning:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 2.55),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.559953), Color(1, 0, 0, 0.607843)]
+}
+
+[sub_resource type="Animation" id="Animation_7jyua"]
+resource_name = "DeathAnim2"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.513459, 0.440593, 0.307128, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3asy2"]
+resource_name = "DeathAnim3"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.231602, 0.354117, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cqxtv"]
+resource_name = "DeathAnim4"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.719049, 0.345107, 0.675988, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_mueou"]
+resource_name = "DeathAnim5"
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathAnim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.597029, 0.47822, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_35bo2"]
 length = 0.001
 tracks/0/type = "value"
@@ -528,386 +945,41 @@ tracks/21/keys = {
 "update": 0,
 "values": [Color(1, 0, 0, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_wjg53"]
-resource_name = "DeathAnim1"
-length = 6.5
-step = 0.075
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DeathAnim/ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.61538),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DeathAnim/ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.92308),
-"transitions": PackedFloat32Array(1, 0.499999),
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("DeathAnim/Imdrowning:position")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.954458, 3.60981e-06, 1.34766e-06, 1), Color(0, 0, 0, 1)]
+"values": [Vector2(345, 478)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DeathAnim/Idontwannadie:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0769231, 3.53846),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DeathAnim/Idontwannadie:size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DeathAnim/Idontwannadie:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.230769, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.830769, 0.9, 0.975, 1.05, 1.125, 1.2, 1.275, 1.35, 1.43077, 1.5, 1.575, 1.65, 1.725, 1.79469, 1.86969, 1.94469, 2.01969, 2.02546, 2.09469, 2.16969, 2.24469, 2.31969, 2.39469, 2.46969, 2.54469, 2.62546, 2.69469, 2.76969, 2.84469, 2.91969, 2.99469, 3.06969, 3.14469, 3.22546, 3.29469, 3.36969, 3.44469, 3.51969),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(423, 288), Vector2(128, 470), Vector2(791, 113), Vector2(326, 213), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(311, 174), Vector2(423, 288), Vector2(790, 683), Vector2(234, 334), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(429, 248), Vector2(69.0001, 69), Vector2(128, 470), Vector2(791, 113), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(835, 444), Vector2(423, 288), Vector2(128, 470), Vector2(791, 113), Vector2(326, 213), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(67, 441), Vector2(423, 288), Vector2(128, 470), Vector2(234, 334), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(429, 248), Vector2(69.0001, 69), Vector2(128, 470), Vector2(791, 113), Vector2(171, 130), Vector2(845, 389), Vector2(224, 388), Vector2(427, 236), Vector2(835, 444)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DeathAnim/Idontwannadie:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("DeathAnim/Idontwannadie:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("DeathAnim/Imdrowning:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0.0]
+"values": [false]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("DeathAnim/Idontwannadie:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.075, 2.53846, 2.55),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.968627, 0.968627, 0.556863), Color(1, 0, 0, 1), Color(1, 0, 0, 0.607843)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("DeathAnim/youareweak:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 3.53846, 6.46154),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("DeathAnim/youareweak:text")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(3.525, 4.05, 4.61538),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["YOU", "ARE", "WEAK"]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("DeathAnim/youareweak:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(3.525, 4.61538),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(667, 343), Vector2(606, 346)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("DeathAnim/Idontwannadie2:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.153846, 3.525),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("DeathAnim/Idontwannadie2:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0.075, 2.55),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0.968627, 0.968627, 0.556863), Color(1, 0, 0, 0.607843)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("DeathAnim/Idontwannadie2:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0.225, 0.3, 0.375, 0.45, 0.9, 0.975, 1.05, 1.2, 1.275, 1.35, 1.425, 1.5, 2.025, 2.1, 2.175, 2.25, 2.325, 2.625, 3.3, 3.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(792, 494), Vector2(151, 332), Vector2(803, 698), Vector2(574, 435), Vector2(364, 545), Vector2(983, 537), Vector2(568, 573), Vector2(1009, 622), Vector2(791, 262), Vector2(467, 438), Vector2(240, 404), Vector2(265, 99), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(1165, 697), Vector2(200, 697), Vector2(233, 231), Vector2(1114, 631)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("DeathAnim/Idontwannadie2:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0.45, 0.525, 0.6, 0.675, 0.75, 0.825, 1.5, 1.575, 1.65, 1.725, 1.8, 1.875, 1.95, 2.1, 2.175, 2.25, 2.325, 2.4, 2.475, 2.55, 2.625, 2.7, 2.775, 2.85, 2.925, 3, 3.075, 3.15, 3.225, 3.3, 3.375, 3.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.113262, -0.113462, -0.438078, 0.579449, -0.387463, 0.130752, -0.1632, -0.506863, 0.439519, 0.141905, -0.309069, 0.81482, -0.166958, 0.4153, -0.336957, -3.43407, -0.639407, -0.0999646, 0.637842, -0.293646, 0.0664174, -0.186181, 0.40199, -0.350674, 0.12637, -1.16672, -3.27328, -5.9363, -6.71241, -6.13895, -6.42144, -6.42144]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("DeathAnim/Eye:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.675, 1.2, 1.95, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, true, false]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("DeathAnim/Eye:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 2.025),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(800, 527), Vector2(800, 527)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("DeathAnim/Eye:rotation")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(2.025, 2.175, 2.325),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0.47822, -0.174533, 0.151844]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("DeathAnim/Eye:modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("DeathAnim/Imdrowning:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.0588235)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("DeathAnim/Eye:skew")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("DeathAnim/Eye:scale")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0.75, 0.84037, 0.9, 0.975, 1.05, 1.125, 2.025, 2.1, 2.175, 2.25, 2.325),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1.05, 1.05), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(2.5, 2.5), Vector2(2, 2), Vector2(1, 1), Vector2(2.5, 2.5), Vector2(1.9, 1.9)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("DeathAnim/youareweak:modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(5.07692, 6.5),
-"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7jyua"]
-resource_name = "DeathAnim2"
-step = 0.075
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DeathAnim/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.513459, 0.440593, 0.307128, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_3asy2"]
-resource_name = "DeathAnim3"
-step = 0.075
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DeathAnim/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.231602, 0.354117, 1, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_cqxtv"]
-resource_name = "DeathAnim4"
-step = 0.075
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DeathAnim/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.719049, 0.345107, 0.675988, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_mueou"]
-resource_name = "DeathAnim5"
-step = 0.075
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DeathAnim/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.975),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0.597029, 0.47822, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DeathAnim/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [Color(1, 1, 1, 0.559953)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fnfi2"]
@@ -1079,10 +1151,10 @@ offset_bottom = 924.0
 color = Color(0.954458, 3.60981e-06, 1.34766e-06, 1)
 
 [node name="Idontwannadie" type="RichTextLabel" parent="DeathAnim"]
-offset_left = 49.0
-offset_top = 205.0
-offset_right = 638.0
-offset_bottom = 380.0
+offset_left = 835.0
+offset_top = 444.0
+offset_right = 1424.0
+offset_bottom = 619.0
 rotation = 0.401426
 theme = SubResource("Theme_w5l58")
 text = "I DON'T WANT TO DIE"
@@ -1090,13 +1162,24 @@ text = "I DON'T WANT TO DIE"
 [node name="Idontwannadie2" type="RichTextLabel" parent="DeathAnim"]
 visible = false
 modulate = Color(1, 0.968627, 0.968627, 0.556863)
-offset_left = 792.0
-offset_top = 494.0
-offset_right = 1397.0
-offset_bottom = 656.0
+offset_left = 1114.0
+offset_top = 631.0
+offset_right = 1719.0
+offset_bottom = 793.0
 rotation = -0.113462
 theme = SubResource("Theme_w5l58")
 text = "HELP ME"
+
+[node name="Imdrowning" type="RichTextLabel" parent="DeathAnim"]
+visible = false
+modulate = Color(1, 1, 1, 0.559953)
+offset_left = 215.0
+offset_top = 610.0
+offset_right = 820.0
+offset_bottom = 772.0
+rotation = 0.113262
+theme = SubResource("Theme_w5l58")
+text = "IT HURTS SO BAD"
 
 [node name="youareweak" type="RichTextLabel" parent="DeathAnim"]
 visible = false
@@ -1106,10 +1189,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -194.0
-offset_top = -104.0
-offset_right = 150.0
-offset_bottom = 85.0
+offset_left = -133.0
+offset_top = -107.0
+offset_right = 211.0
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)

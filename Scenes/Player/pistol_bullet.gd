@@ -7,7 +7,7 @@ var ccd_enabled = true
 var direction: Vector3
 var step_size = 0.1
 var shooter: Node = null
-
+var player: Node3D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,10 @@ func _ready():
 		direction = transform.basis.z.normalized()  # Assuming forward is along Z
 		set_timer(lifetime)
 		set_as_top_level(true)
+		await get_tree().create_timer(0.1).timeout
+	while player == null:
+		player = get_tree().get_root().find_child("Player", true, false)
+		await get_tree().create_timer(0.1).timeout
 		#set_position(translation + direction * speed * get_process_delta_time())
 		#connect("body_entered", self, "_on_body_entered")
 
@@ -45,6 +49,11 @@ func _on_body_entered(body):
 	if body.has_method("take_damage"):
 		body.take_damage(damage)
 		enemy_hit.emit()
+		destroy()
+
+	elif body.has_method("take_damageB"): #code for the boiled one
+		shooter.global_position = Vector3(100,100,100)
+		print("wanker")
 		destroy()
 
 func destroy():

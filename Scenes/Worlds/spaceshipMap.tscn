@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=294 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -45,7 +45,9 @@
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
 [ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
+[ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
+[ext_resource type="PackedScene" uid="uid://ctdr8x54ptgoy" path="res://evilwallofdoom.tscn" id="47_i507k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -1003,6 +1005,9 @@ size = Vector2(7, 9)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7a476"]
 data = PackedVector3Array(3.5, 0, 4, -3.5, 0, 4, 3.5, 0, -4, -3.5, 0, 4, -3.5, 0, -4, 3.5, 0, -4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr38c"]
+size = Vector3(0.5, 3, 0.5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_lyrkb"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_46oa0"]
@@ -1010,6 +1015,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="SpaceshipMap" type="Node3D"]
 process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168762, -0.215107, -0.3992)
 script = ExtResource("1_ua7sc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -3236,6 +3242,13 @@ unit_size = 2.0
 autoplay = true
 parameters/looping = true
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+script = ExtResource("46_5kwde")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.166059, 0.253259, 0.0352783)
+shape = SubResource("BoxShape3D_vr38c")
+
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98923, 3.23124)
 
@@ -3248,4 +3261,21 @@ mesh = SubResource("BoxMesh_lyrkb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_46oa0")
 
+[node name="StaticBody3D" parent="." instance=ExtResource("47_i507k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.2901, 0.793356, -2.54434)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("47_i507k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.6716, 0.588588, -21.4937)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("47_i507k")]
+transform = Transform3D(-0.018831, 0, -0.999823, 0, 1, 0, 0.999823, 0, -0.018831, -62.7002, 0.457285, -18.526)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("47_i507k")]
+transform = Transform3D(0.998884, 0, -0.0472285, 0, 1, 0, 0.0472285, 0, 0.998884, -62.248, 0.46527, -17.2956)
+
+[node name="StaticBody3D5" parent="." instance=ExtResource("47_i507k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.6754, 0.588588, -20.16)
+
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
+
+[editable path="Sketchfab_Scene"]

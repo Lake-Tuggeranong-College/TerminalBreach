@@ -12,6 +12,8 @@ emission_energy_multiplier = 4.03
 
 [node name="pistolBullet" type="Area3D"]
 transform = Transform3D(-9.48575e-13, -0.999985, -0.00556724, -2.4335e-10, 0.00556724, -0.999985, 1, 4.08562e-13, -2.43352e-10, 0, 0, 0)
+collision_layer = 513
+collision_mask = 513
 script = ExtResource("1_0j20g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
