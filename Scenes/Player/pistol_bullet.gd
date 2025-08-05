@@ -53,7 +53,6 @@ func _on_body_entered(body):
 
 	elif body.has_method("take_damageB"): #code for the boiled one
 		shooter.global_position = Vector3(100,100,100)
-		print("wanker")
 		destroy()
 
 func destroy():

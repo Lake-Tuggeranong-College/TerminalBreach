@@ -368,3 +368,6 @@ func set_weapon_visibility(weapon_index: int):
 	elif weapon_index == 1:
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
+
+func world_border():
+	global_position = Vector3.ZERO

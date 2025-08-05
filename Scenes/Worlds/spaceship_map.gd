@@ -43,6 +43,9 @@ func _ready():
 
 		
 		environment.add_to_group("walls")
+		
+	if Global.single_player_mode == true:
+		add_player(multiplayer.get_unique_id())
 
 func _physics_process(_delta):
 	if tracked_player_id and players.has(tracked_player_id):
