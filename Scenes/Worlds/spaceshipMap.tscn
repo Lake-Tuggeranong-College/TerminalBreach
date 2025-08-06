@@ -3251,7 +3251,6 @@ shape = SubResource("BoxShape3D_vr38c")
 
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
-
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -3262,9 +3261,6 @@ mesh = SubResource("BoxMesh_lyrkb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_46oa0")
-
-[node name="lobotomy" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("47_ivg1o")
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
 
