@@ -21,7 +21,7 @@ signal health_changed(health_value)
 @onready var deathanimplayer = $DeathAnim
 @onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar
 @onready var dontwannadie = $DeathAnim/Idontwannadie
-
+@onready var deathsound = $DeathAnim/deathsound
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -62,13 +62,16 @@ var weapon_switch = 0
 func take_damage(amount: int):
 	if not is_multiplayer_authority(): return  # Prevent clients from modifying health
 	health -= amount
-	print("%s took damage. Remaining: %d" % [name, health])
+	print("%s took damage. Remaining: %d" % [name, health]) 
 	if health <= 0:
 		print("Game Over for %s!" % name)
 		global_position = Vector3(100,100,100)
-		deathanimplayer.play("DeathAnim")
-		healthbar.hide()
-		await get_tree().create_timer(5).timeout
+		#var death_anims = ["DeathAnim1", "DeathAnim2", "DeathAnim3", "DeathAnim4", "DeathAnim5"] #Index for death animations
+		#var chosen_anim = death_anims[randi() % death_anims.size()] # picks random death animation
+		deathanimplayer.play("DeathAnim1") 
+		deathsound.play() 
+		healthbar.hide() 
+		await get_tree().create_timer(4.59).timeout #respawn timer
 		healthbar.show()
 		health = max_health
 		position = Vector3.ZERO
@@ -100,6 +103,9 @@ func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
 
 	# ✅ Only connect hitmarker if this peer is the shooter
 	if multiplayer.get_unique_id() == shooter_peer:
+		if is_in_group("wall"):
+			pass
+	else:
 		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 
@@ -337,14 +343,14 @@ func start_reload():
 	is_reloading = false
 
 func show_hitmarker():
-	hitmarker.visible = true
-	hitmarker.modulate = Color(1, 1, 1, 1)  # Fully opaque white
-	hitmarker.size_flags_horizontal = Control.SIZE_FILL
-	hitmarker.size_flags_vertical = Control.SIZE_FILL
-	hitmarker.z_index = 1000  # Bring to front if using Control node
+		hitmarker.visible = true
+		hitmarker.modulate = Color(1, 1, 1, 1)  # Fully opaque white
+		hitmarker.size_flags_horizontal = Control.SIZE_FILL
+		hitmarker.size_flags_vertical = Control.SIZE_FILL
+		hitmarker.z_index = 1000  # Bring to front if using Control node
 
-	await get_tree().create_timer(0.2).timeout
-	hitmarker.visible = false
+		await get_tree().create_timer(0.2).timeout
+		hitmarker.visible = false
 
 
 
@@ -362,3 +368,6 @@ func set_weapon_visibility(weapon_index: int):
 	elif weapon_index == 1:
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
+
+func world_border():
+	global_position = Vector3.ZERO

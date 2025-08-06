@@ -41,6 +41,7 @@ project/assembly_name="Frontier Lands"
 
 nav="nav region"
 Player=""
+wall=""
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=292 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=293 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -45,8 +45,8 @@
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
 [ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
+[ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
-[ext_resource type="AudioStream" uid="uid://bay2u45rx7m8g" path="res://audio/lobotomy-sound-effect.ogg" id="47_ivg1o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -1004,6 +1004,9 @@ size = Vector2(7, 9)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7a476"]
 data = PackedVector3Array(3.5, 0, 4, -3.5, 0, 4, 3.5, 0, -4, -3.5, 0, 4, -3.5, 0, -4, 3.5, 0, -4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr38c"]
+size = Vector3(2, 3, 0.5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_lyrkb"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_46oa0"]
@@ -1011,6 +1014,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="SpaceshipMap" type="Node3D"]
 process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168762, -0.215107, -0.3992)
 script = ExtResource("1_ua7sc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -3111,8 +3115,8 @@ shape = SubResource("ConcavePolygonShape3D_7a476")
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.74916, -1.57298)
+spawn_interval = 1.0
 spawn_radius = 1.0
-wave_increment = 10
 spawn_points = Array[NodePath]([NodePath("Spawner2"), NodePath("Spawner4"), NodePath("Spawner5"), NodePath("Spawner3"), NodePath("Spawner7"), NodePath("Spawner6"), NodePath("Spawner8"), NodePath("Spawner9"), NodePath("Spawner10"), NodePath("Spawner11"), NodePath("Spawner12"), NodePath("Spawner13"), NodePath("Spawner14"), NodePath("Spawner15"), NodePath("Spawner16"), NodePath("Spawner17"), NodePath("Spawner18"), NodePath("Spawner19"), NodePath("Spawner20"), NodePath("Spawner21"), NodePath("Spawner22"), NodePath("Spawner23"), NodePath("Spawner24"), NodePath("Spawner25"), NodePath("Spawner26"), NodePath("Spawner27"), NodePath("Spawner28"), NodePath("Spawner29"), NodePath("Spawner30"), NodePath("Spawner31"), NodePath("Spawner32"), NodePath("Spawner33"), NodePath("Spawner34"), NodePath("Spawner35"), NodePath("Spawner36"), NodePath("Spawner37"), NodePath("Spawner38")])
 
 [node name="Spawner2" type="Marker3D" parent="Spawner"]
@@ -3237,8 +3241,17 @@ unit_size = 2.0
 autoplay = true
 parameters/looping = true
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.469854, 0.0539727, -0.102775)
+script = ExtResource("46_5kwde")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.49012e-08, 0, 1, -0.0348606, 0.253259, -0.00740433)
+shape = SubResource("BoxShape3D_vr38c")
+
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
+
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -3254,3 +3267,5 @@ shape = SubResource("ConcavePolygonShape3D_46oa0")
 stream = ExtResource("47_ivg1o")
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
+
+[editable path="Sketchfab_Scene"]

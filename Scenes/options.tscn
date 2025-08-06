@@ -363,11 +363,6 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Return" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_6tn6b")
-text = "Return"
-
 [node name="volume" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Volume:"
@@ -395,6 +390,11 @@ popup/item_2/id = 2
 popup/item_3/text = "1280x720"
 popup/item_3/id = 3
 
+[node name="Return" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6tn6b")
+text = "Return"
+
 [node name="7Ddc6769-3759-4691-97e3-3555e34b3367" type="Sprite2D" parent="MainMenu/MarginContainer/VBoxContainer"]
 show_behind_parent = true
 position = Vector2(69.7834, 121.804)
@@ -413,7 +413,7 @@ script = ExtResource("5_adjo0")
 visible = false
 position = Vector2(682, 107)
 
-[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="value_changed" from="MainMenu/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MainMenu/MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="MainMenu/MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
