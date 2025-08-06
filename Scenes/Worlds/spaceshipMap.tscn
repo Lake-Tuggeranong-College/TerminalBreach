@@ -3258,7 +3258,7 @@ shape = SubResource("BoxShape3D_vr38c")
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
 
-[node name="Lobotomy-sound-effect" type="AudioStreamPlayer" parent="Node3D"]
+[node name="lobotomy" type="AudioStreamPlayer2D" parent="Node3D"]
 stream = ExtResource("47_ivg1o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
