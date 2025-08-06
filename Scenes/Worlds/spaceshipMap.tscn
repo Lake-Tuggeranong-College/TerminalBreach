@@ -3236,7 +3236,7 @@ transform = Transform3D(2.41405, 0, 0.701695, 0, 3.32657, 0, -0.599878, 0, 2.823
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_Scene"]
 stream = ExtResource("45_pett1")
 attenuation_model = 2
-volume_db = 12.19
+volume_db = 33.523
 unit_size = 2.0
 autoplay = true
 parameters/looping = true
@@ -3252,6 +3252,8 @@ shape = SubResource("BoxShape3D_vr38c")
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
 
+visible = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 100, 85.3491, 100)
 mesh = SubResource("BoxMesh_lyrkb")
@@ -3260,6 +3262,9 @@ mesh = SubResource("BoxMesh_lyrkb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="lobotomy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("47_ivg1o")
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
 

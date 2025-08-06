@@ -1,7 +1,8 @@
-extends Node3D
+extends Node3D  # This script is on Node3D
+
+@onready var hit_sound = get_node("../lobotomy")  # Go up one level and find the sound
 
 var player: Node3D = null
-@onready var hit_sound: AudioStreamPlayer = $Node3D/lobotomy
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
