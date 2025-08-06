@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=292 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
+[ext_resource type="AudioStream" uid="uid://bay2u45rx7m8g" path="res://audio/lobotomy-sound-effect.ogg" id="47_ivg1o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -3237,7 +3238,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98923, 3.23124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
+
+[node name="Lobotomy-sound-effect" type="AudioStreamPlayer" parent="Node3D"]
+stream = ExtResource("47_ivg1o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 100, 85.3491, 100)
