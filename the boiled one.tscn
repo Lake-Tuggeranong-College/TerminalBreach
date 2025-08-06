@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://p0kex8r80um4"]
+
+[ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="1_f6pqy"]
+[ext_resource type="Script" path="res://boiledhell.gd" id="2_3jr5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ybsb6"]
+size = Vector3(0.6, 2.2, 0.6)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_f6pqy")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231044, 0, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_3jr5o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0978869, 0.734865, 0)
+shape = SubResource("BoxShape3D_ybsb6")
