@@ -50,7 +50,6 @@
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
 
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
 
