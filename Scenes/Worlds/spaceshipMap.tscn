@@ -1,4 +1,6 @@
-[gd_scene load_steps=296 format=3 uid="uid://txw564016hgy"]
+
+[gd_scene load_steps=292 format=3 uid="uid://txw564016hgy"]
+
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
@@ -47,8 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
-[ext_resource type="PackedScene" uid="uid://ctdr8x54ptgoy" path="res://evilwallofdoom.tscn" id="47_i507k"]
-[ext_resource type="Script" path="res://Scenes/Worlds/worldborder.gd" id="49_ghjic"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -3255,7 +3256,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, -1.49012e-08, 0, 1, -0.0348606, 0.2532
 shape = SubResource("BoxShape3D_vr38c")
 
 [node name="Node3D" parent="." instance=ExtResource("46_dswip")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98923, 3.23124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
+
+[node name="Lobotomy-sound-effect" type="AudioStreamPlayer" parent="Node3D"]
+stream = ExtResource("47_ivg1o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 100, 85.3491, 100)
