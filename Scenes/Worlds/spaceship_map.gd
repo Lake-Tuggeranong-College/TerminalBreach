@@ -7,6 +7,8 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var environment = $NavigationRegion3D
 @onready var wave_label = $CanvasLayer/HUD/Enemies
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker
+@onready var popup_image = $Popupimage
+@onready var sound_player = $SoundPlayer
 var players = {}
 var tracked_player_id = null  # (for local player reference)
 
@@ -65,12 +67,19 @@ func _unhandled_input(_event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			
-func _process(delta):
-	pass
-	#if get_tree().get_nodes_in_group("enemy").size() ==0:
-		#print("enemy dead")
-		#get_tree().change_scene_to_file("res://Scenes/Victory screen/victory_screen.tscn")
-		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _process(_delta):
+	if Input.is_action_just_pressed("popup_key"):
+		# Show image
+		popup_image.visible = true
+		
+		# Play sound from the start
+		sound_player.stop()  # make sure it restarts
+		sound_player.play()
+		# Hide image and stop sound after 1 second
+		await get_tree().create_timer(4.38).timeout
+		popup_image.visible = false
+		sound_player.stop()
 
 
 func add_player(peer_id):
