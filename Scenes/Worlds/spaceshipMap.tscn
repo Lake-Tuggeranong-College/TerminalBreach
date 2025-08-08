@@ -1,8 +1,10 @@
-[gd_scene load_steps=293 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=294 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
+[ext_resource type="Texture2D" uid="uid://cu4ahw78u2w48" path="res://icons/okay-garmin-video-speichern-v0-kfpi3m2flpef1.webp" id="2_htmix"]
 [ext_resource type="Texture2D" uid="uid://dvjg8qw203lj7" path="res://textures/panorama6.jpg" id="2_ovteb"]
+[ext_resource type="AudioStream" uid="uid://cavo8dk2jwoni" path="res://audio/ok-garmin.ogg" id="2_qkc0c"]
 [ext_resource type="Texture2D" uid="uid://d3vf70f35hwbm" path="res://textures/metalgrid(floor)/metalgrid2_AO.png" id="3_0tvp7"]
 [ext_resource type="Texture2D" uid="uid://dyrr2si0y7stw" path="res://textures/metalgrid(floor)/metalgrid2_metallic.png" id="4_7gjqj"]
 [ext_resource type="Texture2D" uid="uid://umg2dbwr1tlw" path="res://textures/metalgrid(floor)/metalgrid2_roughness.png" id="5_ic1wy"]
@@ -39,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cun7mc88ipxp5" path="res://textures/spacepanels(doors)/filthy-space-panels_roughness.png" id="37_8sd5s"]
 [ext_resource type="Texture2D" uid="uid://biqw5pexpt1pg" path="res://textures/metalbase(walls)/metal-siding-base_roughness.png" id="37_wt8lh"]
 [ext_resource type="PackedScene" uid="uid://b2accwiykec1o" path="res://Scenes/pause menu/paused_menu.tscn" id="40_mrqha"]
-[ext_resource type="AudioStream" uid="uid://c42vmaf4d2f3e" path="res://audio/Background Main.ogg" id="41_g10px"]
 [ext_resource type="PackedScene" uid="uid://b7d2khnhfhx4e" path="res://interior/bettervending.tscn" id="42_hqovd"]
 [ext_resource type="PackedScene" uid="uid://i0kugr6d80t7" path="res://newcontrl.tscn" id="42_rxpww"]
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
@@ -1017,8 +1018,16 @@ process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168762, -0.215107, -0.3992)
 script = ExtResource("1_ua7sc")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("41_g10px")
+[node name="Popupimage" type="TextureRect" parent="."]
+visible = false
+offset_left = 960.0
+offset_top = 523.0
+offset_right = 1600.0
+offset_bottom = 900.0
+texture = ExtResource("2_htmix")
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qkc0c")
 parameters/looping = true
 
 [node name="PausedMenu" parent="." instance=ExtResource("40_mrqha")]
