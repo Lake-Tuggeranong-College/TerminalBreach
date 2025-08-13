@@ -16,7 +16,7 @@ signal health_changed(health_value)
 @onready var reticle = $/root/SpaceshipMap/CanvasLayer/HUD/Reticle
 @export var max_health: int = 100
 @export var pistol_damage: int = 10
-@export var rifle_damage: int = 15
+@export var rifle_damage: int = 1
 @onready var weapon_holder = $weapon_holder
 @onready var deathanimplayer = $DeathAnim
 @onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar

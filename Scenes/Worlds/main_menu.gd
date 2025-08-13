@@ -3,6 +3,8 @@ extends Control
 @onready var scenetransition = $Transition/AnimationPlayer
 @onready var menu = $"."
 @onready var address_entry = $MarginContainer/VBoxContainer/AddressEntry
+@onready var hidden_ip = $MarginContainer/VBoxContainer/hidden_ip
+
 
 
 
@@ -142,3 +144,38 @@ func upnp_setup():
 
 func _on_ryan_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/for ryan/for_ryan.tscn")
+
+
+func _on_join_default_server_pressed() -> void:
+	var ip = hidden_ip.text.strip_edges()
+	
+	if ip == "":
+		show_error("Please enter a valid IP address before joining.")
+		return
+
+	Global.single_player_mode = false
+	Global.address_server = ip
+
+	# Create the peer
+	var peer = ENetMultiplayerPeer.new()
+	var error = peer.create_client(ip, Global.PORT)
+
+	if error != OK:
+		show_error("Failed to create client.")
+		return
+
+	multiplayer.multiplayer_peer = peer
+
+	# Connect signal to check if connection fails
+	if multiplayer.connection_failed.is_connected(_on_connection_failed):
+		multiplayer.connection_failed.disconnect(_on_connection_failed)
+	multiplayer.connection_failed.connect(_on_connection_failed)
+
+	if multiplayer.connected_to_server.is_connected(_on_connected_to_server):
+		multiplayer.connected_to_server.disconnect(_on_connected_to_server)
+	multiplayer.connected_to_server.connect(_on_connected_to_server)
+	
+	# Start a timer as a fallback in case the signals don't fire
+	start_connection_timeout()
+	
+	print("Trying to connect to:", ip)
