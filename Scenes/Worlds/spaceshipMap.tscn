@@ -1,6 +1,7 @@
-[gd_scene load_steps=294 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=295 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
+[ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
 [ext_resource type="Texture2D" uid="uid://cu4ahw78u2w48" path="res://icons/okay-garmin-video-speichern-v0-kfpi3m2flpef1.webp" id="2_htmix"]
 [ext_resource type="Texture2D" uid="uid://dvjg8qw203lj7" path="res://textures/panorama6.jpg" id="2_ovteb"]
@@ -1018,7 +1019,14 @@ process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168762, -0.215107, -0.3992)
 script = ExtResource("1_ua7sc")
 
-[node name="Popupimage" type="TextureRect" parent="."]
+[node name="BrainrotVideo" type="VideoStreamPlayer" parent="."]
+offset_left = 545.0
+offset_top = 100.0
+offset_right = 2153.0
+offset_bottom = 468.0
+stream = ExtResource("2_0qw0f")
+
+[node name="garmin" type="TextureRect" parent="."]
 visible = false
 offset_left = 960.0
 offset_top = 523.0
@@ -1026,7 +1034,7 @@ offset_right = 1600.0
 offset_bottom = 900.0
 texture = ExtResource("2_htmix")
 
-[node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+[node name="okgarmin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qkc0c")
 parameters/looping = true
 
