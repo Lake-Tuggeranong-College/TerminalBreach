@@ -1038,6 +1038,21 @@ grow_vertical = 0
 size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
+[node name="AmmoCounter2" type="Label" parent="Camera3D"]
+anchors_preset = -1
+anchor_left = 0.961264
+anchor_top = 0.003
+anchor_right = 0.997
+anchor_bottom = 0.039
+offset_left = -0.376099
+offset_top = 0.056
+offset_right = 0.455933
+offset_bottom = -0.271999
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
 [node name="man" parent="Camera3D" instance=ExtResource("5_gc3jb")]
 transform = Transform3D(-0.0994226, 0, -0.0107305, 0, 0.1, 0, 0.0107305, 0, -0.0994226, 0.0903189, -1.88805, 0.104838)
 
@@ -1118,6 +1133,31 @@ autoplay = "move-Legacy Slot_001"
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0.820661, 0, 0.571416, 0, 1, 0, -0.571416, 0, 0.820661, 0, 0, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera3D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -82.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/HBoxContainer"]
+layout_mode = 2
+
+[node name="weapon_label" type="Label" parent="Camera3D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pistol
+"
+
+[node name="active_ammo" type="Label" parent="Camera3D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="current_ammo" type="Label" parent="Camera3D/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

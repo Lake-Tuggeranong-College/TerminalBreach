@@ -6,8 +6,6 @@ extends Control
 @onready var hidden_ip = $MarginContainer/VBoxContainer/hidden_ip
 
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scenetransition.get_parent().get_node("ColorRect").color.a = 255

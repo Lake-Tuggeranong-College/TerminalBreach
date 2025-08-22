@@ -31,7 +31,9 @@ var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
 var ammo = 12
+var ammo_pistol_max = 120
 var ammo_rifle = 32
+var ammo_rifle_max = 320
 
 var reload_time = 3
 var is_reloading = false
