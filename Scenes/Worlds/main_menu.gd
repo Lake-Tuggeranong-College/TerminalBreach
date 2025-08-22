@@ -4,12 +4,14 @@ extends Control
 @onready var menu = $"."
 @onready var address_entry = $MarginContainer/VBoxContainer/AddressEntry
 @onready var hidden_ip = $MarginContainer/VBoxContainer/hidden_ip
-
+@onready var ip_label = $IpLabel
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var ip = get_local_ip()
+	ip_label.text = "Host IP: " + ip
 	scenetransition.get_parent().get_node("ColorRect").color.a = 255
 	scenetransition.play("fadeout")
 
@@ -179,3 +181,14 @@ func _on_join_default_server_pressed() -> void:
 	start_connection_timeout()
 	
 	print("Trying to connect to:", ip)
+
+func get_local_ip() -> String:
+	var addresses = IP.get_local_addresses()
+	for ip in addresses:
+		if ip.begins_with("192.") or ip.begins_with("10.") or ip.begins_with("172."):
+			return ip
+	# Fallback to first available address if list not empty
+	if addresses.size() > 0:
+		return addresses[0]
+	# Final fallback
+	return "127.0.0.1"
