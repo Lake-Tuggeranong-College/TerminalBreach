@@ -1,4 +1,4 @@
-[gd_scene load_steps=296 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=299 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
+[ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -1011,6 +1012,11 @@ data = PackedVector3Array(3.5, 0, 4, -3.5, 0, 4, 3.5, 0, -4, -3.5, 0, 4, -3.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vr38c"]
 size = Vector3(2, 3, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8idbg"]
+albedo_texture = ExtResource("50_7ht8p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u55g2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lyrkb"]
 
@@ -3279,13 +3285,91 @@ shape = SubResource("BoxShape3D_vr38c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 100, 85.3491, 100)
+[node name="Boiled One TP" type="Node" parent="."]
+
+[node name="Sign" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(-0.173648, 0.984808, -2.15237e-08, 0, -4.37114e-08, -0.5, -0.984808, -0.173648, 3.7952e-09, 81.1403, 88.534, 100.862)
+material_override = SubResource("StandardMaterial3D_8idbg")
+mesh = SubResource("PlaneMesh_u55g2")
+
+[node name="Sign2" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(-0.984808, 0.173648, 3.7952e-09, 0, -4.37114e-08, 0.5, 0.173648, 0.984808, 2.15237e-08, 81.1403, 89.8002, 89.3364)
+material_override = SubResource("StandardMaterial3D_8idbg")
+mesh = SubResource("PlaneMesh_u55g2")
+
+[node name="Sign3" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(0.540196, 0.841539, 1.83924e-08, -1.11032e-15, -4.37114e-08, 0.5, 0.841539, -0.540196, -1.18064e-08, 69.7099, 91.1087, 94.7794)
+material_override = SubResource("StandardMaterial3D_8idbg")
+mesh = SubResource("PlaneMesh_u55g2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 99.9831, 85.134, 99.6008)
 mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 82.4369, 87.003, 99.6008)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 80.9062, 88.1249, 90.4035)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 70.7317, 89.475, 94.1876)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 76.8697, 90.6573, 100.577)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 73.8447, 91.6364, 110.294)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Boiled One TP"]
+transform = Transform3D(3.44226, 0, 0, 0, 1, 0, 0, 0, 3.33182, 59.2657, 87.8885, 110.294)
+mesh = SubResource("BoxMesh_lyrkb")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boiled One TP/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_46oa0")
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
