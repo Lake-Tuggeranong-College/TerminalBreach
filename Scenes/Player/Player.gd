@@ -152,6 +152,8 @@ func update_ammo_counter():
 			ammo_counter.text = str(ammo_rifle) + "/32"
 	else:
 		print("no label cuh")
+	$Camera3D/ammo_counter_all/pistol_ammo/active_ammo.text = str(ammo) + "/12"
+	$Camera3D/ammo_counter_all/rifle_ammo/active_ammo.text = str(ammo_rifle) + "/32"
 	
 
 
