@@ -30,10 +30,12 @@ var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
-var ammo = 12
-var ammo_pistol_max = 120
-var ammo_rifle = 32
-var ammo_rifle_max = 320
+var ammo = 12 #active ammo
+var ammo_pistol_reserve = 0 #reserve ammo
+var ammo_pistol_max = 120 #maximum reserve ammo
+var ammo_rifle = 32 #active ammo
+var ammo_rifle_reserve = 0 #reserve ammo
+var ammo_rifle_max = 320 #maximum reserve ammo
 
 var reload_time = 3
 var is_reloading = false
@@ -154,6 +156,8 @@ func update_ammo_counter():
 		print("no label cuh")
 	$Camera3D/ammo_counter_all/pistol_ammo/active_ammo.text = str(ammo) + "/12"
 	$Camera3D/ammo_counter_all/rifle_ammo/active_ammo.text = str(ammo_rifle) + "/32"
+	$Camera3D/ammo_counter_all/pistol_ammo/reserve_ammo.text = str(ammo_pistol_reserve) + "/" + str(ammo_pistol_max)
+	$Camera3D/ammo_counter_all/rifle_ammo/reserve_ammo.text = str(ammo_rifle_reserve) + "/" + str(ammo_rifle_max)
 	
 
 
