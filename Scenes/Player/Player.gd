@@ -347,7 +347,12 @@ func start_reload():
 
 	await get_tree().create_timer(reload_time).timeout  # Wait for reload time
 	if weapon_switch == 0:
-		ammo = 12  # Reset ammo after reload
+		if ammo_pistol_reserve >= 12:
+			ammo = 12
+			ammo_pistol_reserve = ammo_pistol_reserve - 12
+		elif ammo_pistol_reserve < 12:
+			ammo = ammo_pistol_reserve  # Reset ammo after reload
+			ammo_pistol_reserve = 0
 	elif weapon_switch == 1:
 		ammo_rifle = 32  # Reset ammo after reload
 	update_ammo_counter()  # Update the counter after reload
