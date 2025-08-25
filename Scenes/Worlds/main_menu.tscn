@@ -210,6 +210,15 @@ theme_override_fonts/font = ExtResource("2_xlx0f")
 theme_override_font_sizes/font_size = 33
 text = "For ryan"
 
+[node name="IpLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -155.144
+offset_top = -323.204
+offset_right = 190.856
+offset_bottom = -223.204
+theme_override_fonts/font = ExtResource("2_xlx0f")
+theme_override_font_sizes/font_size = 20
+
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="?" to="." method="_on__button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
