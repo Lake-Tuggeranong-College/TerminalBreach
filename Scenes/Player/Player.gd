@@ -31,10 +31,10 @@ var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
 var ammo = 12 #active ammo
-var ammo_pistol_reserve = 0 #reserve ammo
+var ammo_pistol_reserve = 24 #reserve ammo
 var ammo_pistol_max = 120 #maximum reserve ammo
 var ammo_rifle = 32 #active ammo
-var ammo_rifle_reserve = 0 #reserve ammo
+var ammo_rifle_reserve = 64 #reserve ammo
 var ammo_rifle_max = 320 #maximum reserve ammo
 
 var reload_time = 3
@@ -179,8 +179,11 @@ func _unhandled_input(event):
 		
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading:
-		start_reload()
-		
+		if weapon_switch == 0 and ammo_pistol_reserve > 0:
+			start_reload()
+		elif weapon_switch == 1 and ammo_rifle_reserve > 0:
+			start_reload()
+			
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
 	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("weapon_switch") and not is_reloading:
