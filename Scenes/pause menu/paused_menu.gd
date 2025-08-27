@@ -21,7 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func set_paused(value:bool) ->void:
 	_is_paused = value
-	get_tree().paused = _is_paused
 	visible = _is_paused
 	if _is_paused:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
