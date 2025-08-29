@@ -80,7 +80,7 @@ func take_damage(amount: int):
 		update_ammo_counter()
 	health_changed.emit(health)
 
-@rpc("authority")
+@rpc("authority") #balls
 func die():
 	await get_tree().create_timer(3).timeout
 	queue_free()
