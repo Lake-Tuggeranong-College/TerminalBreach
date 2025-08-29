@@ -219,6 +219,14 @@ offset_bottom = -223.204
 theme_override_fonts/font = ExtResource("2_xlx0f")
 theme_override_font_sizes/font_size = 20
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1084.02
+offset_top = -310.699
+offset_right = 1231.02
+offset_bottom = -287.699
+text = "This is a button --->"
+
 [connection signal="button_down" from="Credits" to="." method="_on_credits_button_down"]
 [connection signal="button_down" from="?" to="." method="_on__button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/SinglePlayer" to="." method="_on_single_player_button_down"]
