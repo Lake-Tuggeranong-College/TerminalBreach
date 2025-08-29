@@ -64,6 +64,7 @@ text = "Quit to desktop"
 stream = ExtResource("2_0j4qu")
 
 [node name="IpLabel" type="Label" parent="."]
+layout_mode = 0
 offset_top = 2.0
 offset_right = 346.0
 offset_bottom = 102.0

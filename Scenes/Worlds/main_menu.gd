@@ -6,8 +6,6 @@ extends Control
 @onready var hidden_ip = $MarginContainer/VBoxContainer/hidden_ip
 @onready var ip_label = $IpLabel
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var ip = get_local_ip()

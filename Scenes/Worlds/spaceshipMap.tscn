@@ -3285,6 +3285,13 @@ shape = SubResource("BoxShape3D_vr38c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, -59.2245, 2.35869, -13.5581)
 visible = false
 
+[node name="Node3D2" parent="." instance=ExtResource("46_dswip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.85673, 108.809, 87.1885, 101.16)
+
+[node name="Node3D3" parent="." instance=ExtResource("46_dswip")]
+transform = Transform3D(-40.4161, 0, -1098.63, 0, 0.993784, 0, 1145.9, 0, -38.749, 40.5791, -87.8767, 101.16)
+visible = false
+
 [node name="Boiled One TP" type="Node" parent="."]
 
 [node name="Sign" type="MeshInstance3D" parent="Boiled One TP"]
