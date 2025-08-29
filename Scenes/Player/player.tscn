@@ -1141,9 +1141,6 @@ text = "Pistol
 [node name="active_ammo" type="Label" parent="Camera3D/ammo_counter_all/pistol_ammo"]
 layout_mode = 2
 
-[node name="reserve_ammo" type="Label" parent="Camera3D/ammo_counter_all/pistol_ammo"]
-layout_mode = 2
-
 [node name="seperator" type="Label" parent="Camera3D/ammo_counter_all"]
 layout_mode = 2
 text = "                "
@@ -1156,9 +1153,6 @@ layout_mode = 2
 text = "Rifle"
 
 [node name="active_ammo" type="Label" parent="Camera3D/ammo_counter_all/rifle_ammo"]
-layout_mode = 2
-
-[node name="reserve_ammo" type="Label" parent="Camera3D/ammo_counter_all/rifle_ammo"]
 layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
