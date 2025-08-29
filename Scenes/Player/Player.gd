@@ -114,9 +114,18 @@ func _enter_tree():
 
 
 func _ready():
-	Global.player = self
-	if not is_multiplayer_authority(): return
+	# Hide death UI/effects for everyone on spawn (host + clients)
 	dontwannadie.hide()
+	deathanimplayer.stop()
+	deathsound.stop()
+	healthbar.show()
+
+	Global.player = self
+
+	# From here on, only do local-authority setup
+	if not is_multiplayer_authority():
+		return
+
 	bullet_spawn = get_node("Camera3D/bulletSpawn")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
@@ -135,10 +144,11 @@ func _ready():
 		update_ammo_counter()
 	else:
 		is_ready = true
-		print("ammo counte rnot foun")
-		
+		print("ammo counter not found")
+
 	if is_ready and ammo_counter:
 		update_ammo_counter()
+
 
 
 

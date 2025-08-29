@@ -39,10 +39,12 @@ func _on_settings_button_pressed():
 
 
 func _on_quit_button_pressed():
+	NetworkManager.host_quit_to_menu()
 	get_tree().quit()
 
 
 func _on_quit_menu_button_pressed():
+	NetworkManager.host_quit_to_menu()
 	_is_paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Scenes/Worlds/main_menu.tscn")

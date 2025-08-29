@@ -22,6 +22,7 @@ buses/default_bus_layout=""
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+NetworkManager="*res://Scripts/NetworkManager.gd"
 
 [display]
 
