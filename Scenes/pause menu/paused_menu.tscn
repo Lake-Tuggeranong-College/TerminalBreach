@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2accwiykec1o"]
+[gd_scene load_steps=4 format=3 uid="uid://b2accwiykec1o"]
 
 [ext_resource type="Script" path="res://Scenes/pause menu/paused_menu.gd" id="1_jm0ka"]
 [ext_resource type="AudioStream" uid="uid://vd8npopxa8a5" path="res://audio/Monkeys-Spinning-Monkeys(chosic.com).mp3" id="2_0j4qu"]
+[ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="3_b275k"]
 
 [node name="PausedMenu" type="Control"]
 process_mode = 3
@@ -61,6 +62,13 @@ text = "Quit to desktop"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0j4qu")
+
+[node name="IpLabel" type="Label" parent="."]
+offset_top = 2.0
+offset_right = 346.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("3_b275k")
+theme_override_font_sizes/font_size = 20
 
 [connection signal="pressed" from="ColorRect/GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

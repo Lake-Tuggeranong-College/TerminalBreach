@@ -59,9 +59,9 @@ func _ready() -> void:
 		brainrot_video.visible = false
 		brainrot_video.loop = false   # we’ll control duration, not loop
 	else:
-		push_warning("BrainrotVideo not found. Add a VideoStreamPlayer named 'BrainrotVideo' or fix the path.")
+		pass
 	if not is_instance_valid(brainrot_audio):
-		push_warning("Brainrotaudio not found. Add an AudioStreamPlayer named 'Brainrotaudio' or fix the path.")
+		pass
 	# --------------------------------------------
 
 func _physics_process(_delta: float) -> void:
