@@ -113,7 +113,7 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 
-func _ready():
+func _ready(): #balls
 	# Hide death UI/effects for everyone on spawn (host + clients)
 	dontwannadie.hide()
 	deathanimplayer.stop()
