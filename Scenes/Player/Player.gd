@@ -30,8 +30,8 @@ var shoot_cooldown_pistol = 0.2
 var shoot_cooldown_rifle = 0.1
 var can_shoot = true
 
-var ammo = 12
-var ammo_rifle = 32
+var ammo = 12 #active ammo
+var ammo_rifle = 32 #active ammoo
 
 var reload_time = 3
 var is_reloading = false
@@ -160,6 +160,8 @@ func update_ammo_counter():
 			ammo_counter.text = str(ammo_rifle) + "/32"
 	else:
 		print("no label cuh")
+	$Camera3D/ammo_counter_all/pistol_ammo/active_ammo.text = str(ammo) + "/12"
+	$Camera3D/ammo_counter_all/rifle_ammo/active_ammo.text = str(ammo_rifle) + "/32"
 	
 
 
@@ -182,7 +184,7 @@ func _unhandled_input(event):
 	# Detect the reload key (R key)
 	if Input.is_action_just_pressed("reload") and not is_reloading:
 		start_reload()
-		
+			
 	if Input.is_action_just_pressed("shoot") and can_shoot and ammo > 0 and weapon_switch == 0:
 		shoot()
 	if event is InputEventKey and event.pressed and Input.is_action_just_pressed("weapon_switch") and not is_reloading:
@@ -346,7 +348,7 @@ func start_reload():
 
 	await get_tree().create_timer(reload_time).timeout  # Wait for reload time
 	if weapon_switch == 0:
-		ammo = 12  # Reset ammo after reload
+		ammo = 12
 	elif weapon_switch == 1:
 		ammo_rifle = 32  # Reset ammo after reload
 	update_ammo_counter()  # Update the counter after reload
