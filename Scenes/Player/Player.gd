@@ -22,6 +22,7 @@ signal health_changed(health_value)
 @onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar
 @onready var dontwannadie = $DeathAnim/Idontwannadie
 @onready var deathsound = $DeathAnim/deathsound
+@onready var model_anim_player = $Camera3D/MutiplayerModel/AnimationPlayer
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -113,7 +114,7 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 
-func _ready():
+func _ready(): #balls
 	# Hide death UI/effects for everyone on spawn (host + clients)
 	dontwannadie.hide()
 	deathanimplayer.stop()
@@ -238,15 +239,19 @@ func _physics_process(delta):
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("move")
 			play_remote_anim.rpc("move")
+			model_anim_player.play("PistolRunning")
 		elif weapon_switch == 1:  # Rifle
 			player_anim_player.play("riflemove")
+			model_anim_player.play("RifleRunning")
 	else:
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("idle")
 			play_remote_anim.rpc("idle")
+			model_anim_player.play("PistolIdle")
 		elif weapon_switch == 1:  # Rifle
 			player_anim_player.play("rifleidle")
 			play_remote_anim.rpc("rifleidle")
+			model_anim_player.play("RifleIdle")
 
 	move_and_slide()
 
@@ -255,6 +260,7 @@ func _on_animation_player_animation_finished(anim_name):
 		#anim_player.play("idle")
 		#rifle_anim_player.play("idle")
 		player_anim_player.play("idle")
+		model_anim_player.play("PistolIdle")
 		
 # Called every frame
 func _process(delta: float):
@@ -307,6 +313,7 @@ func shoot():
 	var anim_name = "rifleshoot" if is_rifle else "shoot"
 	player_anim_player.play(anim_name)
 	play_remote_anim.rpc(anim_name)
+	model_anim_player.play("RifleShooting")
 
 	# Raycast instant damage
 	if raycast.is_colliding():
