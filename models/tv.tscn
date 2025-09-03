@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu0314shm26d0"]
+[gd_scene load_steps=6 format=3 uid="uid://bu0314shm26d0"]
+
+[ext_resource type="Script" path="res://models/tv.gd" id="1_6k224"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fp6xj"]
 
@@ -13,6 +15,7 @@ albedo_texture = SubResource("ViewportTexture_5vfoy")
 file = "res://audio/clanka.ogv"
 
 [node name="Tv" type="Node3D"]
+script = ExtResource("1_6k224")
 
 [node name="screan" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1.777, 0, 1, -7.76751e-08, 0, 1.4179, 0)
