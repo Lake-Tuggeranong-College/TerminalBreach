@@ -30,3 +30,4 @@ offset_bottom = 40.0
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_iwb7w")
 autoplay = true
+loop = true
