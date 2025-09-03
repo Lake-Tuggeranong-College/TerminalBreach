@@ -1,4 +1,4 @@
-[gd_scene load_steps=307 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=308 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -51,6 +51,7 @@
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
 [ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
+[ext_resource type="PackedScene" uid="uid://bu0314shm26d0" path="res://models/tv.tscn" id="52_qlj26"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxi7n"]
 bg_color = Color(1, 0.117647, 0, 1)
@@ -3456,6 +3457,9 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boiled One TP/MeshInstance3D7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_46oa0")
+
+[node name="Tv" parent="." instance=ExtResource("52_qlj26")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -26.6203, 1.8277, -9.59102)
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
 
