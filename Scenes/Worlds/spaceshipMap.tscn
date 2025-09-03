@@ -2080,61 +2080,168 @@ shape = SubResource("BoxShape3D_cpng8")
 
 [node name="Tables" type="Node" parent="Extra Models"]
 
-[node name="cafeteriatable" parent="Extra Models/Tables" instance=ExtResource("33_giwip")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -2.86734)
+[node name="cafeteriatable1" parent="Extra Models/Tables" instance=ExtResource("33_giwip")]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, -8.75, 0, 0)
 
-[node name="Table" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable"]
+[node name="Table" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
 visible = false
 mesh = SubResource("CylinderMesh_uu4yp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable/Table"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable1/Table"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable/Table/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable1/Table/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hpuic")
 
-[node name="Chair1" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable"]
+[node name="Chair1" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable1"]
 transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, -4.75, 1, 4.75)
 visible = false
 mesh = SubResource("CylinderMesh_q0t26")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable/Chair1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable1/Chair1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable/Chair1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable1/Chair1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nusl7")
 
-[node name="Chair2" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable"]
+[node name="Chair2" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable1"]
 transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, 4.75, 1, 4.75)
 visible = false
 mesh = SubResource("CylinderMesh_q0t26")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable/Chair2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable1/Chair2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable/Chair2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable1/Chair2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vtmbm")
 
-[node name="Chair3" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable"]
+[node name="Chair3" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable1"]
 transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, 4.75, 1, -4.75)
 visible = false
 mesh = SubResource("CylinderMesh_q0t26")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable/Chair3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable1/Chair3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable/Chair3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable1/Chair3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_t286l")
 
-[node name="Chair4" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable"]
+[node name="Chair4" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable1"]
 transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, -4.75, 1, -4.75)
 visible = false
 mesh = SubResource("CylinderMesh_q0t26")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable/Chair4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable1/Chair4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable/Chair4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable1/Chair4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_535bn")
+
+[node name="cafeteriatable2" parent="Extra Models/Tables" instance=ExtResource("33_giwip")]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 8.75, 0, 0)
+
+[node name="Table" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
+visible = false
+mesh = SubResource("CylinderMesh_uu4yp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable2/Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable2/Table/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hpuic")
+
+[node name="Chair1" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable2"]
+transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, -4.75, 1, 4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable2/Chair1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable2/Chair1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nusl7")
+
+[node name="Chair2" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable2"]
+transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, 4.75, 1, 4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable2/Chair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable2/Chair2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vtmbm")
+
+[node name="Chair3" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable2"]
+transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, 4.75, 1, -4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable2/Chair3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable2/Chair3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t286l")
+
+[node name="Chair4" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable2"]
+transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, -4.75, 1, -4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable2/Chair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable2/Chair4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_535bn")
+
+[node name="cafeteriatable3" parent="Extra Models/Tables" instance=ExtResource("33_giwip")]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0, -6)
+
+[node name="Table" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74, 0)
+visible = false
+mesh = SubResource("CylinderMesh_uu4yp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable3/Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable3/Table/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hpuic")
+
+[node name="Chair1" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable3"]
+transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, -4.75, 1, 4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable3/Chair1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable3/Chair1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nusl7")
+
+[node name="Chair2" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable3"]
+transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, 4.75, 1, 4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable3/Chair2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable3/Chair2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vtmbm")
+
+[node name="Chair3" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable3"]
+transform = Transform3D(2.12132, 0, 5.65685, 0, 1, 0, -2.12132, 0, 5.65685, 4.75, 1, -4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable3/Chair3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable3/Chair3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t286l")
+
+[node name="Chair4" type="MeshInstance3D" parent="Extra Models/Tables/cafeteriatable3"]
+transform = Transform3D(2.12132, 0, -5.65685, 0, 1, 0, 2.12132, 0, 5.65685, -4.75, 1, -4.75)
+visible = false
+mesh = SubResource("CylinderMesh_q0t26")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Extra Models/Tables/cafeteriatable3/Chair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Tables/cafeteriatable3/Chair4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_535bn")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["nav"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761417, 4.76837e-07)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_c38ts")
 
 [node name="Floor" type="Node" parent="NavigationRegion3D"]
