@@ -104,9 +104,6 @@ func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
 
 	# ✅ Only connect hitmarker if this peer is the shooter
 	if multiplayer.get_unique_id() == shooter_peer:
-		if is_in_group("wall"):
-			pass
-	else:
 		bullet.connect("enemy_hit", Callable(self, "show_hitmarker"))
 
 
