@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wtwmarr5k6vg"]
+
+[ext_resource type="PackedScene" uid="uid://mlsixtrt72vr" path="res://interior/cafeteriatable.blend" id="1_nd3n6"]
+
+[node name="cafeteriatable" instance=ExtResource("1_nd3n6")]
+
+[node name="Collision" type="Node" parent="." index="1"]
