@@ -1,11 +1,23 @@
 extends Node3D
+# Attach this script to the TV or manage it from a central controller
 
+# Reference to the AudioStreamPlayer node attached to the TV
+@onready var tv_audio: AudioStreamPlayer = $AudioStreamPlayer
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+# Reference to the player node
+@export var player_path: NodePath
+var player: Node
 
+func _ready():
+	player = get_node(player_path)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	if player and tv_audio:
+		var distance = global_position.distance_to(player.global_position)
+		# Set max_distance (where volume is 0), and min_distance (where volume is max)
+		var min_distance = 1.0
+		var max_distance = 20.0
+		# Clamp and map the distance to a volume range (linear fade)
+		var volume = clamp(1.0 - ((distance - min_distance) / (max_distance - min_distance)), 0.0, 1.0)
+		# Convert to decibels for Godot (0 is normal, -80 is silent)
+		tv_audio.volume_db = lerp(0, -80, 1.0 - volume)
