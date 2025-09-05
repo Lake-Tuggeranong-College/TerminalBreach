@@ -35,5 +35,4 @@ offset_bottom = 40.0
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/SubViewportContainer"]
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_iwb7w")
-autoplay = true
 loop = true
