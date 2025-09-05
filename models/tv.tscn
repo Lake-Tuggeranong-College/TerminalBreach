@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu0314shm26d0"]
+[gd_scene load_steps=7 format=3 uid="uid://bu0314shm26d0"]
 
 [ext_resource type="Script" path="res://models/tv.gd" id="1_6k224"]
 
@@ -11,8 +11,11 @@ viewport_path = NodePath("SubViewport")
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_5vfoy")
 
+[sub_resource type="GDScript" id="GDScript_mhyn8"]
+
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_iwb7w"]
 file = "res://audio/clanka.ogv"
+script = SubResource("GDScript_mhyn8")
 
 [node name="Tv" type="Node3D"]
 script = ExtResource("1_6k224")
