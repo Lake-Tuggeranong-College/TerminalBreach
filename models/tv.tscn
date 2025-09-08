@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu0314shm26d0"]
 
-[ext_resource type="AudioStream" path="/home/emmethughes/Documents/GitHub/TerminalBreach/audio/clanka.ogv" id="1_owpyl"]
+[ext_resource type="AudioStream" uid="uid://dxvhhp2asmm1h" path="res://audio/clanka.mp3" id="1_krrxj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fp6xj"]
 
@@ -37,7 +37,9 @@ audio_track = 1
 stream = SubResource("VideoStreamTheora_iwb7w")
 volume_db = -80.0
 autoplay = true
-loop = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("1_owpyl")
+stream = ExtResource("1_krrxj")
+volume_db = -20.0
+autoplay = true
+max_distance = 30.0
