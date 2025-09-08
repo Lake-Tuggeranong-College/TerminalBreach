@@ -40,7 +40,6 @@ func _on_settings_button_pressed():
 
 func _on_quit_button_pressed():
 	NetworkManager.host_quit_to_menu()
-	get_tree().quit()
 
 
 func _on_quit_menu_button_pressed():
