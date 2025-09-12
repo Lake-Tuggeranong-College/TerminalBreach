@@ -23,6 +23,7 @@ signal health_changed(health_value)
 @onready var dontwannadie = $DeathAnim/Idontwannadie
 @onready var deathsound = $DeathAnim/deathsound
 @onready var model_anim_player = $Camera3D/MutiplayerModel/AnimationPlayer
+@onready var multiplayermodel = $Camera3D/MutiplayerModel
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -112,11 +113,12 @@ func _enter_tree():
 
 
 func _ready(): #balls
-	# Hide death UI/effects for everyone on spawn (host + clients)
+	# Hide death UI/effects/MPmodel for everyone on spawn (host + clients)
 	dontwannadie.hide()
 	deathanimplayer.stop()
 	deathsound.stop()
 	healthbar.show()
+	multiplayermodel.hide()
 
 	Global.player = self
 
