@@ -89,8 +89,11 @@ func die():
 	var player_id = multiplayer.get_unique_id()
 	rpc_id(1, "request_respawn", player_id)
 	
-	
 
+@rpc ("call_remote")
+func _balls():
+	multiplayermodel.hide()
+	
 @rpc("authority", "reliable")
 func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
 	var bullet_scene = rifle_bullet_scene if is_rifle else pistol_bullet_scene
@@ -112,14 +115,13 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 
-func _ready(): #balls
+func _ready(): 
 	# Hide death UI/effects/MPmodel for everyone on spawn (host + clients)
 	dontwannadie.hide()
 	deathanimplayer.stop()
 	deathsound.stop()
 	healthbar.show()
-	multiplayermodel.hide()
-
+	_balls()
 	Global.player = self
 
 	# From here on, only do local-authority setup
