@@ -7,6 +7,7 @@ extends Node3D  # Ensure this matches the new scene’s root node type
 @onready var environment = $NavigationRegion3D
 @onready var wave_label = $CanvasLayer/HUD/Enemies
 @onready var hitmarker = $CanvasLayer/HUD/Hitmarker
+@onready var reticle = $CanvasLayer/HUD/Reticle
 
 # Existing popup image + sound
 @onready var popup_image = $garmin
@@ -85,6 +86,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Brainrot = popup (like the other mode)
 	if Input.is_action_just_pressed("brainrot_mode"):
 		_play_brainrot_once()
+		
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("popup_key"):

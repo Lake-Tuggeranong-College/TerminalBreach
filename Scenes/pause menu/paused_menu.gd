@@ -1,6 +1,8 @@
 extends Control
 @onready var pause_music = $AudioStreamPlayer
 @onready var ip_label = $IpLabel
+@onready var reticle = $"../CanvasLayer/HUD/Reticle"
+var player: Node3D = null
 
 var _is_paused:bool = false:
 	set = set_paused
@@ -9,6 +11,8 @@ func _ready():
 	var ip = get_local_ip()
 	ip_label.text = "Host IP: " + ip
 	visible = false
+	while player == null:
+		player = get_tree().get_root().find_child("Player", true, false)
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,6 +37,8 @@ func set_paused(value:bool) ->void:
 func _on_resume_button_pressed():
 	_is_paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	reticle.show()
+	player.is_paused = false
 
 func _on_settings_button_pressed():
 	pass
