@@ -5,10 +5,6 @@ extends Control
 #@onready var reticle = $"../CanvasLayer/HUD/Reticle"
 @onready var player = preload("res://Scenes/Player/Player.gd")
 
-
-@onready var pause_music: AudioStreamPlayer = $AudioStreamPlayer
-@onready var ip_label: Label = $IpLabel
-
 var _is_paused: bool = false:
 	set = set_paused
 
