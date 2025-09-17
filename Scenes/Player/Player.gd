@@ -24,6 +24,7 @@ signal health_changed(health_value)
 @onready var deathsound = $DeathAnim/deathsound
 @onready var model_anim_player = $Camera3D/MutiplayerModel/AnimationPlayer
 @onready var multiplayermodel = $Camera3D/MutiplayerModel
+@onready var playerarms = $Camera3D/man/Armature
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -89,10 +90,6 @@ func die():
 	var player_id = multiplayer.get_unique_id()
 	rpc_id(1, "request_respawn", player_id)
 	
-
-@rpc ("call_remote")
-func _balls():
-	multiplayermodel.hide()
 	
 @rpc("authority", "reliable")
 func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
@@ -121,8 +118,13 @@ func _ready():
 	deathanimplayer.stop()
 	deathsound.stop()
 	healthbar.show()
-	_balls()
 	Global.player = self
+	if is_multiplayer_authority():
+		multiplayermodel.hide()
+		playerarms.show()
+	else:
+		multiplayermodel.show()
+		playerarms.hide()
 
 	# From here on, only do local-authority setup
 	if not is_multiplayer_authority():
