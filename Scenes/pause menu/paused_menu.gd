@@ -1,5 +1,11 @@
 extends Control
 
+@onready var pause_music = $AudioStreamPlayer
+@onready var ip_label = $IpLabel
+#@onready var reticle = $"../CanvasLayer/HUD/Reticle"
+@onready var player = preload("res://Scenes/Player/Player.gd")
+
+
 @onready var pause_music: AudioStreamPlayer = $AudioStreamPlayer
 @onready var ip_label: Label = $IpLabel
 
@@ -39,6 +45,7 @@ func set_paused(value: bool) -> void:
 func _on_resume_button_pressed() -> void:
 	_is_paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#reticle.show()
 
 func _on_settings_button_pressed() -> void:
 	# Open your settings UI here if/when you add it
