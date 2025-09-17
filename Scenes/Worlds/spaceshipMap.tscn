@@ -1126,6 +1126,7 @@ value = 100.0
 script = SubResource("GDScript_07fs1")
 
 [node name="Hitmarker" type="TextureRect" parent="CanvasLayer/HUD"]
+visible = false
 layout_mode = 0
 offset_left = 795.0
 offset_top = 444.0

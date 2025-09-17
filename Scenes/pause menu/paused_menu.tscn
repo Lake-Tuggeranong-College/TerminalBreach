@@ -44,10 +44,17 @@ theme_override_font_sizes/font_size = 36
 text = "Paused"
 
 [node name="ResumeButton" type="Button" parent="ColorRect/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Resume game"
+
+[node name="ResumeButton2" type="Button" parent="ColorRect/GridContainer"]
+visible = false
 layout_mode = 2
 text = "Resume game"
 
 [node name="SettingsButton" type="Button" parent="ColorRect/GridContainer"]
+visible = false
 layout_mode = 2
 text = "Settings"
 
@@ -72,6 +79,7 @@ theme_override_fonts/font = ExtResource("3_b275k")
 theme_override_font_sizes/font_size = 20
 
 [connection signal="pressed" from="ColorRect/GridContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ColorRect/GridContainer/ResumeButton2" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/QuitMenuButton" to="." method="_on_quit_menu_button_pressed"]
 [connection signal="pressed" from="ColorRect/GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
