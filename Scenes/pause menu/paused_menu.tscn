@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2accwiykec1o"]
+[gd_scene load_steps=5 format=3 uid="uid://b2accwiykec1o"]
 
 [ext_resource type="Script" path="res://Scenes/pause menu/paused_menu.gd" id="1_jm0ka"]
 [ext_resource type="AudioStream" uid="uid://vd8npopxa8a5" path="res://audio/Monkeys-Spinning-Monkeys(chosic.com).mp3" id="2_0j4qu"]
+[ext_resource type="Texture2D" uid="uid://c1ei5jd0lnjv5" path="res://images/AWy5fF.png" id="2_g0bh3"]
 [ext_resource type="FontFile" uid="uid://c76krp3u68v8j" path="res://Fonts/Cyberfall Italic.otf" id="3_b275k"]
 
 [node name="PausedMenu" type="Control"]
@@ -22,6 +23,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.286275)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 2
+offset_left = -11.0
+offset_top = -16.0
+offset_right = 1682.0
+offset_bottom = 918.0
+texture = ExtResource("2_g0bh3")
 
 [node name="GridContainer" type="GridContainer" parent="ColorRect"]
 layout_mode = 1
