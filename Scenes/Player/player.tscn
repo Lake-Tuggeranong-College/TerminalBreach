@@ -13,6 +13,35 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
 
+[sub_resource type="Gradient" id="Gradient_cfnn0"]
+offsets = PackedFloat32Array(0, 0.141221, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ca30p"]
+gradient = SubResource("Gradient_cfnn0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
+angle_min = 45.0
+angle_max = 45.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_ca30p")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flg34"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.960784, 0.670588, 1)
+albedo_texture = ExtResource("3_27dhu")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b2g4i"]
+material = SubResource("StandardMaterial3D_flg34")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
 [sub_resource type="Animation" id="Animation_68i2q"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -111,35 +140,6 @@ _data = {
 "move": SubResource("Animation_xiy3f"),
 "shoot": SubResource("Animation_rs2ly")
 }
-
-[sub_resource type="Gradient" id="Gradient_cfnn0"]
-offsets = PackedFloat32Array(0, 0.141221, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ca30p"]
-gradient = SubResource("Gradient_cfnn0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
-angle_min = 45.0
-angle_max = 45.0
-gravity = Vector3(0, 0, 0)
-color_ramp = SubResource("GradientTexture1D_ca30p")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flg34"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.960784, 0.670588, 1)
-albedo_texture = ExtResource("3_27dhu")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_b2g4i"]
-material = SubResource("StandardMaterial3D_flg34")
-size = Vector2(0.5, 0.5)
-orientation = 2
 
 [sub_resource type="Animation" id="Animation_jhgv2"]
 length = 0.001
@@ -1034,6 +1034,7 @@ size_flags_horizontal = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="MutiplayerModel" parent="Camera3D" instance=ExtResource("2_y8wir")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="Armature_005" parent="Camera3D/MutiplayerModel" index="0"]
 transform = Transform3D(-0.01, -8.74228e-10, 3.82137e-17, 0, -4.37114e-10, -0.01, 8.74228e-10, -0.01, 4.37114e-10, 0.157279, -1.44506, 0.406488)
@@ -1138,6 +1139,39 @@ bones/60/rotation = Quaternion(-0.232941, 0.244697, 0.901114, 0.271763)
 bones/61/rotation = Quaternion(-0.379373, 0.000639673, -0.0487072, 0.923961)
 bones/62/rotation = Quaternion(0.501814, 0.141386, 0.231378, 0.821375)
 bones/63/rotation = Quaternion(0.358021, 0.0455754, -0.0180542, 0.932426)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D" index="1"]
+transform = Transform3D(1, -7.10543e-15, 0, 7.10543e-15, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
+
+[node name="Pistol" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D" instance=ExtResource("5_ikpur")]
+transform = Transform3D(-0.49793, 0.0454466, 4.17211e-08, -0.00452642, -0.0495928, -0.497514, -0.0452206, -0.495455, 0.0497989, -14.9032, 48.583, -139.22)
+visible = false
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Pistol"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 3.31787, 33.8179, -40.8837)
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_uu53b")
+draw_pass_1 = SubResource("PlaneMesh_b2g4i")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Pistol"]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, -96.6821, 72.0505, 121.758)
+target_position = Vector3(0, 0, -50)
+collision_mask = 2
+
+[node name="Rifle" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D" instance=ExtResource("7_hb2iv")]
+transform = Transform3D(-51.9563, 42.8142, -19.1701, -44.5161, -54.0215, 3.61113e-06, -14.7942, 12.1911, 67.3239, 14.6406, 29.2257, -219.085)
+
+[node name="riflecomplete" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Rifle" index="0"]
+transform = Transform3D(0.0248717, 0.0122343, 0.0213711, -0.0222944, -0.00171208, 0.0269264, 0.0104575, -0.0327475, 0.00657636, -0.225119, -0.309354, 0.958355)
+
+[node name="RifleAnimationPlayer" type="AnimationPlayer" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Rifle"]
+libraries = {
+"": SubResource("AnimationLibrary_pav85")
+}
 
 [node name="man" parent="Camera3D" instance=ExtResource("5_gc3jb")]
 transform = Transform3D(-0.0994226, 0, -0.0107305, 0, 0.1, 0, 0.0107305, 0, -0.0994226, 0.0903189, -1.88805, 0.104838)
@@ -1351,5 +1385,6 @@ max_distance = 100.0
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Camera3D/MutiplayerModel"]
+[editable path="Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Rifle"]
 [editable path="Camera3D/man"]
 [editable path="Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle"]
