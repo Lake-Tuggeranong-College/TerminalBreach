@@ -34,3 +34,4 @@ func _go_to_menu(reason: String = "") -> void:
 	if reason != "":
 		OS.alert(reason, "Multiplayer")
 	get_tree().change_scene_to_file(MENU_SCENE)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
