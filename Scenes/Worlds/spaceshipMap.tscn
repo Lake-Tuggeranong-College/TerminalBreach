@@ -623,6 +623,8 @@ data = PackedVector3Array(8, 0, 0.75, -8, 0, 0.75, 8, 0, -0.75, -8, 0, 0.75, -8,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r066"]
 transparency = 1
 albedo_color = Color(0.596078, 0.741176, 1, 0.25098)
+metallic = 0.9
+roughness = 0.1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2hqty"]
 material = SubResource("StandardMaterial3D_5r066")
