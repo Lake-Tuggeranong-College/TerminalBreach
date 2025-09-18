@@ -184,14 +184,13 @@ func _unhandled_input(event):
 		#enemies_highlighted = !enemies_highlighted
 		#toggle_enemy_highlights(enemies_highlighted)
 	if Input.is_action_just_pressed("pause"): 
-		if is_paused == false:
-			reticle.hide()
+		reticle.hide()
 			#print("reticle hidden")
-			is_paused = true
-		elif is_paused == true:
-			reticle.show()
-			#print("reticle unhidden")
-			is_paused = false
+			#is_paused = true
+		#elif is_paused == true:
+#
+			##print("reticle unhidden")
+			#is_paused = false
 		print(is_paused)
 	
 		
@@ -223,53 +222,54 @@ func resume_button_pressed():
 
 func _physics_process(delta):
 
+	reticle.show()
+
 	if not is_multiplayer_authority(): return
 	
-	if is_paused == false:
+
 	# Add the gravity.
-		if not is_on_floor():
-			velocity.y -= gravity * delta
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 		
-		if Input.is_action_pressed("shoot") and can_shoot and ammo_rifle > 0 and weapon_switch == 1 and is_reloading == false:
-			shoot()
+	if Input.is_action_pressed("shoot") and can_shoot and ammo_rifle > 0 and weapon_switch == 1 and is_reloading == false:
+		shoot()
 
 	# Handle Jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-		var input_dir = Input.get_vector("left", "right", "up", "down")
-		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-			velocity.z = move_toward(velocity.z, 0, speed)
+	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 
-		if player_anim_player.current_animation == "shoot":
-			pass
-		elif input_dir != Vector2.ZERO and is_on_floor():
-
-			if weapon_switch == 0:  # Pistol
-				player_anim_player.play("move")
-				play_remote_anim.rpc("move")
-				model_anim_player.play("PistolRunning")
-			elif weapon_switch == 1:  # Rifle
-				player_anim_player.play("riflemove")
-				model_anim_player.play("RifleRunning")
-		else:
-			if weapon_switch == 0:  # Pistol
-				player_anim_player.play("idle")
-				play_remote_anim.rpc("idle")
-				model_anim_player.play("PistolIdle")
-			elif weapon_switch == 1:  # Rifle
-				player_anim_player.play("rifleidle")
-				play_remote_anim.rpc("rifleidle")
-				model_anim_player.play("RifleIdle")
+	if player_anim_player.current_animation == "shoot":
+		pass
+	elif input_dir != Vector2.ZERO and is_on_floor():
+		if weapon_switch == 0:  # Pistol
+			player_anim_player.play("move")
+			play_remote_anim.rpc("move")
+			model_anim_player.play("PistolRunning")
+		elif weapon_switch == 1:  # Rifle
+			player_anim_player.play("riflemove")
+			model_anim_player.play("RifleRunning")
+	else:
+		if weapon_switch == 0:  # Pistol
+			player_anim_player.play("idle")
+			play_remote_anim.rpc("idle")
+			model_anim_player.play("PistolIdle")
+		elif weapon_switch == 1:  # Rifle
+			player_anim_player.play("rifleidle")
+			play_remote_anim.rpc("rifleidle")
+			model_anim_player.play("RifleIdle")
 				
-		move_and_slide()
+	move_and_slide()
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":

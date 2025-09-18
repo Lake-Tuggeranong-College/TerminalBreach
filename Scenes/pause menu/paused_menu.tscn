@@ -25,6 +25,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.286275)
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
+visible = false
 layout_mode = 2
 offset_left = -11.0
 offset_top = -16.0
