@@ -78,7 +78,9 @@ func take_damage(amount: int):
 		await get_tree().create_timer(4.59).timeout #respawn timer
 		healthbar.show()
 		health = max_health
-		position = Vector3.ZERO
+		var spawner = get_node("/root/SpaceshipMap/Spawner")
+		spawner.respawn_player(self)
+		#position = Vector3.ZERO
 		ammo = 12
 		ammo_rifle = 32
 		update_ammo_counter()
