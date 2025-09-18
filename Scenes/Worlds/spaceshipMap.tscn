@@ -387,9 +387,7 @@ ao_texture = ExtResource("33_3by63")
 heightmap_enabled = true
 heightmap_texture = ExtResource("34_ivdkf")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_offset = Vector3(0.09, 0, 0.045)
 uv1_triplanar = true
-uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ko3tm"]
 material = SubResource("StandardMaterial3D_rhh2n")
@@ -623,6 +621,8 @@ data = PackedVector3Array(8, 0, 0.75, -8, 0, 0.75, 8, 0, -0.75, -8, 0, 0.75, -8,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r066"]
 transparency = 1
 albedo_color = Color(0.596078, 0.741176, 1, 0.25098)
+metallic = 0.9
+roughness = 0.1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2hqty"]
 material = SubResource("StandardMaterial3D_5r066")

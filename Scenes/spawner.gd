@@ -15,6 +15,7 @@ var enemy_scenes := []
 var spawn_timer: Timer
 
 func _ready():
+	randomize()
 	spawn_timer = Timer.new()
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(spawn_enemy)
@@ -29,6 +30,11 @@ func _ready():
 		Enemies = hud.get_node_or_null("Enemies")
 
 	#start_next_wave()
+
+
+func respawn_player(player):
+	var pos = get_random_spawn_point_position()
+	player.global_transform.origin = pos
 
 func start_next_wave():
 	current_wave += 1
