@@ -387,9 +387,7 @@ ao_texture = ExtResource("33_3by63")
 heightmap_enabled = true
 heightmap_texture = ExtResource("34_ivdkf")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_offset = Vector3(0.09, 0, 0.045)
 uv1_triplanar = true
-uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ko3tm"]
 material = SubResource("StandardMaterial3D_rhh2n")
