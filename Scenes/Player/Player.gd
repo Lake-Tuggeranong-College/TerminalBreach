@@ -59,9 +59,6 @@ var is_ready = false
 var enemies_highlighted = false
 var weapon_switch = 0
 
-var is_paused = false
-
-
 @rpc("any_peer")
 func take_damage(amount: int):
 	if not is_multiplayer_authority(): return  # Prevent clients from modifying health
@@ -185,13 +182,6 @@ func _unhandled_input(event):
 		#toggle_enemy_highlights(enemies_highlighted)
 	if Input.is_action_just_pressed("pause"): 
 		reticle.hide()
-			#print("reticle hidden")
-			#is_paused = true
-		#elif is_paused == true:
-#
-			##print("reticle unhidden")
-			#is_paused = false
-		print(is_paused)
 	
 		
 	# Detect the reload key (R key)
@@ -215,10 +205,6 @@ func _unhandled_input(event):
 			set_weapon_visibility(weapon_switch)
 			set_weapon_visibility.rpc(weapon_switch)
 			update_ammo_counter()
-
-func resume_button_pressed():
-	is_paused = false
-	print("signal sent")
 
 func _physics_process(delta):
 
