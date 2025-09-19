@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://qci78yakilvn"
+path.s3tc="res://.godot/imported/oom_command_droid_8.png-d3e92e31b818e773f421d2c722229bc5.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "bab5663dd97ec7fc8ac4fc7e32b7c30b"
+}
+
+[deps]
+
+source_file="res://models/oom_command_droid_8.png"
+dest_files=["res://.godot/imported/oom_command_droid_8.png-d3e92e31b818e773f421d2c722229bc5.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://models/oom_command_droid_8.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=308 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=310 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -29,8 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://cv004cae0hcrw" path="res://textures/ventedmetal(Bbox)/vented-metal-panel1_roughness.png" id="26_8ic2o"]
 [ext_resource type="Texture2D" uid="uid://8ka2ui7sq36p" path="res://addons/kenney_particle_pack/circle_05.png" id="27_rarf2"]
 [ext_resource type="Texture2D" uid="uid://cl6kwp05e50tu" path="res://icons/Hitmarker.png" id="28_os5cx"]
+[ext_resource type="PackedScene" uid="uid://0y7a5refqtve" path="res://models/star_wars_b1_battle_droid.glb" id="31_wxfw4"]
 [ext_resource type="Texture2D" uid="uid://jj3fxhw7edxf" path="res://textures/spacepanels(doors)/filthy-space-panels_albedo.png" id="32_agrke"]
 [ext_resource type="Texture2D" uid="uid://dku3xbacvlxgs" path="res://textures/metalbase(walls)/metal-siding-base_albedo.png" id="32_ivi72"]
+[ext_resource type="PackedScene" uid="uid://70215ft6cwym" path="res://models/oom_command_droid.glb" id="32_yrern"]
 [ext_resource type="Texture2D" uid="uid://bgkmxgduw3o6d" path="res://textures/metalbase(walls)/metal-siding-base_ao.png" id="33_3by63"]
 [ext_resource type="PackedScene" uid="uid://wtwmarr5k6vg" path="res://interior/cafeteriatable.tscn" id="33_giwip"]
 [ext_resource type="Texture2D" uid="uid://0ly3n3633pxs" path="res://textures/spacepanels(doors)/filthy-space-panels_ao.png" id="33_n2ujb"]
@@ -2045,11 +2047,12 @@ mesh = SubResource("PlaneMesh_1h3j2")
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
 
 [node name="hanginglight31" parent="Extra Models/Lights" instance=ExtResource("22_e5d6l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 4.75, 39.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 6.4501, 45.9757)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Extra Models/Lights/hanginglight31"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 25.0
+light_color = Color(1, 0, 0, 1)
+light_energy = 37.615
 shadow_reverse_cull_face = true
 spot_range = 100.0
 spot_angle = 89.0
@@ -2063,6 +2066,12 @@ mesh = SubResource("PlaneMesh_1h3j2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Extra Models/Lights/hanginglight31/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xs0c6")
+
+[node name="Sketchfab_Scene" parent="Extra Models/Lights" instance=ExtResource("31_wxfw4")]
+transform = Transform3D(-3.11004, 0, -0.0322307, 0, 2.51723, 0, 0.100291, 0, -0.99948, 6.33755, 0.00271606, 47.1116)
+
+[node name="Sketchfab_Scene2" parent="Extra Models/Lights" instance=ExtResource("32_yrern")]
+transform = Transform3D(-0.0285908, 0, -0.000421372, 0, 0.0236828, 0, 0.000961938, 0, -0.012524, 0.0929947, -0.0389625, 47.304)
 
 [node name="ControlPanel" type="Node" parent="Extra Models"]
 
