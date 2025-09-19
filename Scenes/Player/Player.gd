@@ -25,6 +25,7 @@ signal health_changed(health_value)
 @onready var model_anim_player = $Camera3D/MutiplayerModel/AnimationPlayer
 @onready var multiplayermodel = $Camera3D/MutiplayerModel
 @onready var playerarms = $Camera3D/man/Armature
+@onready var stoprotatingplease =$Camera3D/MutiplayerModel/Armature_005/Skeleton3D/Ch35
 #player shooting
 var bullet_spawn
 var pistol_bullet_scene = preload("res://Scenes/Player/pistol_bullet.tscn")
@@ -259,9 +260,6 @@ func _physics_process(delta):
 				
 	move_and_slide()
 	
-	if is_multiplayer_authority():
-		multiplayermodel.rotation_degrees.x = 0
-		multiplayermodel.rotation_degrees.z = 0
 
 
 func _on_animation_player_animation_finished(anim_name):
@@ -296,7 +294,10 @@ func _process(delta: float):
 	if health < max_health: #
 		health += health_regen/fps
 		health_changed.emit(health)
-
+	
+	if not is_multiplayer_authority():
+		camera.rotation_degrees.x = 0
+		camera.rotation_degrees.z = 0
 	
 func toggle_crouch():
 	is_crouching = !is_crouching
