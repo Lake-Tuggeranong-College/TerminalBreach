@@ -209,10 +209,7 @@ func _unhandled_input(event):
 func _physics_process(delta):
 
 	reticle.show()
-	if not is_multiplayer_authority():
-		var t = multiplayermodel.transform
-		var y_rot = t.basis.get_euler().y
-		multiplayermodel.rotation = Vector3(0, y_rot, 0)
+
 
 	if not is_multiplayer_authority(): return
 	
@@ -260,6 +257,8 @@ func _physics_process(delta):
 			model_anim_player.play("RifleIdle")
 				
 	move_and_slide()
+		
+
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
@@ -271,6 +270,7 @@ func _on_animation_player_animation_finished(anim_name):
 # Called every frame
 func _process(delta: float):
 	
+
 	# Check if the player is holding shift to run
 	# Speeds are subject to change
 	if Input.is_action_pressed("player_run") and is_crouching == false:
@@ -286,15 +286,14 @@ func _process(delta: float):
 
 	else:
 		speed = 5.0
-	
 	#regenerates health_regen amount every second
 	var fps = Engine.get_frames_per_second()
 	if health < max_health: #
 		health += health_regen/fps
 		health_changed.emit(health)
-		
-		
-		
+	
+	multiplayermodel.rotation_degrees.x = 0
+	multiplayermodel.rotation_degrees.z = 0
 func toggle_crouch():
 	is_crouching = !is_crouching
 
