@@ -211,6 +211,7 @@ func _physics_process(delta):
 	reticle.show()
 
 
+
 	if not is_multiplayer_authority(): return
 	
 
@@ -241,23 +242,26 @@ func _physics_process(delta):
 	elif input_dir != Vector2.ZERO and is_on_floor():
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("move")
-			play_remote_anim.rpc("move")
+			play_remote_anim.rpc("PistolRunning")
 			model_anim_player.play("PistolRunning")
 		elif weapon_switch == 1:  # Rifle
-			player_anim_player.play("riflemove")
+			player_anim_player.play("RifleRunning")
 			model_anim_player.play("RifleRunning")
 	else:
 		if weapon_switch == 0:  # Pistol
 			player_anim_player.play("idle")
-			play_remote_anim.rpc("idle")
+			play_remote_anim.rpc("PistolIdle")
 			model_anim_player.play("PistolIdle")
 		elif weapon_switch == 1:  # Rifle
 			player_anim_player.play("rifleidle")
-			play_remote_anim.rpc("rifleidle")
+			play_remote_anim.rpc("RifleIdle")
 			model_anim_player.play("RifleIdle")
 				
 	move_and_slide()
-		
+	
+	if is_multiplayer_authority():
+		multiplayermodel.rotation_degrees.x = 0
+		multiplayermodel.rotation_degrees.z = 0
 
 
 func _on_animation_player_animation_finished(anim_name):
@@ -266,6 +270,7 @@ func _on_animation_player_animation_finished(anim_name):
 		#rifle_anim_player.play("idle")
 		player_anim_player.play("idle")
 		model_anim_player.play("PistolIdle")
+		play_remote_anim.rpc("PistolIdle")
 		
 # Called every frame
 func _process(delta: float):
@@ -291,9 +296,8 @@ func _process(delta: float):
 	if health < max_health: #
 		health += health_regen/fps
 		health_changed.emit(health)
+
 	
-	multiplayermodel.rotation_degrees.x = 0
-	multiplayermodel.rotation_degrees.z = 0
 func toggle_crouch():
 	is_crouching = !is_crouching
 
@@ -317,7 +321,7 @@ func shoot():
 	# Play local and remote animation
 	var anim_name = "rifleshoot" if is_rifle else "shoot"
 	player_anim_player.play(anim_name)
-	play_remote_anim.rpc(anim_name)
+	play_remote_anim.rpc("RifleShooting")
 	model_anim_player.play("RifleShooting")
 
 	# Raycast instant damage
@@ -381,8 +385,8 @@ func show_hitmarker():
 
 @rpc("call_remote")
 func play_remote_anim(anim_name: String):
-	if player_anim_player.has_animation(anim_name):
-		player_anim_player.play(anim_name)
+	if model_anim_player.has_animation(anim_name):
+		model_anim_player.play(anim_name)
 		
 @rpc("call_remote")
 func set_weapon_visibility(weapon_index: int):
