@@ -209,6 +209,10 @@ func _unhandled_input(event):
 func _physics_process(delta):
 
 	reticle.show()
+	if not is_multiplayer_authority():
+		var t = multiplayermodel.transform
+		var y_rot = t.basis.get_euler().y
+		multiplayermodel.rotation = Vector3(0, y_rot, 0)
 
 	if not is_multiplayer_authority(): return
 	
@@ -386,9 +390,13 @@ func set_weapon_visibility(weapon_index: int):
 	if weapon_index == 0:
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.show()
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.hide()
+		$Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/riflecomplete.hide()
+		$Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Pistol.show()
 	elif weapon_index == 1:
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Pistol.hide()
 		$Camera3D/man/Armature/Skeleton3D/BoneAttachment3D/Rifle.show()
+		$Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/riflecomplete.show()
+		$Camera3D/MutiplayerModel/Armature_005/Skeleton3D/BoneAttachment3D/Pistol.hide()
 
 func world_border():
 	global_position = Vector3.ZERO
