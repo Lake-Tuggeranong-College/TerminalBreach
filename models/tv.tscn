@@ -43,3 +43,4 @@ loop = true
 stream = ExtResource("1_krrxj")
 autoplay = true
 max_distance = 30.0
+parameters/looping = true
