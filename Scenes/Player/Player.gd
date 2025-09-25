@@ -15,8 +15,8 @@ signal health_changed(health_value)
 @onready var hitmarker = $/root/SpaceshipMap/CanvasLayer/HUD/Hitmarker  # Adjust path to match your scene
 @onready var reticle = $/root/SpaceshipMap/CanvasLayer/HUD/Reticle
 @export var max_health: int = 100
-@export var pistol_damage: int = 10
-@export var rifle_damage: int = 1
+@export var pistol_damage: int = 20
+@export var rifle_damage: int = 5
 @onready var weapon_holder = $weapon_holder
 @onready var deathanimplayer = $DeathAnim
 @onready var healthbar = $/root/SpaceshipMap/CanvasLayer/HUD/HealthBar
