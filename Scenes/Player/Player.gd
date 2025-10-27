@@ -282,7 +282,7 @@ func _process(delta: float):
 		print("Crouch")
 		toggle_crouch()
 		speed = 3.5
-		if is_crouching:
+		if is_crouching and is_multiplayer_authority():
 			camera.position.y = crouch_height / 2.0
 		else:
 			camera.position.y = standing_height / 1.3
