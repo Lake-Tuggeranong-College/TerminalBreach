@@ -1,4 +1,4 @@
-[gd_scene load_steps=314 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=313 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -50,7 +50,6 @@
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
-[ext_resource type="Script" path="res://Scenes/Worlds/door_button.gd" id="46_xng4y"]
 [ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
 [ext_resource type="PackedScene" uid="uid://bu0314shm26d0" path="res://models/tv.tscn" id="52_qlj26"]
 
@@ -633,7 +632,7 @@ _data = {
 "door_open": SubResource("Animation_u56i7")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_6ldf6"]
+[sub_resource type="BoxMesh" id="BoxMesh_m7lkw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dv58q"]
 material = SubResource("StandardMaterial3D_rhh2n")
@@ -2661,10 +2660,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ylyek")
 }
 
-[node name="DoorButton" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls/InteractableDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34101, -2.34885, 2.27677)
-mesh = SubResource("BoxMesh_6ldf6")
-script = ExtResource("46_xng4y")
+[node name="DoorButton" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2, -13.05)
+mesh = SubResource("BoxMesh_m7lkw")
 
 [node name="Exterior Walls" type="Node" parent="NavigationRegion3D"]
 
@@ -3547,6 +3545,9 @@ transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 
 
 [node name="Spawner38" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 49.9314, 2.22106, -10.1435)
+
+[node name="Spawner39" type="Marker3D" parent="Spawner"]
+transform = Transform3D(1, 0, 0, 0, 0.992887, -0.119062, 0, 0.119062, 0.992887, 26.6017, -3.33898, 36.2231)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("44_qnwor")]
 transform = Transform3D(2.41405, 0, 0.701695, 0, 3.32657, 0, -0.599878, 0, 2.82379, -61.2273, -2.1346, -16.9719)
