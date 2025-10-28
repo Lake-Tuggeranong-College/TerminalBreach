@@ -281,11 +281,7 @@ func _process(delta: float):
 	elif Input.is_action_just_pressed("ui_crouch"): 
 		print("Crouch")
 		toggle_crouch()
-		speed = 3.5
-		if is_crouching and is_multiplayer_authority():
-			camera.position.y = crouch_height / 2.0
-		else:
-			camera.position.y = standing_height / 1.3
+
 
 	else:
 		speed = 5.0
@@ -298,9 +294,15 @@ func _process(delta: float):
 	if not is_multiplayer_authority():
 		camera.rotation_degrees.x = 0
 		camera.rotation_degrees.z = 0
-	
+		
+@rpc("call_remote")
 func toggle_crouch():
 	is_crouching = !is_crouching
+	speed = 3.5
+	if is_crouching and is_multiplayer_authority():
+		camera.position.y = crouch_height / 2.0
+	else:
+		camera.position.y = standing_height / 1.3
 
 @rpc("any_peer")
 func shoot():
