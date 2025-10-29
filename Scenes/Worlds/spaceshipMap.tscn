@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=316 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -49,7 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
+[ext_resource type="PackedScene" uid="uid://mby87jlejjlo" path="res://models/weapon_rack.glb" id="46_diu40"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
+[ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="47_u3ogd"]
+[ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="48_yreto"]
 [ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
 [ext_resource type="PackedScene" uid="uid://bu0314shm26d0" path="res://models/tv.tscn" id="52_qlj26"]
 
@@ -3428,6 +3431,36 @@ mesh = SubResource("PlaneMesh_o07lb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Exterior Walls/MeshInstance3D31/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7a476")
+
+[node name="weapon rack" parent="NavigationRegion3D/Exterior Walls" instance=ExtResource("46_diu40")]
+transform = Transform3D(-1.74846e-09, 0, 0.04, 0, 0.04, 0, -0.04, 0, -1.74846e-09, -1.138, 0.18, -49.503)
+
+[node name="enemyrifle" parent="NavigationRegion3D/Exterior Walls/weapon rack" instance=ExtResource("47_u3ogd")]
+transform = Transform3D(2.085, 1.24345e-14, 2.13163e-14, 0, 2.00917, -0.557192, -2.84217e-14, 0.557192, 2.00917, -3.1427, 83.5673, 34.2255)
+
+[node name="enemyrifle2" parent="NavigationRegion3D/Exterior Walls/weapon rack" instance=ExtResource("47_u3ogd")]
+transform = Transform3D(2.085, 1.42109e-14, 2.84217e-14, 0, 2.00917, -0.557192, -3.55271e-14, 0.557192, 2.00917, -3.1427, 47.1494, 34.2255)
+
+[node name="Pistol" parent="NavigationRegion3D/Exterior Walls/weapon rack" instance=ExtResource("48_yreto")]
+transform = Transform3D(54.905, 0, 0, 0, 52.9081, -14.6727, 0, 14.6727, 52.9081, -2.66589, 48.3048, -24.6802)
+
+[node name="Pistol2" parent="NavigationRegion3D/Exterior Walls/weapon rack" instance=ExtResource("48_yreto")]
+transform = Transform3D(54.905, 5.68434e-14, 2.27374e-13, 0, 52.9081, -14.6727, -2.27374e-13, 14.6727, 52.9081, -2.66589, 83.8387, -24.6802)
+
+[node name="weapon rack2" parent="NavigationRegion3D/Exterior Walls" instance=ExtResource("46_diu40")]
+transform = Transform3D(-1.74846e-09, 0, 0.04, 0, 0.04, 0, -0.04, 0, -1.74846e-09, 9.4819, 0.180201, -49.5034)
+
+[node name="enemyrifle" parent="NavigationRegion3D/Exterior Walls/weapon rack2" instance=ExtResource("47_u3ogd")]
+transform = Transform3D(2.085, 1.24345e-14, 2.13163e-14, 0, 2.00917, -0.557192, -2.84217e-14, 0.557192, 2.00917, -3.1427, 83.5673, 34.2255)
+
+[node name="enemyrifle2" parent="NavigationRegion3D/Exterior Walls/weapon rack2" instance=ExtResource("47_u3ogd")]
+transform = Transform3D(2.085, 1.42109e-14, 2.84217e-14, 0, 2.00917, -0.557192, -3.55271e-14, 0.557192, 2.00917, -3.1427, 47.1494, 34.2255)
+
+[node name="Pistol" parent="NavigationRegion3D/Exterior Walls/weapon rack2" instance=ExtResource("48_yreto")]
+transform = Transform3D(54.905, 0, 0, 0, 52.9081, -14.6727, 0, 14.6727, 52.9081, -2.66589, 48.3048, -24.6802)
+
+[node name="Pistol2" parent="NavigationRegion3D/Exterior Walls/weapon rack2" instance=ExtResource("48_yreto")]
+transform = Transform3D(54.905, 5.68434e-14, 2.27374e-13, 0, 52.9081, -14.6727, -2.27374e-13, 14.6727, 52.9081, -2.66589, 83.8387, -24.6802)
 
 [node name="Spawner" parent="." instance=ExtResource("43_r6yhk")]
 transform = Transform3D(1, 0, 0, 0, 0.992887, 0.119062, 0, -0.119062, 0.992887, 0.279287, 1.74916, -1.57298)
