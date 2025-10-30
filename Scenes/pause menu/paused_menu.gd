@@ -14,12 +14,12 @@ func _ready() -> void:
 		ip_label.text = "Host IP: " + ip
 	visible = false
 
-func _unhandled_input(event: InputEvent) -> void:
-	# Keep your original logic: if pause pressed while Global.player == null, ignore
-	if event.is_action_pressed("pause") and Global.player == null:
-		return
-	if event.is_action_pressed("pause"):
-		_is_paused = !_is_paused
+#func _unhandled_input(event: InputEvent) -> void:
+	## Keep your original logic: if pause pressed while Global.player == null, ignore
+	#if event.is_action_pressed("pause") and Global.player == null:
+		#return
+	#if event.is_action_pressed("pause"):
+		#_is_paused = !_is_paused
 
 func set_paused(value: bool) -> void:
 	_is_paused = value
