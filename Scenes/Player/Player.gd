@@ -86,8 +86,8 @@ func take_damage(amount: int):
 
 @rpc("authority") #balls
 func die():
-	await get_tree().create_timer(3).timeout
 	queue_free()
+	await get_tree().create_timer(3).timeout
 	var player_id = multiplayer.get_unique_id()
 	rpc_id(1, "request_respawn", player_id)
 	
