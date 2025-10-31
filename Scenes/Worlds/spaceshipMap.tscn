@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=3 uid="uid://txw564016hgy"]
+[gd_scene load_steps=318 format=3 uid="uid://txw564016hgy"]
 
 [ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
 [ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
@@ -51,6 +51,7 @@
 [ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://mby87jlejjlo" path="res://models/weapon_rack.glb" id="46_diu40"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
+[ext_resource type="Script" path="res://Interactable/button.gd" id="46_u2nfg"]
 [ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="47_u3ogd"]
 [ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="48_yreto"]
 [ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
@@ -636,6 +637,9 @@ _data = {
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_m7lkw"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gnq72"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dv58q"]
 material = SubResource("StandardMaterial3D_rhh2n")
@@ -2648,7 +2652,7 @@ skeleton = NodePath("../LowerLeftQuarterMid")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Interior Walls/MidMainDoorRight/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5mw0f")
 
-[node name="InteractableDoor" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls"]
+[node name="InteractableDoor" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls" groups=["door2"]]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, -28.75, 4.5, -15.5)
 mesh = SubResource("BoxMesh_bvtg5")
 skeleton = NodePath("../LowerLeftQuarterMid")
@@ -2663,9 +2667,17 @@ libraries = {
 "": SubResource("AnimationLibrary_ylyek")
 }
 
-[node name="DoorButton" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls"]
+[node name="DoorButton" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls" groups=["door"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 2, -13.05)
+layers = 2
 mesh = SubResource("BoxMesh_m7lkw")
+script = ExtResource("46_u2nfg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Interior Walls/DoorButton" groups=["door"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Interior Walls/DoorButton/StaticBody3D" groups=["door"]]
+shape = SubResource("ConcavePolygonShape3D_gnq72")
 
 [node name="Exterior Walls" type="Node" parent="NavigationRegion3D"]
 
