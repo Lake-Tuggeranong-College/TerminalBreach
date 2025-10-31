@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=38 format=3 uid="uid://xcjrjq5cbn7y"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="PackedScene" uid="uid://djklvpslr1akk" path="res://models/MutiplayerModel.glb" id="2_y8wir"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://buvlkhddosc45" path="res://Fonts/CorruptionFont.ttf" id="7_eg2uk"]
 [ext_resource type="PackedScene" uid="uid://q531qdb3m0yw" path="res://Scenes/Guns/riflecomplete.tscn" id="7_hb2iv"]
 [ext_resource type="Texture2D" uid="uid://b2vp1fhrqxnb0" path="res://images/eye.png" id="8_7vqxj"]
+[ext_resource type="Script" path="res://Interactable/interact.gd" id="8_xlsbh"]
 [ext_resource type="AudioStream" uid="uid://beq0o01hry63r" path="res://radioglitchsound292597mp3.wav" id="9_c4r5u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_67y6s"]
@@ -1142,7 +1143,7 @@ bones/62/rotation = Quaternion(0.501814, 0.141386, 0.231378, 0.821375)
 bones/63/rotation = Quaternion(0.358021, 0.0455754, -0.0180542, 0.932426)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/MutiplayerModel/Armature_005/Skeleton3D" index="1"]
-transform = Transform3D(0.0267647, -0.977185, -0.210695, 0.130921, 0.212382, -0.968376, 0.991031, -0.00166631, 0.133619, -10.5133, 42.3478, -108.05)
+transform = Transform3D(0.0267648, -0.977185, -0.210695, 0.130922, 0.212381, -0.968377, 0.991031, -0.00166626, 0.13362, -10.5133, 42.3479, -108.05)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 10
 
@@ -1246,8 +1247,10 @@ collision_mask = 2
 [node name="AnimationPlayer" parent="Camera3D/man" index="2"]
 autoplay = "move-Legacy Slot_001"
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(0.820661, 0, 0.571416, 0, 1, 0, -0.571416, 0, 0.820661, 0, 0, 0)
+[node name="Interact" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+script = ExtResource("8_xlsbh")
 
 [node name="ammo_counter_all" type="HBoxContainer" parent="Camera3D"]
 anchors_preset = 3
