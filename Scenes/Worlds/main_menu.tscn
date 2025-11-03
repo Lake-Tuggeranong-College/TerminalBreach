@@ -173,10 +173,6 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_q3ytf")
 text = "Join Default Server"
 
-[node name="Feedback2" type="LinkButton" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-uri = "https://docs.google.com/forms/d/e/1FAIpQLSe5uwFegpVZR1HTVDLFAxtNjS_cS3q9vr36kAfLAYiq9Lp29w/viewform"
-
 [node name="hidden_ip" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
