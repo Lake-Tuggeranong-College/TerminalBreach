@@ -328,11 +328,11 @@ func shoot():
 	model_anim_player.play("RifleShooting")
 
 	# Raycast instant damage
-	if raycast.is_colliding():
-		var target = raycast.get_collider()
-		if target.has_method("take_damage"):
-			var authority_id = target.get_multiplayer_authority()
-			target.take_damage.rpc_id(authority_id, damage)
+	#if raycast.is_colliding():
+		#var target = raycast.get_collider()
+		#if target.has_method("take_damage"):
+			#var authority_id = target.get_multiplayer_authority()
+			#target.take_damage.rpc_id(authority_id, damage)
 
 	# Spawn bullet across network
 	var shooter_id = multiplayer.get_unique_id()
