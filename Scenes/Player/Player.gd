@@ -48,6 +48,7 @@ var current_weapon = null
 var current_health: int = 100
 var health_regen:float = 1 #amount of health regenerated every second
 var health = 100
+var is_dead = false
 
 #player movement
 const JUMP_VELOCITY = 10.0
@@ -86,11 +87,14 @@ func take_damage(amount: int):
 
 @rpc("authority") #balls
 func die():
+	$Camera3D/ammo_counter_all/pistol_ammo/weapon_label.hide()
+	$Camera3D/ammo_counter_all/rifle_ammo/weapon_label.hide()
 	queue_free()
 	await get_tree().create_timer(3).timeout
 	var player_id = multiplayer.get_unique_id()
 	rpc_id(1, "request_respawn", player_id)
-	
+	$Camera3D/ammo_counter_all/pistol_ammo/weapon_label.show()
+	$Camera3D/ammo_counter_all/rifle_ammo/weapon_label.show()
 	
 @rpc("authority", "reliable")
 func spawn_bullet(is_rifle: bool, transform: Transform3D, shooter_peer: int):
@@ -181,9 +185,6 @@ func _unhandled_input(event):
 	#if Input.is_action_just_pressed("esp"):
 		#enemies_highlighted = !enemies_highlighted
 		#toggle_enemy_highlights(enemies_highlighted)
-	elif Input.is_action_just_pressed("pause"): 
-		reticle.hide()
-	
 		
 	# Detect the reload key (R key)
 	elif Input.is_action_just_pressed("reload") and not is_reloading:
@@ -208,9 +209,6 @@ func _unhandled_input(event):
 			update_ammo_counter()
 
 func _physics_process(delta):
-
-	reticle.show()
-
 
 
 	if not is_multiplayer_authority(): return
