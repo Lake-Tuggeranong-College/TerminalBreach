@@ -1,7 +1,7 @@
 [gd_scene load_steps=318 format=3 uid="uid://txw564016hgy"]
 
-[ext_resource type="Script" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
-[ext_resource type="VideoStream" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
+[ext_resource type="Script" uid="uid://dgrkmocbpxbn3" path="res://Scenes/Worlds/spaceship_map.gd" id="1_ua7sc"]
+[ext_resource type="VideoStream" uid="uid://cufes2w5voglw" path="res://animation/BrainrotVideo.ogv" id="2_0qw0f"]
 [ext_resource type="Texture2D" uid="uid://ufr15imhwco1" path="res://textures/metalgrid(floor)/metalgrid2_basecolor.png" id="2_2wrj5"]
 [ext_resource type="Texture2D" uid="uid://cu4ahw78u2w48" path="res://icons/okay-garmin-video-speichern-v0-kfpi3m2flpef1.webp" id="2_htmix"]
 [ext_resource type="Texture2D" uid="uid://dvjg8qw203lj7" path="res://textures/panorama6.jpg" id="2_ovteb"]
@@ -48,10 +48,10 @@
 [ext_resource type="PackedScene" uid="uid://c43tfk8mpm0lp" path="res://Scenes/spawner.tscn" id="43_r6yhk"]
 [ext_resource type="PackedScene" uid="uid://cbqorlevxvdti" path="res://models/the_boiled_one_horror_game_-_boiled_one.glb" id="44_qnwor"]
 [ext_resource type="AudioStream" uid="uid://c4ydido1dm23q" path="res://audio/the boiled one.ogg" id="45_pett1"]
-[ext_resource type="Script" path="res://boiledhell.gd" id="46_5kwde"]
+[ext_resource type="Script" uid="uid://bp77ds2gdh3ta" path="res://boiledhell.gd" id="46_5kwde"]
 [ext_resource type="PackedScene" uid="uid://mby87jlejjlo" path="res://models/weapon_rack.glb" id="46_diu40"]
 [ext_resource type="PackedScene" uid="uid://ebyukika44kj" path="res://node_3d.tscn" id="46_dswip"]
-[ext_resource type="Script" path="res://Interactable/button.gd" id="46_u2nfg"]
+[ext_resource type="Script" uid="uid://6t8cyt2or8m4" path="res://Interactable/button.gd" id="46_u2nfg"]
 [ext_resource type="PackedScene" uid="uid://b2fj2wmmnm54i" path="res://Scenes/Enemy/enemyrifle.blend" id="47_u3ogd"]
 [ext_resource type="PackedScene" uid="uid://cf1dcxwv6bvl3" path="res://models/Pistol.glb" id="48_yreto"]
 [ext_resource type="Texture2D" uid="uid://b1i44r27i84ql" path="res://arrow.jpg" id="50_7ht8p"]
@@ -631,9 +631,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ylyek"]
 _data = {
-"RESET": SubResource("Animation_n4k3o"),
-"door_close": SubResource("Animation_yc0qw"),
-"door_open": SubResource("Animation_u56i7")
+&"RESET": SubResource("Animation_n4k3o"),
+&"door_close": SubResource("Animation_yc0qw"),
+&"door_open": SubResource("Animation_u56i7")
 }
 
 [sub_resource type="BoxMesh" id="BoxMesh_m7lkw"]
@@ -1112,7 +1112,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="SpaceshipMap" type="Node3D"]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168762, -0.215107, -0.3992)
 script = ExtResource("1_ua7sc")
 
 [node name="BrainrotVideo" type="VideoStreamPlayer" parent="."]
@@ -1209,7 +1208,7 @@ offset_bottom = 23.0
 environment = SubResource("Environment_r27kf")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/Player/player.tscn")
+_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")
 spawn_path = NodePath("..")
 
 [node name="Roof" type="Node" parent="."]
@@ -2664,7 +2663,7 @@ shape = SubResource("ConcavePolygonShape3D_n0qh7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/Interior Walls/InteractableDoor"]
 libraries = {
-"": SubResource("AnimationLibrary_ylyek")
+&"": SubResource("AnimationLibrary_ylyek")
 }
 
 [node name="DoorButton" type="MeshInstance3D" parent="NavigationRegion3D/Interior Walls" groups=["door"]]
